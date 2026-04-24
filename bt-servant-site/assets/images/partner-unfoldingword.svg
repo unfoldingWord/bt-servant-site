@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 60" role="img" aria-label="unfoldingWord">
+    <g transform="translate(8,10)">
+        <path d="M0 6 L18 0 L18 36 L0 42 Z" fill="#0a7fb8"/>
+        <path d="M18 0 L36 6 L36 42 L18 36 Z" fill="#31ADE3"/>
+    </g>
+    <text x="58" y="40" font-family="Inter, Arial, sans-serif" font-size="30" font-weight="400" fill="#1F1F1F">unfolding</text>
+    <text x="175" y="40" font-family="Inter, Arial, sans-serif" font-size="30" font-weight="700" fill="#31ADE3">Word</text>
+</svg>
