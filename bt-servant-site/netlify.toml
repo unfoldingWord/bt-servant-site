@@ -23,29 +23,29 @@
     X-Content-Type-Options = "nosniff"
     Referrer-Policy        = "strict-origin-when-cross-origin"
 
-  # 301 the .com pair to the canonical .ai marketing host.
-  # `force = true` is required so it overrides the 200 served for /,
-  # /index.html, etc. Path & query are preserved via :splat.
-  [[redirects]]
-    from = "https://btservant.com/*"
-    to = "https://www.btservant.ai/:splat"
-    status = 301
-    force = true
+# 301 the .com pair to the canonical .ai marketing host.
+# `force = true` is required so it overrides the 200 served for /,
+# /index.html, etc. Path & query are preserved via :splat.
+[[redirects]]
+  from = "https://btservant.com/*"
+  to = "https://www.btservant.ai/:splat"
+  status = 301
+  force = true
 
-  [[redirects]]
-    from = "https://www.btservant.com/*"
-    to = "https://www.btservant.ai/:splat"
-    status = 301
-    force = true
+[[redirects]]
+  from = "https://www.btservant.com/*"
+  to = "https://www.btservant.ai/:splat"
+  status = 301
+  force = true
 
-  [[redirects]]
-    from = "http://btservant.com/*"
-    to = "https://www.btservant.ai/:splat"
-    status = 301
-    force = true
+[[redirects]]
+  from = "http://btservant.com/*"
+  to = "https://www.btservant.ai/:splat"
+  status = 301
+  force = true
 
-  [[redirects]]
-    from = "http://www.btservant.com/*"
-    to = "https://www.btservant.ai/:splat"
-    status = 301
-    force = true
+[[redirects]]
+  from = "http://www.btservant.com/*"
+  to = "https://www.btservant.ai/:splat"
+  status = 301
+  force = true

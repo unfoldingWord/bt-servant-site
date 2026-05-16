@@ -9,18 +9,24 @@ deploy to Netlify from GitHub.
 ```
 .
 ├── index.html         Site (single-page landing)
+├── 404.html           Branded 404 fallback
 ├── style.css          Theme variables + typography
-├── netlify.toml       Netlify build/headers config
+├── netlify.toml       Netlify build / headers config
+├── README.md
 ├── .gitignore
 └── assets/
     ├── css/main.css   Main stylesheet
     ├── js/main.js     Mobile nav + smooth scroll
-    └── images/        Logos, QR code, partner logos
+    └── images/        BT Servant + partner logos, QR code
 ```
 
-## Deploy to Netlify via GitHub
+## Deploy to Netlify
 
-1. Create a new repository on GitHub (e.g. `bt-servant-site`).
+Two equally valid paths — pick whichever fits your workflow.
+
+### Option A — GitHub-connected (recommended; gives push-to-deploy)
+
+1. Create a new GitHub repo (e.g. `bt-servant-site`).
 2. From this folder:
    ```bash
    git init
@@ -31,10 +37,17 @@ deploy to Netlify from GitHub.
    git push -u origin main
    ```
 3. In Netlify: **Add new site → Import an existing project → GitHub**, pick the repo.
-4. Netlify reads `netlify.toml` automatically:
-   - Publish directory: `.` (repo root)
-   - Build command: none
-5. Click **Deploy**. Every push to `main` redeploys the site.
+4. Netlify reads `netlify.toml` automatically — publish dir `.`, no build command.
+5. Click **Deploy**. Every push to `main` redeploys; pull requests get
+   their own preview URLs automatically.
+
+### Option B — Drag-and-drop (fastest, no Git)
+
+1. In Netlify: **Add new site → Deploy manually**.
+2. Drag this entire folder onto the upload area.
+3. Netlify gives you a live URL within ~30 seconds.
+4. To update the site later, drag a new copy of the folder onto the
+   same site's **Deploys** tab.
 
 ## Local preview
 

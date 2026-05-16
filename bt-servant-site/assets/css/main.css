@@ -148,6 +148,10 @@ p  { margin: 0 0 1rem; color: var(--bt-muted); }
     line-height: 1.05;
     margin-bottom: 20px;
 }
+.hero__accent {
+    color: var(--bt-gold);
+    font-style: italic;
+}
 .hero__sub {
     font-size: 1.05rem;
     max-width: 520px;
@@ -983,7 +987,7 @@ p  { margin: 0 0 1rem; color: var(--bt-muted); }
 }
 
 .site-footer__credits {
-    padding: 16px 0 4px;
+    padding: 22px 0 6px;
     border-top: 1px solid rgba(237,236,232,0.08);
 }
 .site-footer__credits p {
@@ -1003,6 +1007,62 @@ p  { margin: 0 0 1rem; color: var(--bt-muted); }
 }
 .site-footer__credits a:hover { border-bottom-color: var(--bt-gold); }
 
+/* Partner logo banner (white strip below footer) ---------------------- */
+/* Banner height and logo slot scale together so the logos always sit
+   centered with consistent breathing room above and below. */
+.partner-bar {
+    background: #ffffff;
+    padding: 22px 0;     /* ~22% of logo height — proportional breathing room */
+    border-top: 1px solid var(--bt-border, #E2DFD9);
+}
+.partner-banner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 60px;
+    flex-wrap: nowrap;
+}
+.partner-banner__logo {
+    /* Fixed, identical "slot" so every logo reads at the same size. */
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 260px;
+    height: 100px;
+    padding: 4px 8px;
+    opacity: 0.92;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+    border-bottom: none;
+}
+.partner-banner__logo:hover,
+.partner-banner__logo:focus-visible {
+    opacity: 1;
+    transform: translateY(-1px);
+}
+.partner-banner__logo img {
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    display: block;
+}
+@media (max-width: 1100px) {
+    .partner-bar { padding: 18px 0; }
+    .partner-banner { gap: 36px; }
+    .partner-banner__logo { width: 200px; height: 84px; }
+}
+@media (max-width: 780px) {
+    .partner-bar { padding: 14px 0; }
+    .partner-banner { gap: 22px; }
+    .partner-banner__logo { width: 150px; height: 68px; }
+}
+@media (max-width: 520px) {
+    .partner-bar { padding: 10px 0; }
+    .partner-banner { gap: 12px; }
+    .partner-banner__logo { width: 100px; height: 50px; }
+}
+
 .site-footer__legal {
     padding: 10px 0 16px;
     font-size: 0.8rem;
@@ -1017,8 +1077,47 @@ p  { margin: 0 0 1rem; color: var(--bt-muted); }
 
 /* Responsive -------------------------------------------------------------- */
 @media (max-width: 900px) {
+    .site-header__inner { position: relative; flex-wrap: wrap; }
     .site-nav, .site-header__cta { display: none; }
-    .nav-toggle { display: inline-flex; }
+    .nav-toggle { display: inline-flex; margin-left: auto; }
+
+    /* Open mobile menu */
+    .site-nav.is-open {
+        display: block;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: var(--bt-cream);
+        border-top: 1px solid rgba(31,31,31,0.08);
+        border-bottom: 1px solid rgba(31,31,31,0.08);
+        box-shadow: 0 8px 18px rgba(0,0,0,0.06);
+        padding: 14px 24px 18px;
+        z-index: 40;
+    }
+    .site-nav.is-open .nav-menu,
+    .site-nav.is-open ul {
+        flex-direction: column;
+        gap: 6px;
+    }
+    .site-nav.is-open a {
+        display: block;
+        padding: 10px 0;
+        font-size: 1rem;
+        border-bottom: 1px solid rgba(31,31,31,0.06);
+    }
+    /* Animated hamburger -> X */
+    .nav-toggle[aria-expanded="true"] span:nth-child(1) {
+        transform: translateY(6px) rotate(45deg);
+    }
+    .nav-toggle[aria-expanded="true"] span:nth-child(2) {
+        opacity: 0;
+    }
+    .nav-toggle[aria-expanded="true"] span:nth-child(3) {
+        transform: translateY(-6px) rotate(-45deg);
+    }
+    .nav-toggle span { transition: transform 0.2s ease, opacity 0.2s ease; }
+
     .hero__inner,
     .split-cards__inner,
     .integrations__inner,
