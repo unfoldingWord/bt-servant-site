@@ -22,9 +22,7 @@ deploy to Netlify from GitHub.
 
 ## Deploy to Netlify
 
-Two equally valid paths — pick whichever fits your workflow.
-
-### Option A — GitHub-connected (recommended; gives push-to-deploy)
+### GitHub-connected (recommended; gives push-to-deploy)
 
 1. Create a new GitHub repo (e.g. `bt-servant-site`).
 2. From this folder:
@@ -40,14 +38,6 @@ Two equally valid paths — pick whichever fits your workflow.
 4. Netlify reads `netlify.toml` automatically — publish dir `.`, no build command.
 5. Click **Deploy**. Every push to `main` redeploys; pull requests get
    their own preview URLs automatically.
-
-### Option B — Drag-and-drop (fastest, no Git)
-
-1. In Netlify: **Add new site → Deploy manually**.
-2. Drag this entire folder onto the upload area.
-3. Netlify gives you a live URL within ~30 seconds.
-4. To update the site later, drag a new copy of the folder onto the
-   same site's **Deploys** tab.
 
 ## Local preview
 
