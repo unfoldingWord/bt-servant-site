@@ -16,6 +16,30 @@
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="assets/css/main.css" />
 
+    <!-- ===== CHANGE: styles for new Teams section and Telegram callout variant ===== -->
+    <style>
+        .teams-band { background: var(--bt-black); padding: 80px 0; }
+        .teams-band__inner {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 64px;
+            align-items: center;
+        }
+        .teams-band__title { color: var(--bt-cream); }
+        .teams-band__sub { color: rgba(237,236,232,0.75); }
+        .teams-band__panel { display: flex; flex-direction: column; gap: 20px; }
+        .tg-callout {
+            background: rgba(0, 136, 204, 0.12);
+            color: #004f7a;
+            border-color: rgba(0, 136, 204, 0.35);
+        }
+        .tg-callout__icon { color: #0088cc; }
+        @media (max-width: 767px) {
+            .teams-band__inner { grid-template-columns: 1fr; gap: 32px; }
+        }
+    </style>
+    <!-- ===== END CHANGE ===== -->
+
     <!-- Google Analytics 4 -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-LT1CE2F1PZ"></script>
     <script>
@@ -202,9 +226,69 @@
             </div>
         </div>
 
-        <div class="card card--dark">
-            <h3 class="card__eyebrow card__eyebrow--light">Built for Bible translation teams</h3>
-            <p class="card__body card__body--light">Working with a church, ministry, or translation team? BT Servant can be configured to support your workflow, language, and translation approach.</p>
+        <!-- ===== CHANGE: replaced "Built for Bible translation teams" dark card with Telegram QR card ===== -->
+        <div class="card card--light">
+            <h3 class="card__eyebrow">Also on Telegram</h3>
+            <p class="card__body">No new platforms. No complicated setup. Just scan, ask, and translate&mdash;right inside Telegram.</p>
+            <div class="card__row">
+                <div class="qr-placeholder" aria-hidden="true">
+                    <img src="assets/images/qr-code-telegram.png" alt="Scan to open BT Servant on Telegram" class="qr-img" width="160" height="160" />
+                </div>
+                <div class="card__row-text">
+                    <ol class="wa-steps">
+                        <li class="wa-step">
+                            <span class="wa-step__num">1</span>
+                            <div class="wa-step__body">
+                                <strong>Scan the QR</strong>
+                                <span>Point your phone camera at the code.</span>
+                            </div>
+                        </li>
+                        <li class="wa-step">
+                            <span class="wa-step__num">2</span>
+                            <div class="wa-step__body">
+                                <strong>Open in Telegram</strong>
+                                <span>Tap the link to start a chat with BT Servant.</span>
+                            </div>
+                        </li>
+                        <li class="wa-step">
+                            <span class="wa-step__num">3</span>
+                            <div class="wa-step__body">
+                                <strong>Ask &amp; translate</strong>
+                                <span>Send your first question and get guidance instantly.</span>
+                            </div>
+                        </li>
+                    </ol>
+                    <span class="wa-callout tg-callout">
+                        <svg class="wa-callout__icon tg-callout__icon" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M9.78 18.65l.28-4.23 7.68-6.92c.34-.31-.07-.46-.52-.19L7.74 13.3 3.64 12c-.88-.25-.89-.86.2-1.3l15.97-6.16c.73-.33 1.43.18 1.15 1.3l-2.72 12.81c-.19.91-.74 1.13-1.5.71L12.6 16.3l-1.99 1.93c-.23.23-.42.42-.83.42z"/></svg>
+                        Scan to get started on Telegram
+                    </span>
+                </div>
+            </div>
+        </div>
+        <!-- ===== END CHANGE ===== -->
+    </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- TRUST STRIP                                                  -->
+<!-- ============================================================ -->
+<section class="trust-strip">
+    <div class="container">
+        <p>Built with guidance from translation experts and designed for church-based teams.</p>
+    </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- BUILT FOR BIBLE TRANSLATION TEAMS (moved from split-cards)   -->
+<!-- ===== CHANGE: relocated from split-cards dark card; now full-width section ===== -->
+<!-- ============================================================ -->
+<section class="teams-band">
+    <div class="container teams-band__inner">
+        <div class="teams-band__copy">
+            <h2 class="section-title teams-band__title">Built for Bible translation teams.</h2>
+            <p class="section-sub teams-band__sub">Working with a church, ministry, or translation team? BT Servant can be configured to support your workflow, language, and translation approach.</p>
+        </div>
+        <div class="teams-band__panel">
             <ul class="check-list check-list--light">
                 <li>Align with your translation methodology</li>
                 <li>Customize guidance for your context</li>
@@ -217,15 +301,7 @@
         </div>
     </div>
 </section>
-
-<!-- ============================================================ -->
-<!-- TRUST STRIP                                                  -->
-<!-- ============================================================ -->
-<section class="trust-strip">
-    <div class="container">
-        <p>Built with guidance from translation experts and designed for church-based teams.</p>
-    </div>
-</section>
+<!-- ===== END CHANGE ===== -->
 
 <!-- ============================================================ -->
 <!-- FROM QUESTION TO CLARITY (3 STEPS)                           -->
