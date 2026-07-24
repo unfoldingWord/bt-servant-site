@@ -1070,7 +1070,7 @@ p  { margin: 0 0 1rem; color: var(--bt-muted); }
    centered with consistent breathing room above and below. */
 .partner-bar {
     background: #ffffff;
-    padding: 22px 0;     /* ~22% of logo height â€” proportional breathing room */
+    padding: 22px 0;     /* ~22% of logo height — proportional breathing room */
     border-top: 1px solid var(--bt-border, #E2DFD9);
 }
 .partner-banner {
