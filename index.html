@@ -183,89 +183,191 @@
 </section>
 
 <!-- ============================================================ -->
-<!-- START IN SECONDS / BUILT FOR TEAMS                           -->
+<!-- START IN SECONDS &mdash; WHATSAPP / TELEGRAM / SIGNAL / WEB   -->
 <!-- ============================================================ -->
-<section class="split-cards">
-    <div class="container split-cards__inner">
-        <div class="card card--light">
-            <h3 class="card__eyebrow">Start in seconds</h3>
-            <p class="card__body">No new platforms. No complicated setup. Just scan, ask, and translate&mdash;right inside WhatsApp.</p>
-            <div class="card__row">
-                <div class="qr-placeholder" aria-hidden="true">
-                    <img src="assets/images/qr-code.png?v=20260427" alt="Scan to open BT Servant" class="qr-img" width="160" height="160" />
-                </div>
-                <div class="card__row-text">
-                    <ol class="wa-steps">
-                        <li class="wa-step">
-                            <span class="wa-step__num">1</span>
-                            <div class="wa-step__body">
-                                <strong>Scan the QR</strong>
-                                <span>Point your phone camera at the code.</span>
-                            </div>
-                        </li>
-                        <li class="wa-step">
-                            <span class="wa-step__num">2</span>
-                            <div class="wa-step__body">
-                                <strong>Open in WhatsApp</strong>
-                                <span>Tap the link to start a chat with BT Servant.</span>
-                            </div>
-                        </li>
-                        <li class="wa-step">
-                            <span class="wa-step__num">3</span>
-                            <div class="wa-step__body">
-                                <strong>Ask &amp; translate</strong>
-                                <span>Send your first question and get guidance instantly.</span>
-                            </div>
-                        </li>
-                    </ol>
-                    <span class="wa-callout">
-                        <svg class="wa-callout__icon" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M20.5 3.5A11 11 0 003.2 17.2L2 22l4.9-1.3A11 11 0 1020.5 3.5zM12 20.1a8 8 0 01-4.3-1.3l-.3-.2-2.9.8.8-2.9-.2-.3A8 8 0 1112 20.1zm4.6-6c-.3-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1-.2.3-.7.8-.8 1-.1.2-.3.2-.5.1-.3-.1-1.1-.4-2-1.3-.7-.6-1.2-1.4-1.4-1.7-.1-.2 0-.4.1-.5l.4-.5c.1-.2.2-.3.3-.5.1-.2 0-.3 0-.5s-.6-1.4-.8-1.9c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.2.3-.9.9-.9 2.2 0 1.3.9 2.6 1 2.8.1.2 1.8 2.8 4.4 3.9.6.3 1.1.4 1.5.5.6.2 1.2.2 1.6.1.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.1-1.2-.1-.1-.3-.2-.5-.3z"/></svg>
-                        Scan to get started on WhatsApp
-                    </span>
-                </div>
-            </div>
+<section class="access" id="get-bt-servant">
+    <div class="container">
+        <div class="section-head section-head--center">
+            <h2 class="section-title">Start in seconds.</h2>
+            <p class="section-sub">BT Servant is available on WhatsApp, Telegram, Signal, and the web. Choose where you&rsquo;d like to chat.</p>
         </div>
 
-        <!-- ===== CHANGE: replaced "Built for Bible translation teams" dark card with Telegram QR card ===== -->
-        <div class="card card--light">
-            <h3 class="card__eyebrow">Also on Telegram</h3>
-            <p class="card__body">No new platforms. No complicated setup. Just scan, ask, and translate&mdash;right inside Telegram.</p>
-            <div class="card__row">
-                <div class="qr-placeholder" aria-hidden="true">
-                    <img src="assets/images/qr-code-telegram.png" alt="Scan to open BT Servant on Telegram" class="qr-img" width="160" height="160" />
+        <div class="access-tabs" role="tablist" aria-label="Choose how to use BT Servant">
+            <button type="button" class="access-tab is-active" data-platform="whatsapp" role="tab" aria-selected="true" aria-controls="panel-whatsapp" id="tab-whatsapp">
+                <svg class="access-tab__icon" viewBox="0 0 64 64" role="img" aria-label="WhatsApp"><circle cx="32" cy="32" r="30" fill="#25D366"/><path fill="#fff" d="M47.7 16.1A22 22 0 0 0 13.1 42.6L10 54l11.7-3.1A22 22 0 0 0 47.7 16.1Zm-15.6 32a18.2 18.2 0 0 1-9.3-2.6l-.7-.4-6.9 1.8 1.9-6.7-.5-.7a18.2 18.2 0 1 1 15.5 8.6Z"/><path fill="#fff" d="M42.1 35.7c-.5-.3-3.1-1.5-3.6-1.7-.5-.2-.9-.3-1.3.3-.4.5-1.4 1.7-1.7 2.1-.3.4-.6.4-1.2.1-3.2-1.6-5.3-2.9-7.4-6.5-.6-1 .6-.9 1.6-3.1.2-.4.1-.8-.1-1.1-.1-.3-1.3-3.1-1.7-4.3-.5-1.1-.9-1-1.3-1h-1.1c-.4 0-1 .1-1.5.7-.5.5-2 2-2 4.8s2.1 5.6 2.4 6c.3.4 4.1 6.2 9.9 8.7 3.7 1.6 5.2 1.7 7.1 1.4 1.1-.2 3.1-1.3 3.5-2.5.4-1.2.4-2.2.3-2.5-.2-.5-.7-.8-1.9-1.4Z"/></svg>
+                WhatsApp
+            </button>
+            <button type="button" class="access-tab" data-platform="telegram" role="tab" aria-selected="false" aria-controls="panel-telegram" id="tab-telegram">
+                <svg class="access-tab__icon" viewBox="0 0 64 64" role="img" aria-label="Telegram"><circle cx="32" cy="32" r="30" fill="#229ED9"/><path fill="#fff" d="M49.6 17.5 43.8 47c-.4 2.1-1.6 2.6-3.3 1.6l-8.8-6.5-4.3 4.1c-.5.5-.9.9-1.8.9l.6-9 16.4-14.8c.7-.6-.2-1-1.1-.4L21.3 35.6l-8.7-2.7c-1.9-.6-1.9-1.9.4-2.8l34-13.1c1.6-.6 3 .4 2.6.5Z"/></svg>
+                Telegram
+            </button>
+            <button type="button" class="access-tab" data-platform="signal" role="tab" aria-selected="false" aria-controls="panel-signal" id="tab-signal">
+                <svg class="access-tab__icon" viewBox="0 0 64 64" role="img" aria-label="Signal"><circle cx="32" cy="32" r="30" fill="#3A76F0"/><path fill="#fff" d="M32 15.5c-10.4 0-18.8 7.3-18.8 16.3 0 4.7 2.3 9.1 6.3 12.1l-2.7 7.6 8.4-4.2c2.2.6 4.5.9 6.8.9 10.4 0 18.8-7.3 18.8-16.3S42.4 15.5 32 15.5Z"/><g fill="none" stroke="#fff" stroke-linecap="round" stroke-width="2.4"><path stroke-dasharray="3.5 4.2" d="M10.4 26.4a23.2 23.2 0 0 1 16.1-16.6"/><path stroke-dasharray="3.5 4.2" d="M37.8 9.5a23.2 23.2 0 0 1 16 15.2"/><path stroke-dasharray="3.5 4.2" d="M54.8 36.2a23.2 23.2 0 0 1-15.3 17.2"/><path stroke-dasharray="3.5 4.2" d="M27 54.4A23.2 23.2 0 0 1 10.2 39"/></g></svg>
+                Signal
+            </button>
+            <button type="button" class="access-tab" data-platform="web" role="tab" aria-selected="false" aria-controls="panel-web" id="tab-web">
+                <svg class="access-tab__icon" viewBox="0 0 64 64" role="img" aria-label="Web App"><circle cx="32" cy="32" r="30" fill="#B29159"/><g fill="none" stroke="#fff" stroke-linecap="round" stroke-width="2.4"><circle cx="32" cy="32" r="18.5"/><path d="M13.5 32h37"/><path d="M32 13.5c6.2 7 6.2 30 0 37M32 13.5c-6.2 7-6.2 30 0 37"/></g></svg>
+                Web App
+            </button>
+        </div>
+
+        <div class="access-panels">
+            <!-- WhatsApp panel -->
+            <div class="access-panel is-active card card--light" data-platform="whatsapp" id="panel-whatsapp" role="tabpanel" aria-labelledby="tab-whatsapp">
+                <h3 class="access-panel__title">Use BT Servant on WhatsApp</h3>
+                <div class="card__row">
+                    <div class="qr-placeholder" aria-hidden="true">
+                        <img src="assets/images/qr-code.png?v=20260427" alt="Scan to open BT Servant on WhatsApp" class="qr-img" width="160" height="160" />
+                    </div>
+                    <div class="card__row-text">
+                        <ol class="wa-steps">
+                            <li class="wa-step">
+                                <span class="wa-step__num">1</span>
+                                <div class="wa-step__body">
+                                    <strong>Scan the QR or tap &ldquo;Open in WhatsApp&rdquo;</strong>
+                                    <span>Starts a chat with BT Servant right away.</span>
+                                </div>
+                            </li>
+                            <li class="wa-step">
+                                <span class="wa-step__num">2</span>
+                                <div class="wa-step__body">
+                                    <strong>Send any question</strong>
+                                    <span>No setup or sign-up needed.</span>
+                                </div>
+                            </li>
+                            <li class="wa-step">
+                                <span class="wa-step__num">3</span>
+                                <div class="wa-step__body">
+                                    <strong>Reply in text or voice</strong>
+                                    <span>Get guidance right inside WhatsApp.</span>
+                                </div>
+                            </li>
+                        </ol>
+                        <div class="access-panel__actions">
+                            <a href="https://scanned.page/Sj1Qz7" class="btn btn--dark btn--sm" target="_blank" rel="noopener">Open in WhatsApp</a>
+                            <button type="button" class="btn btn--outline copy-link" data-copy-link="https://scanned.page/Sj1Qz7">Copy access link</button>
+                        </div>
+                    </div>
                 </div>
-                <div class="card__row-text">
-                    <ol class="wa-steps">
-                        <li class="wa-step">
-                            <span class="wa-step__num">1</span>
-                            <div class="wa-step__body">
-                                <strong>Scan the QR</strong>
-                                <span>Point your phone camera at the code.</span>
-                            </div>
-                        </li>
-                        <li class="wa-step">
-                            <span class="wa-step__num">2</span>
-                            <div class="wa-step__body">
-                                <strong>Open in Telegram</strong>
-                                <span>Tap the link to start a chat with BT Servant.</span>
-                            </div>
-                        </li>
-                        <li class="wa-step">
-                            <span class="wa-step__num">3</span>
-                            <div class="wa-step__body">
-                                <strong>Ask &amp; translate</strong>
-                                <span>Send your first question and get guidance instantly.</span>
-                            </div>
-                        </li>
-                    </ol>
-                    <span class="wa-callout tg-callout">
-                        <svg class="wa-callout__icon tg-callout__icon" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M9.78 18.65l.28-4.23 7.68-6.92c.34-.31-.07-.46-.52-.19L7.74 13.3 3.64 12c-.88-.25-.89-.86.2-1.3l15.97-6.16c.73-.33 1.43.18 1.15 1.3l-2.72 12.81c-.19.91-.74 1.13-1.5.71L12.6 16.3l-1.99 1.93c-.23.23-.42.42-.83.42z"/></svg>
-                        Scan to get started on Telegram
-                    </span>
+            </div>
+
+            <!-- Telegram panel -->
+            <div class="access-panel card card--light" data-platform="telegram" id="panel-telegram" role="tabpanel" aria-labelledby="tab-telegram" hidden>
+                <h3 class="access-panel__title">Use BT Servant on Telegram</h3>
+                <div class="card__row">
+                    <div class="qr-placeholder" aria-hidden="true">
+                        <img src="assets/images/qr-code-telegram.png" alt="Scan to open BT Servant on Telegram" class="qr-img" width="160" height="160" />
+                    </div>
+                    <div class="card__row-text">
+                        <ol class="wa-steps">
+                            <li class="wa-step">
+                                <span class="wa-step__num">1</span>
+                                <div class="wa-step__body">
+                                    <strong>Scan the QR or tap &ldquo;Open in Telegram&rdquo;</strong>
+                                    <span>Starts a chat with BT Servant right away.</span>
+                                </div>
+                            </li>
+                            <li class="wa-step">
+                                <span class="wa-step__num">2</span>
+                                <div class="wa-step__body">
+                                    <strong>Send any question</strong>
+                                    <span>No setup or sign-up needed.</span>
+                                </div>
+                            </li>
+                            <li class="wa-step">
+                                <span class="wa-step__num">3</span>
+                                <div class="wa-step__body">
+                                    <strong>Reply in text or voice</strong>
+                                    <span>Get guidance right inside Telegram.</span>
+                                </div>
+                            </li>
+                        </ol>
+                        <div class="access-panel__actions">
+                            <a href="https://t.me/bt_servant_bot" class="btn btn--dark btn--sm" target="_blank" rel="noopener">Open in Telegram</a>
+                            <button type="button" class="btn btn--outline copy-link" data-copy-link="https://t.me/bt_servant_bot">Copy access link</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Signal panel -->
+            <div class="access-panel card card--light" data-platform="signal" id="panel-signal" role="tabpanel" aria-labelledby="tab-signal" hidden>
+                <h3 class="access-panel__title">Use BT Servant on Signal</h3>
+                <div class="card__row">
+                    <div class="qr-placeholder" aria-hidden="true">
+                        <img src="assets/images/qr-code-signal.png" alt="Scan to open BT Servant on Signal" class="qr-img" width="160" height="160" />
+                    </div>
+                    <div class="card__row-text">
+                        <ol class="wa-steps">
+                            <li class="wa-step">
+                                <span class="wa-step__num">1</span>
+                                <div class="wa-step__body">
+                                    <strong>Scan the QR or tap &ldquo;Open in Signal&rdquo;</strong>
+                                    <span>Starts a chat with BT Servant right away.</span>
+                                </div>
+                            </li>
+                            <li class="wa-step">
+                                <span class="wa-step__num">2</span>
+                                <div class="wa-step__body">
+                                    <strong>Send any question</strong>
+                                    <span>No setup or sign-up needed.</span>
+                                </div>
+                            </li>
+                            <li class="wa-step">
+                                <span class="wa-step__num">3</span>
+                                <div class="wa-step__body">
+                                    <strong>Reply in text or voice</strong>
+                                    <span>Get guidance right inside Signal.</span>
+                                </div>
+                            </li>
+                        </ol>
+                        <div class="access-panel__actions">
+                            <a href="https://signal.me/#eu/-RGNTp_ER2U74QlijVSyUHxU_EnzcvATLyvcTyCYS8r_jcbr-FlNxJcgZ7fPXTce" class="btn btn--dark btn--sm" target="_blank" rel="noopener">Open in Signal</a>
+                            <button type="button" class="btn btn--outline copy-link" data-copy-link="https://signal.me/#eu/-RGNTp_ER2U74QlijVSyUHxU_EnzcvATLyvcTyCYS8r_jcbr-FlNxJcgZ7fPXTce">Copy access link</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Web App panel -->
+            <div class="access-panel card card--light" data-platform="web" id="panel-web" role="tabpanel" aria-labelledby="tab-web" hidden>
+                <h3 class="access-panel__title">Use BT Servant on the Web</h3>
+                <div class="card__row">
+                    <div class="qr-placeholder" aria-hidden="true">
+                        <img src="assets/images/qr-code-web.png" alt="Scan to open BT Servant Web App" class="qr-img" width="160" height="160" />
+                    </div>
+                    <div class="card__row-text">
+                        <ol class="wa-steps">
+                            <li class="wa-step">
+                                <span class="wa-step__num">1</span>
+                                <div class="wa-step__body">
+                                    <strong>Scan the QR or tap &ldquo;Open Web App&rdquo;</strong>
+                                    <span>Opens BT Servant in your browser.</span>
+                                </div>
+                            </li>
+                            <li class="wa-step">
+                                <span class="wa-step__num">2</span>
+                                <div class="wa-step__body">
+                                    <strong>Send any question</strong>
+                                    <span>No setup or sign-up needed.</span>
+                                </div>
+                            </li>
+                            <li class="wa-step">
+                                <span class="wa-step__num">3</span>
+                                <div class="wa-step__body">
+                                    <strong>Get guidance in text</strong>
+                                    <span>Right inside the BT Servant web app.</span>
+                                </div>
+                            </li>
+                        </ol>
+                        <div class="access-panel__actions">
+                            <a href="https://app.btservant.ai/chat" class="btn btn--dark btn--sm" target="_blank" rel="noopener">Open Web App</a>
+                            <button type="button" class="btn btn--outline copy-link" data-copy-link="https://app.btservant.ai/chat">Copy access link</button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-        <!-- ===== END CHANGE ===== -->
     </div>
 </section>
 
@@ -375,7 +477,7 @@
                 <div class="feature-card__icon feature-card__icon--phone"><span class="bt-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h4l2 5-2.5 1.5a11 11 0 005.5 5.5L14.5 13l5 2v4a2 2 0 01-2 2A15 15 0 014 6a2 2 0 012-2"/></svg></span></div>
                 <div class="feature-card__text">
                     <h4>Wherever you work</h4>
-                    <p>Available in WhatsApp, Telegram, and web tools your team already uses.</p>
+                    <p>Available in WhatsApp, Telegram, Signal, and web tools your team already uses.</p>
                 </div>
             </div>
         </div>

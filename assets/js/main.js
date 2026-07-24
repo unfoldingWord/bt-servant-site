@@ -68,5 +68,63 @@
                 });
             });
         });
+
+        // Access tabs: WhatsApp / Telegram / Signal / Web App --------------
+        var accessTabs = document.querySelectorAll('.access-tab');
+        var accessPanels = document.querySelectorAll('.access-panel');
+        if (accessTabs.length && accessPanels.length) {
+            accessTabs.forEach(function (tab) {
+                tab.addEventListener('click', function () {
+                    var platform = tab.getAttribute('data-platform');
+
+                    accessTabs.forEach(function (t) {
+                        var isActive = t === tab;
+                        t.classList.toggle('is-active', isActive);
+                        t.setAttribute('aria-selected', isActive ? 'true' : 'false');
+                    });
+                    accessPanels.forEach(function (panel) {
+                        var isActive = panel.getAttribute('data-platform') === platform;
+                        panel.classList.toggle('is-active', isActive);
+                        if (isActive) {
+                            panel.removeAttribute('hidden');
+                        } else {
+                            panel.setAttribute('hidden', '');
+                        }
+                    });
+
+                    track('platform_tab_click', { platform: platform });
+                });
+            });
+        }
+
+        // Copy access link buttons ------------------------------------------
+        document.querySelectorAll('.copy-link').forEach(function (btn) {
+            var defaultLabel = btn.textContent;
+            btn.addEventListener('click', function () {
+                var link = btn.getAttribute('data-copy-link');
+                if (!link) return;
+
+                function showCopied() {
+                    btn.textContent = 'Copied!';
+                    setTimeout(function () { btn.textContent = defaultLabel; }, 2000);
+                    track('copy_access_link', { link_url: link });
+                }
+
+                if (navigator.clipboard && navigator.clipboard.writeText) {
+                    navigator.clipboard.writeText(link).then(showCopied, showCopied);
+                } else {
+                    // Fallback for older browsers
+                    var temp = document.createElement('textarea');
+                    temp.value = link;
+                    temp.style.position = 'fixed';
+                    temp.style.opacity = '0';
+                    document.body.appendChild(temp);
+                    temp.select();
+                    try { document.execCommand('copy'); } catch (err) { /* no-op */ }
+                    document.body.removeChild(temp);
+                    showCopied();
+                }
+            });
+        });
     });
 })();
