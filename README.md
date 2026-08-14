@@ -1,9 +1,8 @@
 # BT Servant — Static Site
 
-Marketing site for BT Servant — trusted Scripture guidance through conversation,
+Main site for BT Servant — trusted Scripture guidance through conversation,
 free on WhatsApp, Telegram, Signal, and the web. Pure static HTML/CSS/JS — no
-build step. Ready to deploy to Netlify from GitHub.
-
+build step. 
 ## Brand identity
 
 - **Logo:** raster lockups in `assets/images/` — `logo-full.png` (header,
