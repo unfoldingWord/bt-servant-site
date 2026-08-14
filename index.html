@@ -1,596 +1,318 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="carbon">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>BT Servant — Human-guided, AI-powered Bible translation</title>
-    <meta name="description" content="BT Servant is a human-guided, AI-powered Bible translation coach that helps you understand Scripture, translate with confidence, and check your work — right where you already work." />
-    <link rel="profile" href="https://gmpg.org/xfn/11" />
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>BT Servant — Trusted Scripture guidance, in the tools you already use</title>
+<meta name="description" content="BT Servant equips disciples to understand, study, teach, translate, share, and equip others with God's Word — free on WhatsApp, Telegram, and the web." />
 
-    <!-- Google Fonts: Playfair Display (headings) + Inter (body) -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" />
+<link rel="icon" type="image/png" href="assets/images/favicon.png" />
+<link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png" />
 
-    <!-- Theme styles -->
-    <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="assets/css/main.css?v=20260728" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=Inter:wght@400;500;600;700;800&display=swap" />
 
-    <!-- ===== CHANGE: styles for new Teams section and Telegram callout variant ===== -->
-    <style>
-        .teams-band { background: var(--bt-black); padding: 80px 0; }
-        .teams-band__inner {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 64px;
-            align-items: center;
-        }
-        .teams-band__title { color: var(--bt-cream); }
-        .teams-band__sub { color: rgba(237,236,232,0.75); }
-        .teams-band__panel { display: flex; flex-direction: column; gap: 20px; }
-        .tg-callout {
-            background: rgba(0, 136, 204, 0.12);
-            color: #004f7a;
-            border-color: rgba(0, 136, 204, 0.35);
-        }
-        .tg-callout__icon { color: #0088cc; }
-        @media (max-width: 767px) {
-            .teams-band__inner { grid-template-columns: 1fr; gap: 32px; }
-        }
-    </style>
-    <!-- ===== END CHANGE ===== -->
+<link rel="stylesheet" href="assets/css/main.css" />
 
-    <!-- Google Analytics 4 -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-LT1CE2F1PZ"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-LT1CE2F1PZ');
-    </script>
+<!-- Google Analytics 4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-LT1CE2F1PZ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-LT1CE2F1PZ');
+</script>
 </head>
-<body class="home page">
+
+<body class="home">
+
+<a class="skip-link" href="#site-content">Skip to content</a>
 
 <header class="site-header" role="banner">
-    <div class="container site-header__inner">
-        <a class="site-logo" href="/" aria-label="BT Servant">
-            <img src="assets/images/logo.png" alt="BT Servant" class="site-logo__img" width="1149" height="246" />
-        </a>
-
-        <nav class="site-nav" aria-label="Primary">
-            <ul class="nav-menu">
-                <li><a href="#features">Features</a></li>
-                <li><a href="#get-started">Contact</a></li>
-            </ul>
-        </nav>
-
-        <div class="site-header__cta">
-            <a href="https://app.btservant.ai/chat" class="btn btn--dark btn--sm">Try BT Servant</a>
-        </div>
-
-        <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
-            <span></span><span></span><span></span>
-        </button>
+  <div class="container site-header__inner">
+    <a class="site-logo" href="/" aria-label="BT Servant home">
+      <img class="site-logo__full" src="assets/images/logo-full.png" alt="BT Servant" />
+    </a>
+    <nav class="site-nav" id="siteNav" aria-label="Primary">
+      <ul class="nav-menu">
+        <li><a href="#what-you-can-do">What You Can Do</a></li>
+        <li><a href="#where-to-use-it">Where to Use It</a></li>
+        <li><a href="#why-bt-servant">Why BT Servant</a></li>
+        <li><a href="organizations.html">Organizations</a></li>
+      </ul>
+    </nav>
+    <div class="site-header__cta">
+      <a href="https://app.btservant.ai/login" class="btn btn--navy btn--sm" data-track="header_cta" data-track-name="start_conversation">Start a Conversation</a>
     </div>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="siteNav">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
 </header>
 
-<main id="site-content" class="site-main">
+<main id="site-content">
 
-<!-- ============================================================ -->
-<!-- HERO                                                         -->
-<!-- ============================================================ -->
-<section class="hero">
+  <!-- ============================================================ -->
+  <!-- 1. HERO -->
+  <!-- ============================================================ -->
+  <section class="hero">
     <div class="container hero__inner">
-        <div class="hero__copy">
-            <h1 class="hero__title">Get Bible translation help&mdash;<span class="hero__accent">instantly</span></h1>
-            <p class="hero__lede">In your language, on your phone.</p>
-            <p class="hero__sub">BT Servant is a human-guided, AI-powered translation coach that helps you understand Scripture, translate with confidence, and check your work&mdash;right where you already work.</p>
-            <div class="hero__actions">
-                <a href="https://app.btservant.ai/chat" class="btn btn--dark">Try BT Servant Now</a>
-                <a href="https://discord.gg/pvzDWQ82zq" class="btn btn--ghost">Set Up for Your Team &rarr;</a>
-            </div>
-            <ul class="hero__meta">
-                <li><span class="dot dot--gold"></span> Human-guided</li>
-                <li><span class="dot dot--gold"></span> AI-powered</li>
-            </ul>
+      <div class="hero__copy">
+        <h1 class="hero__title">BT Servant equips disciples</h1>
+        <p class="hero__rotator" aria-live="polite"><span class="hero__rotator-text" id="heroRotator">to understand</span><span class="caret" aria-hidden="true"></span> <span class="hero__rotator-tail">God&rsquo;s Word.</span></p>
+        <p class="hero__sub">Ask in text or voice. Get trusted, context-aware guidance &mdash; inside the apps you already use.</p>
+        <div class="hero__actions">
+          <a href="https://scanned.page/Sj1Qz7" class="btn btn--navy" data-track="hero_cta" data-track-name="start_whatsapp">Start on WhatsApp</a>
+          <a href="https://app.btservant.ai/chat" class="btn btn--ghost" data-track="hero_cta" data-track-name="open_webapp">Open the Web App</a>
         </div>
-        <div class="hero__visual" aria-hidden="true">
-            <div class="hero-visual">
-                <!-- Phone: BT Servant mobile chat -->
-                <div class="hv-phone" aria-hidden="true">
-                    <div class="hv-phone__frame">
-                        <div class="hv-phone__notch"></div>
-                        <div class="hv-phone__screen">
-                            <div class="hv-phone__status">
-                                <span class="hv-phone__time">5:36</span>
-                                <span class="hv-phone__icons">
-                                    <svg viewBox="0 0 24 24" width="12" height="12" fill="currentColor"><path d="M2 17h3v3H2zm5-3h3v6H7zm5-3h3v9h-3zm5-4h3v13h-3z"/></svg>
-                                    <svg viewBox="0 0 24 24" width="12" height="12" fill="currentColor"><path d="M12 4C7 4 2.73 6.11 0 9l12 15L24 9c-2.73-2.89-7-5-12-5z"/></svg>
-                                    <span class="hv-phone__batt"><span></span></span>
-                                </span>
-                            </div>
-                            <div class="hv-phone__nav">
-                                <span class="hv-phone__back">&lsaquo;</span>
-                                <span class="hv-phone__avatar">
-                                    <svg viewBox="0 0 24 24" width="14" height="14" fill="#E59D33"><path d="M6 4h12v16l-6-3-6 3z"/></svg>
-                                </span>
-                                <div class="hv-phone__who">
-                                    <strong>BT Servant</strong>
-                                    <small>unfoldingWord BT Servant</small>
-                                </div>
-                            </div>
-                            <div class="hv-phone__date">Today</div>
-                            <div class="hv-phone__bubble">
-                                <p>I&rsquo;m here to assist with general Bible translation tasks. Here&rsquo;s what I can do:</p>
-                                <ul>
-                                    <li><strong>Summarize a passage:</strong> Summarize books, chapters, or verse ranges.</li>
-                                    <li><strong>FIA process guidance:</strong> Use FIA resources to explain the workflow or apply steps to a passage.</li>
-                                    <li><strong>Translation helps:</strong> Point out typical translation challenges.</li>
-                                    <li><strong>Keywords:</strong> List key terms in a passage.</li>
-                                    <li><strong>Show scripture text:</strong> Display the verse text for a selection.</li>
-                                    <li><strong>Read aloud:</strong> Hear the passage as audio.</li>
-                                    <li><strong>Set response language:</strong> Choose your preferred reply language.</li>
-                                </ul>
-                                <p>Which of these would you like me to do?</p>
-                                <span class="hv-phone__ts">5:36 PM</span>
-                            </div>
-                            <div class="hv-phone__input">
-                                <span class="hv-phone__plus">+</span>
-                                <span class="hv-phone__field"></span>
-                                <span class="hv-phone__mic"></span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+      </div>
 
-                <!-- Desktop: BTS Web chat -->
-                <div class="hv-web" aria-hidden="true">
-                    <div class="hv-web__bar">
-                        <span class="hv-web__dot hv-web__dot--r"></span>
-                        <span class="hv-web__dot hv-web__dot--y"></span>
-                        <span class="hv-web__dot hv-web__dot--g"></span>
-                    </div>
-                    <div class="hv-web__header">
-                        <span class="hv-web__logo">
-                            <svg viewBox="0 0 24 24" width="18" height="18" fill="#E59D33"><path d="M6 3h12v18l-6-3-6 3z"/><path d="M11 6h2v6h-2zm0 7h2v2h-2z" fill="#fff"/></svg>
-                        </span>
-                        <strong>BTS Web</strong>
-                        <span class="hv-web__user">B</span>
-                    </div>
-                    <div class="hv-web__body">
-                        <div class="hv-web__msg hv-web__msg--user">Help me translate John 3:16</div>
-                        <div class="hv-web__msg hv-web__msg--bot">
-                            <p>Welcome! I&rsquo;m <strong>BT Servant</strong>, your Bible translation assistant. <span class="hv-web__emoji">&#x1F642;</span></p>
-                            <p>I&rsquo;d love to help you translate <strong>John 3:16</strong>!</p>
-                            <p>Before we dive into translation, I need to walk you through the <strong>Understand</strong> phase first. This is an important part of the translation process &mdash; you need to deeply understand a passage before you can faithfully translate it.</p>
-                            <p>The process I use is called <strong>UTC</strong>:</p>
-                            <ul>
-                                <li>Understand the passage</li>
-                                <li>Translate the passage</li>
-                                <li>Check the translation</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="hv-web__input">
-                        <span class="hv-web__placeholder">How can I help you today?</span>
-                        <span class="hv-web__send"></span>
-                    </div>
-                    <div class="hv-web__footer">BT Servant Web v1.6.3</div>
-                </div>
-            </div>
+      <div class="hero__visual" aria-hidden="true">
+        <div class="chat-shot">
+          <img src="assets/images/wa/understand.png" alt="A real WhatsApp conversation with BT Servant: a user asks for help understanding Romans 12:1-2, and BT Servant replies with the passage text and translation notes." loading="lazy" />
         </div>
+      </div>
     </div>
-</section>
+  </section>
 
-<!-- ============================================================ -->
-<!-- START IN SECONDS &mdash; WHATSAPP / TELEGRAM / SIGNAL / WEB   -->
-<!-- ============================================================ -->
-<section class="access" id="get-bt-servant">
+  <!-- ============================================================ -->
+  <!-- 2. REACH -->
+  <!-- ============================================================ -->
+  <section class="reach" id="where-to-use-it">
     <div class="container">
-        <div class="section-head section-head--center">
-            <h2 class="section-title">Start in seconds.</h2>
-            <p class="section-sub">BT Servant is available on WhatsApp, Telegram, Signal, and the web. Choose where you&rsquo;d like to chat.</p>
+      <div class="section-head section-head--center">
+        <h2 class="section-title reach__title">Available wherever you serve.</h2>
+        <p class="section-sub reach__sub">Free, in the apps you already know.</p>
+      </div>
+
+      <div class="reach__mobile-actions">
+        <a href="https://scanned.page/Sj1Qz7" class="btn btn--navy" data-track="reach_mobile" data-track-name="whatsapp">Open in WhatsApp</a>
+        <a href="https://t.me/bt_servant_bot" class="btn btn--ghost" data-track="reach_mobile" data-track-name="telegram">Open in Telegram</a>
+        <a href="https://signal.me/#eu/-RGNTp_ER2U74QlijVSyUHxU_EnzcvATLyvcTyCYS8r_jcbr-FlNxJcgZ7fPXTce" class="btn btn--ghost" data-track="reach_mobile" data-track-name="signal">Open in Signal</a>
+        <a href="https://app.btservant.ai/chat" class="btn btn--bronze" data-track="reach_mobile" data-track-name="web">Open Web App</a>
+      </div>
+
+      <div class="reach__desktop" id="reachDesktop">
+        <div class="reach__tabs" role="tablist" aria-label="Choose a platform">
+          <button class="reach__tab is-active" data-channel="whatsapp" role="tab" aria-selected="true" type="button">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M20.5 3.5A11 11 0 003.2 17.2L2 22l4.9-1.3A11 11 0 1020.5 3.5z"/></svg>
+            WhatsApp
+          </button>
+          <button class="reach__tab" data-channel="telegram" role="tab" aria-selected="false" type="button">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M2 12l19-8-6 18-5-6-6-2z"/></svg>
+            Telegram
+          </button>
+          <button class="reach__tab" data-channel="signal" role="tab" aria-selected="false" type="button">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="12" r="9" stroke-dasharray="3 2.4"/><circle cx="12" cy="12" r="4.5"/></svg>
+            Signal
+          </button>
+          <button class="reach__tab" data-channel="web" role="tab" aria-selected="false" type="button">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 3 2.5 15 0 18M12 3c-2.5 3-2.5 15 0 18"/></svg>
+            Web App
+          </button>
         </div>
 
-        <div class="access-tabs" role="tablist" aria-label="Choose how to use BT Servant">
-            <button type="button" class="access-tab is-active" data-platform="whatsapp" role="tab" aria-selected="true" aria-controls="panel-whatsapp" id="tab-whatsapp">
-                <svg class="access-tab__icon" viewBox="0 0 64 64" role="img" aria-label="WhatsApp"><circle cx="32" cy="32" r="30" fill="#25D366"/><path fill="#fff" d="M47.7 16.1A22 22 0 0 0 13.1 42.6L10 54l11.7-3.1A22 22 0 0 0 47.7 16.1Zm-15.6 32a18.2 18.2 0 0 1-9.3-2.6l-.7-.4-6.9 1.8 1.9-6.7-.5-.7a18.2 18.2 0 1 1 15.5 8.6Z"/><path fill="#fff" d="M42.1 35.7c-.5-.3-3.1-1.5-3.6-1.7-.5-.2-.9-.3-1.3.3-.4.5-1.4 1.7-1.7 2.1-.3.4-.6.4-1.2.1-3.2-1.6-5.3-2.9-7.4-6.5-.6-1 .6-.9 1.6-3.1.2-.4.1-.8-.1-1.1-.1-.3-1.3-3.1-1.7-4.3-.5-1.1-.9-1-1.3-1h-1.1c-.4 0-1 .1-1.5.7-.5.5-2 2-2 4.8s2.1 5.6 2.4 6c.3.4 4.1 6.2 9.9 8.7 3.7 1.6 5.2 1.7 7.1 1.4 1.1-.2 3.1-1.3 3.5-2.5.4-1.2.4-2.2.3-2.5-.2-.5-.7-.8-1.9-1.4Z"/></svg>
-                WhatsApp
-            </button>
-            <button type="button" class="access-tab" data-platform="telegram" role="tab" aria-selected="false" aria-controls="panel-telegram" id="tab-telegram">
-                <svg class="access-tab__icon" viewBox="0 0 64 64" role="img" aria-label="Telegram"><circle cx="32" cy="32" r="30" fill="#229ED9"/><path fill="#fff" d="M49.6 17.5 43.8 47c-.4 2.1-1.6 2.6-3.3 1.6l-8.8-6.5-4.3 4.1c-.5.5-.9.9-1.8.9l.6-9 16.4-14.8c.7-.6-.2-1-1.1-.4L21.3 35.6l-8.7-2.7c-1.9-.6-1.9-1.9.4-2.8l34-13.1c1.6-.6 3 .4 2.6.5Z"/></svg>
-                Telegram
-            </button>
-            <button type="button" class="access-tab" data-platform="signal" role="tab" aria-selected="false" aria-controls="panel-signal" id="tab-signal">
-                <svg class="access-tab__icon" viewBox="0 0 64 64" role="img" aria-label="Signal"><circle cx="32" cy="32" r="30" fill="#3A76F0"/><path fill="#fff" d="M32 15.5c-10.4 0-18.8 7.3-18.8 16.3 0 4.7 2.3 9.1 6.3 12.1l-2.7 7.6 8.4-4.2c2.2.6 4.5.9 6.8.9 10.4 0 18.8-7.3 18.8-16.3S42.4 15.5 32 15.5Z"/><g fill="none" stroke="#fff" stroke-linecap="round" stroke-width="2.4"><path stroke-dasharray="3.5 4.2" d="M10.4 26.4a23.2 23.2 0 0 1 16.1-16.6"/><path stroke-dasharray="3.5 4.2" d="M37.8 9.5a23.2 23.2 0 0 1 16 15.2"/><path stroke-dasharray="3.5 4.2" d="M54.8 36.2a23.2 23.2 0 0 1-15.3 17.2"/><path stroke-dasharray="3.5 4.2" d="M27 54.4A23.2 23.2 0 0 1 10.2 39"/></g></svg>
-                Signal
-            </button>
-            <button type="button" class="access-tab" data-platform="web" role="tab" aria-selected="false" aria-controls="panel-web" id="tab-web">
-                <svg class="access-tab__icon" viewBox="0 0 64 64" role="img" aria-label="Web App"><circle cx="32" cy="32" r="30" fill="#B29159"/><g fill="none" stroke="#fff" stroke-linecap="round" stroke-width="2.4"><circle cx="32" cy="32" r="18.5"/><path d="M13.5 32h37"/><path d="M32 13.5c6.2 7 6.2 30 0 37M32 13.5c-6.2 7-6.2 30 0 37"/></g></svg>
-                Web App
-            </button>
+        <div class="reach__panel" id="reachPanel">
+          <div class="reach__steps-wrap">
+            <h3 id="reachHeading">Use BT Servant on WhatsApp</h3>
+            <ol class="wa-steps" id="reachSteps"></ol>
+            <p class="reach__note" id="reachNote"></p>
+            <div class="reach__panel-actions">
+              <a class="btn btn--navy" id="reachCta" href="https://scanned.page/Sj1Qz7" data-track="reach_cta" data-track-name="whatsapp">Open in WhatsApp</a>
+              <button class="btn btn--ghost" id="reachCopyLink" type="button">Copy access link</button>
+            </div>
+          </div>
+          <div class="reach__qr">
+            <img id="reachQrImg" src="assets/images/qr-code.png" alt="Scan to open BT Servant on WhatsApp" width="210" height="210" loading="lazy" />
+            <span>Scan to open</span>
+          </div>
         </div>
+      </div>
 
-        <div class="access-panels">
-            <!-- WhatsApp panel -->
-            <div class="access-panel is-active card card--light" data-platform="whatsapp" id="panel-whatsapp" role="tabpanel" aria-labelledby="tab-whatsapp">
-                <h3 class="access-panel__title">Use BT Servant on WhatsApp</h3>
-                <div class="card__row">
-                    <div class="qr-placeholder" aria-hidden="true">
-                        <img src="assets/images/qr-code.png?v=20260427" alt="Scan to open BT Servant on WhatsApp" class="qr-img" width="160" height="160" />
-                    </div>
-                    <div class="card__row-text">
-                        <ol class="wa-steps">
-                            <li class="wa-step">
-                                <span class="wa-step__num">1</span>
-                                <div class="wa-step__body">
-                                    <strong>Scan the QR or tap &ldquo;Open in WhatsApp&rdquo;</strong>
-                                    <span>Starts a chat with BT Servant right away.</span>
-                                </div>
-                            </li>
-                            <li class="wa-step">
-                                <span class="wa-step__num">2</span>
-                                <div class="wa-step__body">
-                                    <strong>Send any question</strong>
-                                    <span>No setup or sign-up needed.</span>
-                                </div>
-                            </li>
-                            <li class="wa-step">
-                                <span class="wa-step__num">3</span>
-                                <div class="wa-step__body">
-                                    <strong>Reply in text or voice</strong>
-                                    <span>Get guidance right inside WhatsApp.</span>
-                                </div>
-                            </li>
-                        </ol>
-                        <div class="access-panel__actions">
-                            <a href="https://scanned.page/Sj1Qz7" class="btn btn--dark btn--sm" target="_blank" rel="noopener">Open in WhatsApp</a>
-                            <button type="button" class="btn btn--outline copy-link" data-copy-link="https://scanned.page/Sj1Qz7">Copy access link</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Telegram panel -->
-            <div class="access-panel card card--light" data-platform="telegram" id="panel-telegram" role="tabpanel" aria-labelledby="tab-telegram" hidden>
-                <h3 class="access-panel__title">Use BT Servant on Telegram</h3>
-                <div class="card__row">
-                    <div class="qr-placeholder" aria-hidden="true">
-                        <img src="assets/images/qr-code-telegram.png" alt="Scan to open BT Servant on Telegram" class="qr-img" width="160" height="160" />
-                    </div>
-                    <div class="card__row-text">
-                        <ol class="wa-steps">
-                            <li class="wa-step">
-                                <span class="wa-step__num">1</span>
-                                <div class="wa-step__body">
-                                    <strong>Scan the QR or tap &ldquo;Open in Telegram&rdquo;</strong>
-                                    <span>Starts a chat with BT Servant right away.</span>
-                                </div>
-                            </li>
-                            <li class="wa-step">
-                                <span class="wa-step__num">2</span>
-                                <div class="wa-step__body">
-                                    <strong>Send any question</strong>
-                                    <span>No setup or sign-up needed.</span>
-                                </div>
-                            </li>
-                            <li class="wa-step">
-                                <span class="wa-step__num">3</span>
-                                <div class="wa-step__body">
-                                    <strong>Reply in text or voice</strong>
-                                    <span>Get guidance right inside Telegram.</span>
-                                </div>
-                            </li>
-                        </ol>
-                        <div class="access-panel__actions">
-                            <a href="https://t.me/bt_servant_bot" class="btn btn--dark btn--sm" target="_blank" rel="noopener">Open in Telegram</a>
-                            <button type="button" class="btn btn--outline copy-link" data-copy-link="https://t.me/bt_servant_bot">Copy access link</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Signal panel -->
-            <div class="access-panel card card--light" data-platform="signal" id="panel-signal" role="tabpanel" aria-labelledby="tab-signal" hidden>
-                <h3 class="access-panel__title">Use BT Servant on Signal</h3>
-                <div class="card__row">
-                    <div class="qr-placeholder" aria-hidden="true">
-                        <img src="assets/images/qr-code-signal.png" alt="Scan to open BT Servant on Signal" class="qr-img" width="160" height="160" />
-                    </div>
-                    <div class="card__row-text">
-                        <ol class="wa-steps">
-                            <li class="wa-step">
-                                <span class="wa-step__num">1</span>
-                                <div class="wa-step__body">
-                                    <strong>Scan the QR or tap &ldquo;Open in Signal&rdquo;</strong>
-                                    <span>Starts a chat with BT Servant right away.</span>
-                                </div>
-                            </li>
-                            <li class="wa-step">
-                                <span class="wa-step__num">2</span>
-                                <div class="wa-step__body">
-                                    <strong>Send any question</strong>
-                                    <span>No setup or sign-up needed.</span>
-                                </div>
-                            </li>
-                            <li class="wa-step">
-                                <span class="wa-step__num">3</span>
-                                <div class="wa-step__body">
-                                    <strong>Reply in text or voice</strong>
-                                    <span>Get guidance right inside Signal.</span>
-                                </div>
-                            </li>
-                        </ol>
-                        <div class="access-panel__actions">
-                            <a href="https://signal.me/#eu/-RGNTp_ER2U74QlijVSyUHxU_EnzcvATLyvcTyCYS8r_jcbr-FlNxJcgZ7fPXTce" class="btn btn--dark btn--sm" target="_blank" rel="noopener">Open in Signal</a>
-                            <button type="button" class="btn btn--outline copy-link" data-copy-link="https://signal.me/#eu/-RGNTp_ER2U74QlijVSyUHxU_EnzcvATLyvcTyCYS8r_jcbr-FlNxJcgZ7fPXTce">Copy access link</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Web App panel -->
-            <div class="access-panel card card--light" data-platform="web" id="panel-web" role="tabpanel" aria-labelledby="tab-web" hidden>
-                <h3 class="access-panel__title">Use BT Servant on the Web</h3>
-                <div class="card__row">
-                    <div class="qr-placeholder" aria-hidden="true">
-                        <img src="assets/images/qr-code-web.png" alt="Scan to open BT Servant Web App" class="qr-img" width="160" height="160" />
-                    </div>
-                    <div class="card__row-text">
-                        <ol class="wa-steps">
-                            <li class="wa-step">
-                                <span class="wa-step__num">1</span>
-                                <div class="wa-step__body">
-                                    <strong>Scan the QR or tap &ldquo;Open Web App&rdquo;</strong>
-                                    <span>Opens BT Servant in your browser.</span>
-                                </div>
-                            </li>
-                            <li class="wa-step">
-                                <span class="wa-step__num">2</span>
-                                <div class="wa-step__body">
-                                    <strong>Send any question</strong>
-                                    <span>No setup or sign-up needed.</span>
-                                </div>
-                            </li>
-                            <li class="wa-step">
-                                <span class="wa-step__num">3</span>
-                                <div class="wa-step__body">
-                                    <strong>Get guidance in text</strong>
-                                    <span>Right inside the BT Servant web app.</span>
-                                </div>
-                            </li>
-                        </ol>
-                        <div class="access-panel__actions">
-                            <a href="https://app.btservant.ai/chat" class="btn btn--dark btn--sm" target="_blank" rel="noopener">Open Web App</a>
-                            <button type="button" class="btn btn--outline copy-link" data-copy-link="https://app.btservant.ai/chat">Copy access link</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+      <p class="reach__langs">English &middot; Indonesian &middot; Spanish &middot; <em>and many more languages</em> &middot; Audio supported</p>
     </div>
-</section>
+  </section>
 
-<!-- ============================================================ -->
-<!-- TRUST STRIP                                                  -->
-<!-- ============================================================ -->
-<section class="trust-strip">
+  <!-- ============================================================ -->
+  <!-- 3. INTENTS -->
+  <!-- ============================================================ -->
+  <section class="intents" id="what-you-can-do">
     <div class="container">
-        <p>Built with guidance from translation experts and designed for church-based teams.</p>
-    </div>
-</section>
+      <div class="section-head section-head--center">
+        <h2 class="section-title">What would you like to do today?</h2>
+        <p class="section-sub">Pick a starting point. The rest is a conversation.</p>
+      </div>
 
-<!-- ============================================================ -->
-<!-- BUILT FOR BIBLE TRANSLATION TEAMS (moved from split-cards)   -->
-<!-- ===== CHANGE: relocated from split-cards dark card; now full-width section ===== -->
-<!-- ============================================================ -->
-<section class="teams-band">
-    <div class="container teams-band__inner">
-        <div class="teams-band__copy">
-            <h2 class="section-title teams-band__title">Built for Bible translation teams.</h2>
-            <p class="section-sub teams-band__sub">Working with a church, ministry, or translation team? BT Servant can be configured to support your workflow, language, and translation approach.</p>
+      <div class="intents__layout">
+        <div class="intents__list" role="tablist" aria-label="Choose what you'd like to do">
+          <button class="intent-btn is-active" data-intent="understand" role="tab" aria-selected="true" type="button">
+            <span class="intent-btn__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 12s3.5-6.5 10-6.5S22 12 22 12s-3.5 6.5-10 6.5S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg></span>
+            <span class="intent-btn__text"><strong>Understand</strong><span>What a passage means.</span></span>
+          </button>
+          <button class="intent-btn" data-intent="study" role="tab" aria-selected="false" type="button">
+            <span class="intent-btn__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 5h7v15H4a1 1 0 01-1-1V6a1 1 0 011-1z"/><path d="M20 5h-7v15h7a1 1 0 001-1V6a1 1 0 00-1-1z"/></svg></span>
+            <span class="intent-btn__text"><strong>Study</strong><span>Context, questions, resources.</span></span>
+          </button>
+          <button class="intent-btn" data-intent="teach" role="tab" aria-selected="false" type="button">
+            <span class="intent-btn__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 5h14v10H8l-4 4V5z"/><path d="M21 9v8l-3-3h-4"/></svg></span>
+            <span class="intent-btn__text"><strong>Teach</strong><span>Lessons and discussions.</span></span>
+          </button>
+          <button class="intent-btn" data-intent="translate" role="tab" aria-selected="false" type="button">
+            <span class="intent-btn__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 3 2.5 15 0 18M12 3c-2.5 3-2.5 15 0 18"/></svg></span>
+            <span class="intent-btn__text"><strong>Translate</strong><span>Terms, meaning, decisions.</span></span>
+          </button>
+          <button class="intent-btn" data-intent="share" role="tab" aria-selected="false" type="button">
+            <span class="intent-btn__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20.5 3.5A11 11 0 003.2 17.2L2 22l4.9-1.3A11 11 0 1020.5 3.5z"/></svg></span>
+            <span class="intent-btn__text"><strong>Share</strong><span>The gospel, said clearly.</span></span>
+          </button>
+          <button class="intent-btn" data-intent="equip" role="tab" aria-selected="false" type="button">
+            <span class="intent-btn__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="8" cy="8" r="3"/><path d="M2 20c0-3.3 2.7-6 6-6s6 2.7 6 6"/><path d="M15 8h5M17.5 5.5v5"/></svg></span>
+            <span class="intent-btn__text"><strong>Equip</strong><span>Train and multiply leaders.</span></span>
+          </button>
         </div>
-        <div class="teams-band__panel">
-            <ul class="check-list check-list--light">
-                <li>Align with your translation methodology</li>
-                <li>Customize guidance for your context</li>
-                <li>Integrate into your existing tools</li>
-            </ul>
-            <div class="card__actions">
-                <a href="https://app.btservant.ai" class="btn btn--gold btn--sm">Get Started</a>
-                <a href="https://discord.gg/pvzDWQ82zq" class="link link--gold">Join our community &rarr;</a>
+
+        <div class="intents__preview" id="intentPreview" data-intent="understand">
+          <div class="chat-shot">
+            <img id="intentPreviewImg" src="assets/images/wa/understand.png" alt="A real WhatsApp conversation with BT Servant: a user asks for help understanding Romans 12:1-2, and BT Servant replies with the passage text and translation notes." loading="lazy" />
+          </div>
+          <div class="intents__preview-actions">
+            <a href="https://app.btservant.ai/chat?intent=understand" class="btn btn--bronze" id="intentPreviewCta" data-track="intent_cta" data-track-name="understand">Start understanding</a>
+            <div class="intents__preview-continue">
+              <span>Continue on:</span>
+              <a href="https://scanned.page/Sj1Qz7" data-track="intent_continue" data-track-name="whatsapp">WhatsApp</a>
+              <a href="https://t.me/bt_servant_bot" data-track="intent_continue" data-track-name="telegram">Telegram</a>
+              <a href="https://app.btservant.ai/chat" data-track="intent_continue" data-track-name="web">Web</a>
             </div>
+          </div>
         </div>
+      </div>
     </div>
-</section>
-<!-- ===== END CHANGE ===== -->
+  </section>
 
-<!-- ============================================================ -->
-<!-- FROM QUESTION TO CLARITY (3 STEPS)                           -->
-<!-- ============================================================ -->
-<section class="three-col">
+  <!-- ============================================================ -->
+  <!-- 5. WHY BT SERVANT -->
+  <!-- ============================================================ -->
+  <section class="why section--vellum" id="why-bt-servant">
     <div class="container">
-        <div class="section-head section-head--center">
-            <h2 class="section-title">From question to clarity in seconds.</h2>
-            <p class="section-sub">Three steps. No friction. Get the guidance you need where you already work.</p>
-        </div>
-        <div class="three-col__grid three-col__grid--steps">
-            <div class="mini-card">
-                <span class="mini-card__badge">1</span>
-                <div class="mini-card__row">
-                    <div class="mini-card__icon"><span class="bt-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 5h10a2 2 0 012 2v5a2 2 0 01-2 2H9l-3 3v-3H4V5z"/><path d="M8 10h11a1 1 0 011 1v6a1 1 0 01-1 1h-3l-2 2v-2h-2"/></svg></span></div>
-                    <div class="mini-card__text">
-                        <h4>Ask naturally</h4>
-                        <p>Type or speak your translation question as you work.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="mini-card">
-                <span class="mini-card__badge">2</span>
-                <div class="mini-card__row">
-                    <div class="mini-card__icon"><span class="bt-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 18h6m-5 3h4M12 3a6 6 0 00-4 10.5c.8.8 1.3 1.6 1.4 2.5h5.2c.1-.9.6-1.7 1.4-2.5A6 6 0 0012 3z"/></svg></span></div>
-                    <div class="mini-card__text">
-                        <h4>Receive guidance</h4>
-                        <p>Get suggestions grounded in meaning, language, and context.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="mini-card">
-                <span class="mini-card__badge">3</span>
-                <div class="mini-card__row">
-                    <div class="mini-card__icon"><span class="bt-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12l4 4 10-10"/></svg></span></div>
-                    <div class="mini-card__text">
-                        <h4>Translate with confidence</h4>
-                        <p>Make informed decisions supported by trusted insight.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
+      <div class="section-head section-head--center">
+        <h2 class="section-title">Guidance you can trust</h2>
+      </div>
 
-<!-- ============================================================ -->
-<!-- BUILT ON WHAT MATTERS MOST                                   -->
-<!-- ============================================================ -->
-<section class="feature-grid" id="features">
+      <div class="why__grid">
+        <div class="why-card">
+          <h4>Trusted</h4>
+          <p>Grounded in vetted biblical resources &mdash; not the open internet.</p>
+        </div>
+
+        <div class="why-card">
+          <h4>Natural</h4>
+          <p>Text or voice. No commands to learn.</p>
+        </div>
+
+        <div class="why-card">
+          <h4>Human-centered</h4>
+          <p>Supports pastors, teachers, and translators. Never replaces them.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================ -->
+  <!-- 7. PARTNERS -->
+  <!-- ============================================================ -->
+  <section class="partners section--vellum" id="partners" style="padding-bottom: 60px;">
     <div class="container">
-        <div class="section-head section-head--center">
-            <h2 class="section-title"><em>Built on what matters most.</em></h2>
-            <p class="section-sub">Trusted guidance, context-aware support, and access wherever you work.</p>
-        </div>
-        <div class="feature-grid__grid feature-grid__grid--three">
-            <div class="feature-card feature-card--row">
-                <div class="feature-card__icon feature-card__icon--shield"><span class="bt-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6l8-3z"/><path d="M9 12l2 2 4-4"/></svg></span></div>
-                <div class="feature-card__text">
-                    <h4>Trusted guidance</h4>
-                    <p>Expert-informed support ensures your translation remains faithful and accurate.</p>
-                </div>
-            </div>
-            <div class="feature-card feature-card--row">
-                <div class="feature-card__icon feature-card__icon--globe"><span class="bt-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 3 2.5 15 0 18M12 3c-2.5 3-2.5 15 0 18"/></svg></span></div>
-                <div class="feature-card__text">
-                    <h4>Context-aware support</h4>
-                    <p>Guidance adapts to your language, culture, and translation approach.</p>
-                </div>
-            </div>
-            <div class="feature-card feature-card--row">
-                <div class="feature-card__icon feature-card__icon--phone"><span class="bt-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h4l2 5-2.5 1.5a11 11 0 005.5 5.5L14.5 13l5 2v4a2 2 0 01-2 2A15 15 0 014 6a2 2 0 012-2"/></svg></span></div>
-                <div class="feature-card__text">
-                    <h4>Wherever you work</h4>
-                    <p>Available in WhatsApp, Telegram, Signal, and web tools your team already uses.</p>
-                </div>
-            </div>
-        </div>
+      <div class="section-head section-head--center">
+        <h2 class="section-title">Built with ministries. Shaped by real use.</h2>
+      </div>
     </div>
-</section>
-
-<!-- ============================================================ -->
-<!-- BUILT FOR TEAMS SERVING THE WORD                             -->
-<!-- ============================================================ -->
-<section class="integrations">
-    <div class="container integrations__inner">
-        <div class="integrations__copy">
-            <h2 class="section-title">Built for teams serving the Word.</h2>
-            <p class="section-sub">BT Servant is shaped around the people doing the work of translation&mdash;wherever they are, in whatever language they serve.</p>
-        </div>
-        <div class="integrations__logos integrations__logos--audience">
-            <div class="audience-tile"><span class="bt-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="9" cy="8" r="3"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6"/><circle cx="17" cy="9" r="2.5"/><path d="M15 20c0-2.5 2-4.5 4.5-4.5"/></svg></span><span>Church-based translation teams</span></div>
-            <div class="audience-tile"><span class="bt-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 3l9 5-9 5-9-5 9-5zM3 13l9 5 9-5M3 17l9 5 9-5"/></svg></span><span>Ministry-led language projects</span></div>
-            <div class="audience-tile"><span class="bt-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 3 2.5 15 0 18M12 3c-2.5 3-2.5 15 0 18"/></svg></span><span>Teams in oral or under-resourced languages</span></div>
-            <div class="audience-tile"><span class="bt-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h10a4 4 0 014 4v12H8a4 4 0 01-4-4V4z"/><path d="M4 16a4 4 0 014-4h10"/></svg></span><span>Communities seeking faithful local Scripture</span></div>
-        </div>
+    <div class="partner-bar">
+      <div class="container partner-banner">
+        <a class="partner-banner__logo" href="https://www.unfoldingword.org/" target="_blank" rel="noopener">
+          <img src="assets/images/partners/unfoldingword.png" alt="unfoldingWord" loading="lazy" />
+        </a>
+        <a class="partner-banner__logo" href="https://www.etenlab.org" target="_blank" rel="noopener">
+          <img src="assets/images/partners/eten-innovation-lab.png" alt="ETEN Innovation Lab" loading="lazy" />
+        </a>
+        <a class="partner-banner__logo" href="https://www.wordcollective.com/" target="_blank" rel="noopener">
+          <img src="assets/images/partners/word-collective.png" alt="Word Collective" loading="lazy" />
+        </a>
+      </div>
     </div>
-</section>
+  </section>
 
-<!-- ============================================================ -->
-<!-- EVERY LANGUAGE DESERVES CLARITY                              -->
-<!-- ============================================================ -->
-<section class="languages">
-    <div class="container languages__inner">
-        <div class="languages__visual" aria-hidden="true">
-            <div class="voices">
-                <div class="voices__bubble voices__bubble--a">
-                    <div class="wave">
-                        <span></span><span></span><span></span><span></span><span></span>
-                        <span></span><span></span><span></span><span></span><span></span>
-                    </div>
-                    <small>&ldquo;What does this verse mean?&rdquo;</small>
-                </div>
-                <div class="voices__bubble voices__bubble--b">
-                    <div class="wave">
-                        <span></span><span></span><span></span><span></span>
-                        <span></span><span></span><span></span><span></span>
-                    </div>
-                    <small>&ldquo;How should I translate this word?&rdquo;</small>
-                </div>
-                <div class="voices__bubble voices__bubble--c">
-                    <div class="wave">
-                        <span></span><span></span><span></span>
-                        <span></span><span></span><span></span>
-                    </div>
-                    <small>&ldquo;Explain this passage in simple terms.&rdquo;</small>
-                </div>
-            </div>
-        </div>
-        <div class="languages__copy">
-            <h2 class="section-title">Every language deserves clarity.</h2>
-            <p class="section-sub">We believe Scripture should be understood&mdash;not just translated.</p>
-            <p class="section-sub">BT Servant exists to support those bringing God&rsquo;s Word to life in every language and culture with guidance they can trust.</p>
-        </div>
-    </div>
-</section>
-
-<!-- ============================================================ -->
-<!-- FINAL CTA                                                    -->
-<!-- ============================================================ -->
-<section class="cta-banner" id="get-started">
+  <!-- ============================================================ -->
+  <!-- 8. FINAL CTA -->
+  <!-- ============================================================ -->
+  <section class="cta-banner" id="get-started">
     <div class="container cta-banner__inner">
-        <h2 class="cta-banner__title">Start translating with confidence.</h2>
+      <h2 class="cta-banner__title">What would you like to do next?</h2>
+
+      <div class="cta-banner__group">
+        <span class="cta-banner__group-label">Individuals</span>
         <div class="cta-banner__actions">
-            <a href="https://app.btservant.ai/chat" class="btn btn--gold">Try BT Servant Now</a>
-            <a href="https://discord.gg/pvzDWQ82zq" class="btn btn--outline-light">Set up your team workflow</a>
+          <a href="https://scanned.page/Sj1Qz7" class="btn btn--bronze" data-track="final_cta" data-track-name="whatsapp">Start on WhatsApp</a>
+          <a href="https://t.me/bt_servant_bot" class="btn btn--outline-light" data-track="final_cta" data-track-name="telegram">Telegram</a>
+          <a href="https://signal.me/#eu/-RGNTp_ER2U74QlijVSyUHxU_EnzcvATLyvcTyCYS8r_jcbr-FlNxJcgZ7fPXTce" class="btn btn--outline-light" data-track="final_cta" data-track-name="signal">Signal</a>
+          <a href="https://app.btservant.ai/chat" class="btn btn--outline-light" data-track="final_cta" data-track-name="web">Web App</a>
         </div>
-    </div>
-</section>
+      </div>
+      <div class="cta-banner__group">
+        <span class="cta-banner__group-label">Organizations</span>
+        <div class="cta-banner__actions">
+          <a href="https://app.btservant.ai" class="btn btn--outline-light">Use it with your team</a>
+          <a href="https://unfoldingword.org/contact/" class="btn btn--outline-light" target="_blank" rel="noopener">Customize</a>
+          <a href="https://unfoldingword.org/contact/" class="btn btn--outline-light" target="_blank" rel="noopener">Integrate</a>
+        </div>
+      </div>
 
-</main><!-- /#site-content -->
+      <p class="cta-banner__brandline">Ask naturally. Receive trusted guidance. Take action with confidence.</p>
+    </div>
+  </section>
 
-<footer class="site-footer" role="contentinfo">
-    <div class="container site-footer__inner">
-        <div class="site-footer__brand">
-            <a class="site-logo site-logo--light" href="/">
-                <img src="assets/images/logo-light.png" alt="BT Servant" class="site-logo__img" width="1131" height="213" />
-            </a>
-            <p class="site-footer__tag">Helping bring Scripture to life in every language.</p>
-        </div>
+</main>
 
-        <nav class="site-footer__nav" aria-label="Footer">
-            <a href="https://unfoldingword.org/contact/" target="_blank" rel="noopener">Contact</a>
-            <a href="https://github.com/unfoldingWord/bt-servant-engine" target="_blank" rel="noopener">GitHub</a>
-        </nav>
+<div class="mobile-bar" aria-hidden="false">
+  <a href="https://scanned.page/Sj1Qz7" class="btn btn--navy" data-track="mobile_bar" data-track-name="ask">Ask BT Servant</a>
+  <a href="#where-to-use-it" class="btn btn--ghost">Choose App</a>
+</div>
+
+<footer class="site-footer" role="contentinfo" id="about">
+  <div class="container site-footer__inner">
+    <div class="site-footer__brand">
+      <a class="site-logo" href="/">
+        <img class="site-logo__full" src="assets/images/logo-full-inverse.png" alt="BT Servant" />
+      </a>
+      <p class="site-footer__tag">Deep biblical knowledge, made accessible through conversation.</p>
     </div>
-    <div class="site-footer__credits">
-        <div class="container">
-            <p>
-                BT Servant is a project by <a href="https://www.unfoldingword.org/" target="_blank" rel="noopener">unfoldingWord</a> in partnership with
-                <a href="https://spoken.org/" target="_blank" rel="noopener">Spoken Worldwide</a> and
-                <a href="https://www.etenlab.org" target="_blank" rel="noopener">ETEN Innovation Lab</a>,
-                released under the <strong>MIT License</strong>.
-            </p>
-        </div>
+
+    <div class="site-footer__cols">
+      <div class="site-footer__col">
+        <h5>Access</h5>
+        <a href="#where-to-use-it">WhatsApp</a>
+        <a href="#where-to-use-it">Telegram</a>
+        <a href="#where-to-use-it">Signal</a>
+        <a href="https://app.btservant.ai/chat">Web App</a>
+      </div>
+      <div class="site-footer__col">
+        <h5>Resources</h5>
+        <a href="https://github.com/unfoldingWord/bt-servant-engine" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://discord.gg/pvzDWQ82zq" target="_blank" rel="noopener">Discord</a>
+        <a href="https://www.youtube.com/watch?v=dIda6Q2lGYE&amp;list=PLa3_fZSWwn6AEbqMCPamBokvLxCUtwMXB" target="_blank" rel="noopener">Demo Video</a>
+        <a href="https://unfoldingword.org/contact/" target="_blank" rel="noopener">Contact</a>
+      </div>
     </div>
-    <div class="site-footer__legal">
-        <div class="container site-footer__legal-inner">
-            <small>&copy; <span id="copyright-year">2026</span> BT Servant. All rights reserved.</small>
-            <small>Human-guided. AI-powered. Built for Bible translation.</small>
-        </div>
+  </div>
+
+  <div class="site-footer__credits">
+    <div class="container">
+      <span>&copy; 2026 BT Servant &middot; a project of <a href="https://www.unfoldingword.org/" target="_blank" rel="noopener">unfoldingWord</a></span>
+      <span>Open source &middot; <a href="https://github.com/unfoldingWord/bt-servant-engine/releases" target="_blank" rel="noopener">Release notes</a></span>
     </div>
+  </div>
 </footer>
 
-<script>
-    // Keep copyright year current without editing HTML.
-    document.getElementById('copyright-year').textContent = new Date().getFullYear();
-</script>
-<script src="assets/js/main.js?v=20260728" defer></script>
+<script src="assets/js/main.js"></script>
 </body>
 </html>
