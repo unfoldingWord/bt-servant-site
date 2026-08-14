@@ -1,4 +1,0 @@
-/* BT Servant — 2026 rebrand.
-   The full theme now lives in assets/css/main.css (single source of truth).
-   This file remains only so any legacy <link href="style.css"> keeps working. */
-@import url("assets/css/main.css");
