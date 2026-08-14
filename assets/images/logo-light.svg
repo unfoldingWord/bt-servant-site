@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 160" role="img" aria-label="BT Servant">
+    <defs>
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&amp;display=swap');
+            .bt-wordmark { font-family: 'Playfair Display', 'Lora', Georgia, serif; font-size: 120px; fill: #EDECE8; letter-spacing: 0.01em; }
+            .bt-bold     { font-weight: 700; }
+            .bt-reg      { font-weight: 500; }
+        </style>
+    </defs>
+    <text x="10" y="120" class="bt-wordmark bt-bold">BT</text>
+    <text x="170" y="120" class="bt-wordmark bt-reg">Serv</text>
+    <g transform="translate(368,0)" fill="#EDECE8">
+        <path d="M 46 120 L 32 120 L 50 40 L 55 40 L 46 120 Z" />
+        <path d="M 60 40 L 65 40 L 83 120 L 69 120 L 60 40 Z" />
+    </g>
+    <circle cx="425" cy="98" r="5" fill="#B29159" />
+    <text x="458" y="120" class="bt-wordmark bt-reg">nt</text>
+    <rect x="310" y="142" width="90" height="3" fill="#B29159" />
+</svg>
