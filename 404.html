@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Page not found — BT Servant</title>
+    <link rel="icon" type="image/png" href="/assets/images/favicon.png" />
+
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-LT1CE2F1PZ"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-LT1CE2F1PZ');
+    </script>
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,500;6..72,600&family=Inter:wght@400;500&display=swap" />
+    <style>
+        :root {
+            --bt-navy: #23282C; --bt-navy-deep: #15181B; --bt-bronze: #FF5A1F;
+            --bt-paper: #FAF9F6; --bt-muted: #9CA1A5;
+        }
+        * { box-sizing: border-box; }
+        html, body { height: 100%; margin: 0; }
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bt-paper); color: var(--bt-navy);
+            display: grid; place-items: center; text-align: center; padding: 24px;
+        }
+        .wrap { max-width: 520px; }
+        .mark { width: 92px; height: auto; margin-bottom: 22px; }
+        h1 {
+            font-family: 'Newsreader', Georgia, serif;
+            font-size: clamp(2.6rem, 8vw, 4.4rem); margin: 0 0 6px;
+            color: var(--bt-bronze); font-weight: 600;
+        }
+        h2 {
+            font-family: 'Newsreader', Georgia, serif;
+            font-size: clamp(1.3rem, 3vw, 1.9rem); margin: 0 0 16px; font-weight: 500;
+        }
+        p { color: var(--bt-muted); line-height: 1.6; margin: 0 0 28px; }
+        a.btn {
+            display: inline-block; background: var(--bt-navy); color: var(--bt-paper);
+            text-decoration: none; padding: 12px 26px; border-radius: 999px; font-weight: 500;
+            transition: transform 0.2s ease, background 0.2s ease;
+        }
+        a.btn:hover { transform: translateY(-1px); background: var(--bt-navy-deep); }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <img class="mark" src="/assets/images/logo-mark.png" alt="" />
+        <h1>404</h1>
+        <h2>This page isn&rsquo;t in the scroll.</h2>
+        <p>The page you were looking for isn&rsquo;t here. It may have been moved, or the link might be out of date.</p>
+        <a class="btn" href="/">Back to BT Servant</a>
+    </div>
+</body>
+</html>
