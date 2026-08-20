@@ -34,10 +34,11 @@ document.addEventListener('DOMContentLoaded', function () {
   /* ---------- Hero rotator: typewriter ---------- */
   var rotator = document.getElementById('heroRotator');
   var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  if (rotator && reduceMotion) {
-    /* Static fallback: full line, no animation (caret hidden via CSS) */
-    rotator.textContent = 'to understand, study, teach, translate, and share';
-  }
+  /* Reduced motion: leave the word already painted by the static markup
+     (index.html / organizations.html #heroRotator) exactly as-is. Swapping it
+     for a longer combined phrase here caused a visible text/layout jump right
+     after load for these users — the one thing "reduced motion" asks us not
+     to do. */
   if (rotator && !reduceMotion) {
     var words = ['to understand', 'to study', 'to teach', 'to translate', 'to share'];
     var wi = 0, ci = 0, deleting = false, paused = false;
@@ -63,8 +64,20 @@ document.addEventListener('DOMContentLoaded', function () {
         setTimeout(tick, 14);
       }
     }
-    rotator.textContent = '';
-    setTimeout(tick, 450);
+    /* Pick up from the word the static markup already rendered instead of
+       clearing it to blank and re-typing it — that clear-then-retype was the
+       visible "flash" / restart bug on page load. If the markup ever gets
+       hand-edited to something outside `words`, fall back to a clean start. */
+    var startIndex = words.indexOf(rotator.textContent.trim());
+    if (startIndex === -1) {
+      rotator.textContent = '';
+      setTimeout(tick, 450);
+    } else {
+      wi = startIndex;
+      ci = words[wi].length;
+      deleting = true;
+      setTimeout(tick, 900);
+    }
   }
 
   /* ---------- Intent selector ---------- */
@@ -133,7 +146,7 @@ document.addEventListener('DOMContentLoaded', function () {
       heading: 'Use BT Servant on WhatsApp',
       steps: ['Scan the QR code, or tap \u201cOpen in WhatsApp.\u201d', 'Send any question.', 'Reply in text or voice.'],
       note: '',
-      link: 'https://scanned.page/Sj1Qz7',
+      link: 'https://wa.me/15558196461?text=Hello%2C%20BT%20Servant',
       cta: 'Open in WhatsApp',
       qr: 'assets/images/qr-code.png',
       qrAlt: 'Scan to open BT Servant on WhatsApp'
