@@ -63,7 +63,10 @@ brand-assets/
 All four are wired into the reach/QR section on the homepage and verified
 to decode correctly:
 
-- **WhatsApp:** `https://scanned.page/Sj1Qz7`
+- **WhatsApp:** `https://wa.me/15558196461?text=Hello%2C%20BT%20Servant` (a direct `wa.me`
+  deep link — previously this went through a `scanned.page` short-link redirect,
+  which required loading a browser before handing off to WhatsApp and failed
+  when the QR code was scanned from inside WhatsApp itself; see change log below)
 - **Telegram:** `@bt_servant_bot` → `https://t.me/bt_servant_bot`
 - **Signal:** `https://signal.me/#eu/-RGNTp_ER2U74QlijVSyUHxU_EnzcvATLyvcTyCYS8r_jcbr-FlNxJcgZ7fPXTce`
 - **Web App:** `https://app.btservant.ai/chat`
