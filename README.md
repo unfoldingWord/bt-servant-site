@@ -51,7 +51,8 @@ build step.
         ├── wa/                     Real BT Servant WhatsApp conversation
         │                           screenshots, one per intent
         └── partners/               Partner logos (unfoldingWord, ETEN
-                                    Innovation Lab, Word Collective)
+                                    Innovation Lab, Word Collective,
+                                    Spoken Worldwide)
 
 brand-assets/
 ├── bt-servant-style-guide.pdf / .html   Full brand/style guide
@@ -74,7 +75,7 @@ to decode correctly:
 ## Partners
 
 Real logo images (not placeholder text) for unfoldingWord, ETEN Innovation
-Lab, and Word Collective are in place at `assets/images/partners/` and
+Lab, Word Collective, and Spoken Worldwide are in place at `assets/images/partners/` and
 rendered in the `.partner-banner` section, each linking to the partner's
 site.
 
