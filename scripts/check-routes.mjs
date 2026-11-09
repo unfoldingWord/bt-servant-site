@@ -34,6 +34,26 @@ function resolves(path) {
   return existsSync(p) || existsSync(`${p}.html`) || existsSync(join(p, 'index.html'));
 }
 
+const normalize = (s) => s.replace(/\s+/g, ' ').trim();
+
+/** The text a visitor sees in an HTML fragment: scripts, styles and
+ *  templates removed, tags stripped, common entities decoded. */
+function visibleText(html) {
+  return normalize(
+    html
+      .replace(/<(script|style|template|noscript)[^>]*>[\s\S]*?<\/\1>/gi, ' ')
+      .replace(/<[^>]+>/g, '')
+      .replace(/&nbsp;/g, ' ')
+      .replace(/&rsquo;/g, '’')
+      .replace(/&mdash;/g, '—')
+      .replace(/&#39;/g, "'")
+      .replace(/&quot;/g, '"')
+      .replace(/&lt;/g, '<')
+      .replace(/&gt;/g, '>')
+      .replace(/&amp;/g, '&')
+  );
+}
+
 function internalPath(url) {
   if (url.startsWith(SITE)) return url.slice(SITE.length) || '/';
   if (url.startsWith('/') && !url.startsWith('//')) return url;
@@ -72,9 +92,16 @@ for (const file of htmlFiles) {
         if (page && page.dateModified !== shown) fail(`${rel}: WebPage dateModified ${page?.dateModified} != footer date ${shown}`);
         const faq = graph.find((n) => n['@type'] === 'FAQPage');
         if (faq) {
-          const text = html.replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ');
-          for (const q of faq.mainEntity) {
-            if (!text.includes(q.name)) fail(`${rel}: FAQ question not visible on the page: ${q.name}`);
+          // Read only the rendered FAQ section, never the JSON-LD itself.
+          const section = html.match(/<section class="faq" id="faq">([\s\S]*?)<\/section>/)?.[1];
+          if (!section) fail(`${rel}: has FAQPage JSON-LD but no visible <section id="faq">`);
+          else {
+            const text = visibleText(section);
+            for (const q of faq.mainEntity) {
+              if (!text.includes(normalize(q.name))) fail(`${rel}: FAQ question not visible on the page: ${q.name}`);
+              if (!text.includes(normalize(q.acceptedAnswer.text)))
+                fail(`${rel}: FAQ answer not visible on the page (or differs from the JSON-LD): ${q.name}`);
+            }
           }
         }
       } catch (e) {

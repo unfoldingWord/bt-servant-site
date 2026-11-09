@@ -15,11 +15,12 @@ npm run preview  # serves the built dist/
 
 Requires Node 18.20+ (Astro's minimum); `.nvmrc` pins 22.
 
-Checks (CI runs both on every pull request, `.github/workflows/checks.yml`):
+Checks (CI runs all three on every pull request, `.github/workflows/checks.yml`):
 
 ```
+npm test               # unit tests for the markdown content negotiation
 npm run build
-npm run check:routes   # after a build: links, assets, canonicals, JSON-LD, sitemaps, llms files, redirects
+npm run check:routes   # after a build: links, assets, canonicals, JSON-LD, visible FAQ vs FAQPage, sitemaps, llms files, redirects
 ```
 
 To try the Cloudflare Pages Function (markdown negotiation, below) locally: `npx wrangler pages dev dist`.
@@ -31,11 +32,11 @@ To try the Cloudflare Pages Function (markdown negotiation, below) locally: `npx
 | `src/pages/` | One file per route: `index.astro` (home), `organizations/index.astro`, `404.astro`, plus the sitemaps, `/llms.txt`, `/llms-full.txt`, `/index.md`, `/organizations/index.md` and `/ai/*.json`. |
 | `src/layouts/Base.astro` | The page shell: `<head>` (canonical, Open Graph, JSON-LD, analytics), header, footer, mobile bar, script. |
 | `src/components/` | `Header.astro`, `Footer.astro`, `MobileBar.astro`, `GoogleAnalytics.astro`. |
-| `src/data/site.ts` | **The facts and shared copy**: URLs, channel links, the six intents, the "why" cards, partners, the organizations paths, the FAQ, page titles/descriptions and `PAGE_UPDATED` dates. The pages, JSON-LD and the markdown/JSON files all read from here. |
+| `src/data/site.ts` | **The facts and shared copy**: URLs, channel links, the six intents, the "why" cards, partners, the organizations paths, the FAQ, page titles/descriptions and `PAGE_UPDATED` dates. The pages render the intents, "why" cards, partners, organizations cards and FAQ from here, and the JSON-LD and markdown/JSON files read the same data, so editing a value here changes every copy of it. |
 | `src/lib/` | `jsonld.ts` (structured data), `markdown.ts` (llms files, per-page markdown), `sitemap.ts`, `negotiate.js` (used by the Pages Function). |
 | `functions/` | Cloudflare Pages Functions for `/` and `/organizations/` only: markdown content negotiation. |
 | `public/` | Copied to the site root verbatim: `assets/` (CSS, JS, images), `brand-assets/` (style guide and logo lockups), `style.css` (legacy shim), `_headers`, `_redirects`, `robots.txt`, `.well-known/ai.txt`. |
-| `scripts/check-routes.mjs` | The post-build check. |
+| `scripts/` | `check-routes.mjs` (the post-build check) and `negotiate.test.mjs` (`npm test`). |
 | `docs/` | `deployment.md` (Cloudflare setup and go-live), `search-visibility.md`. |
 
 ## Pages
@@ -72,7 +73,7 @@ If a link changes, update `site.ts`, the matching `href`s in `src/pages/index.as
 - **Author and date on every page.** `<meta name="author">`, the `WebPage` author/publisher, and a "Last updated" date in the footer (`<time datetime>`). **When a page's copy or facts change, update its date in `PAGE_UPDATED` (`src/data/site.ts`)**: it drives the footer, `dateModified` and the sitemap `lastmod`.
 - **Home FAQ.** A visible "Frequently asked questions" section and the `FAQPage` node, both rendered from `FAQ` in `src/data/site.ts`, so the structured data always matches the page (a Google requirement; `check:routes` verifies every question is visible). Answers restate only facts the site already states; keep it that way.
 - **Sitemaps:** `sitemap-index.xml` → `sitemap-pages.xml` (both pages, with `lastmod`). `robots.txt` points at the index.
-- **Markdown for AI agents.** `/llms.txt` (index: definition, pages, channels, intents, FAQ, project links), `/llms-full.txt` (the full text of both pages), `/index.md` and `/organizations/index.md` (each page as markdown, linked from its `<head>` as `rel="alternate" type="text/markdown"`). A request to `/` or `/organizations/` with `Accept: text/markdown` gets that markdown from the Pages Function in `functions/`; every other request gets the static HTML (with `Vary: Accept`). All of it is generated from `src/data/site.ts`.
+- **Markdown for AI agents.** `/llms.txt` (index: definition, pages, channels, intents, FAQ, project links), `/llms-full.txt` (the full text of both pages), `/index.md` and `/organizations/index.md` (each page as markdown, linked from its `<head>` as `rel="alternate" type="text/markdown"`). A request to `/` or `/organizations/` whose `Accept` header names `text/markdown` exactly, with q > 0 and no lower than `text/html`, gets that markdown from the Pages Function in `functions/`; every other request gets the static HTML (with `Vary: Accept`). All of it is generated from `src/data/site.ts`.
 - **`/ai/summary.json`** and **`/ai/faq.json`** restate the same facts as JSON; **`/.well-known/ai.txt`** states the same allow-all policy as `robots.txt`. The engine's GitHub releases Atom feed is linked from every `<head>` as the update feed.
 - **The GEO score.** openbiblestories.org and translationcore.com keep their [geo-optimizer](https://github.com/auriti-labs/geo-optimizer-skill) score in the 90s. Run the audit against production (not a pages.dev preview, which sends `X-Robots-Tag: noindex`) after any change to `<head>`, JSON-LD, the FAQ or `robots.txt`:
 

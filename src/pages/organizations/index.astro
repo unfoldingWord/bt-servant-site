@@ -1,7 +1,10 @@
 ---
 // Organizations page. Markup carried over verbatim from the static site's
-// organizations.html (asset paths made root-absolute).
+// organizations.html (asset paths made root-absolute). The Use / Customize /
+// Integrate cards are rendered from ORG_PATHS in src/data/site.ts, the same
+// source as /organizations/index.md and /llms.txt.
 import Base from '../../layouts/Base.astro';
+import { ORG_PATHS, WEB_APP_HOME_URL, CONTACT_URL, GITHUB_URL } from '../../data/site';
 ---
 <Base pageKey="organizations" bodyClass="page">
 
@@ -27,39 +30,23 @@ import Base from '../../layouts/Base.astro';
       </div>
 
       <div class="org__cards">
-        <details class="org-card" id="use" open>
-          <summary>
-            <h3>Use</h3>
-            <p>Free access for your team on WhatsApp, Telegram, and the web.</p>
-          </summary>
-          <div class="org-card__body">
-            <p><strong>Best for:</strong> teams, pilots, workshops.</p>
-            <a href="https://app.btservant.ai" class="btn btn--bronze btn--sm">Start now</a>
-          </div>
-        </details>
-
-        <details class="org-card" id="customize">
-          <summary>
-            <h3>Customize</h3>
-            <p>Your resources, language, tone, and workflows.</p>
-          </summary>
-          <div class="org-card__body">
-            <p>Custom modes (Trainer, Translator, Checking), white-label deployments, and production support &mdash; through partner commitments.</p>
-            <a href="https://unfoldingword.org/contact/" class="btn btn--navy btn--sm" target="_blank" rel="noopener">Explore customization</a>
-          </div>
-        </details>
-
-        <details class="org-card" id="integrate">
-          <summary>
-            <h3>Integrate</h3>
-            <p>Bring trusted guidance into your own apps.</p>
-          </summary>
-          <div class="org-card__body">
-            <p>The engine is open source &mdash; embed it or self-host it, free.</p>
-            <a href="https://github.com/unfoldingWord/bt-servant-engine" class="btn btn--ghost btn--sm" target="_blank" rel="noopener">GitHub</a>
-            <a href="https://unfoldingword.org/contact/" class="btn btn--navy btn--sm" target="_blank" rel="noopener">Discuss an integration</a>
-          </div>
-        </details>
+        {ORG_PATHS.map((path, i) => (
+          <details class="org-card" id={path.id} open={i === 0}>
+            <summary>
+              <h3>{path.name}</h3>
+              <p>{path.summary}</p>
+            </summary>
+            <div class="org-card__body">
+              <p set:html={path.detail} />
+              {path.id === 'use' && <a href={WEB_APP_HOME_URL} class="btn btn--bronze btn--sm">Start now</a>}
+              {path.id === 'customize' && <a href={CONTACT_URL} class="btn btn--navy btn--sm" target="_blank" rel="noopener">Explore customization</a>}
+              {path.id === 'integrate' && <Fragment>
+                <a href={GITHUB_URL} class="btn btn--ghost btn--sm" target="_blank" rel="noopener">GitHub</a>
+                <a href={CONTACT_URL} class="btn btn--navy btn--sm" target="_blank" rel="noopener">Discuss an integration</a>
+              </Fragment>}
+            </div>
+          </details>
+        ))}
       </div>
     </div>
   </section>

@@ -75,14 +75,16 @@ export const CHANNELS = [
   { name: 'Web App', url: WEB_APP_URL, note: 'app.btservant.ai' },
 ];
 
-/** The six starting points on the home page ("What would you like to do today?"). */
+/** The six starting points on the home page ("What would you like to do
+ *  today?"). `key` is the intent's data-intent value (also used by
+ *  public/assets/js/main.js and the ?intent= link to the web app). */
 export const INTENTS = [
-  { name: 'Understand', text: 'What a passage means.' },
-  { name: 'Study', text: 'Context, questions, resources.' },
-  { name: 'Teach', text: 'Lessons and discussions.' },
-  { name: 'Translate', text: 'Terms, meaning, decisions.' },
-  { name: 'Share', text: 'The gospel, said clearly.' },
-  { name: 'Equip', text: 'Train and multiply leaders.' },
+  { key: 'understand', name: 'Understand', text: 'What a passage means.' },
+  { key: 'study', name: 'Study', text: 'Context, questions, resources.' },
+  { key: 'teach', name: 'Teach', text: 'Lessons and discussions.' },
+  { key: 'translate', name: 'Translate', text: 'Terms, meaning, decisions.' },
+  { key: 'share', name: 'Share', text: 'The gospel, said clearly.' },
+  { key: 'equip', name: 'Equip', text: 'Train and multiply leaders.' },
 ];
 
 /** "Guidance you can trust" cards. */
@@ -101,19 +103,23 @@ export const PARTNERS = [
   { name: 'Spoken Worldwide', url: 'https://spoken.org/', logo: '/assets/images/partners/spoken-worldwide.png' },
 ];
 
-/** The organizations page: Use → Customize → Integrate. */
+/** The organizations page: Use → Customize → Integrate. `id` is the card's
+ *  anchor (/organizations/#use …). `detail` may carry inline HTML (<strong>). */
 export const ORG_PATHS = [
   {
+    id: 'use',
     name: 'Use',
     summary: 'Free access for your team on WhatsApp, Telegram, and the web.',
-    detail: 'Best for: teams, pilots, workshops.',
+    detail: '<strong>Best for:</strong> teams, pilots, workshops.',
   },
   {
+    id: 'customize',
     name: 'Customize',
     summary: 'Your resources, language, tone, and workflows.',
     detail: 'Custom modes (Trainer, Translator, Checking), white-label deployments, and production support — through partner commitments.',
   },
   {
+    id: 'integrate',
     name: 'Integrate',
     summary: 'Bring trusted guidance into your own apps.',
     detail: 'The engine is open source — embed it or self-host it, free.',
@@ -181,6 +187,7 @@ export function markdownText(html: string): string {
     .replace(/<a href="([^"]+)">([^<]+)<\/a>/g, (_, href: string, text: string) =>
       `[${text}](${href.startsWith('/') ? SITE_URL + href : href})`
     )
+    .replace(/<strong>([^<]+)<\/strong>/g, '**$1**')
     .replace(/<[^>]+>/g, '')
     .trim();
 }

@@ -1,10 +1,21 @@
 ---
 // Home page. Markup carried over verbatim from the static site's index.html
-// (asset paths made root-absolute). Shared copy for /llms.txt etc. lives in
-// src/data/site.ts.
+// (asset paths made root-absolute). Copy that also appears in the JSON-LD,
+// /llms.txt or the markdown (intents, "why" cards, partners, FAQ) is
+// rendered from src/data/site.ts so the two cannot drift.
 import Base from '../layouts/Base.astro';
-import { FAQ, SITE_URL } from '../data/site';
+import { FAQ, SITE_URL, INTENTS, WHY, PARTNERS } from '../data/site';
 import { faqNode } from '../lib/jsonld';
+
+// Each intent's line icon (markup only; the copy is INTENTS in site.ts).
+const INTENT_ICONS: Record<string, string> = {
+  understand: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 12s3.5-6.5 10-6.5S22 12 22 12s-3.5 6.5-10 6.5S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg>',
+  study: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 5h7v15H4a1 1 0 01-1-1V6a1 1 0 011-1z"/><path d="M20 5h-7v15h7a1 1 0 001-1V6a1 1 0 00-1-1z"/></svg>',
+  teach: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 5h14v10H8l-4 4V5z"/><path d="M21 9v8l-3-3h-4"/></svg>',
+  translate: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 3 2.5 15 0 18M12 3c-2.5 3-2.5 15 0 18"/></svg>',
+  share: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20.5 3.5A11 11 0 003.2 17.2L2 22l4.9-1.3A11 11 0 1020.5 3.5z"/></svg>',
+  equip: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="8" cy="8" r="3"/><path d="M2 20c0-3.3 2.7-6 6-6s6 2.7 6 6"/><path d="M15 8h5M17.5 5.5v5"/></svg>',
+};
 ---
 <Base pageKey="home" bodyClass="home" jsonLd={[faqNode(`${SITE_URL}/`, FAQ)]}>
 
@@ -101,30 +112,12 @@ import { faqNode } from '../lib/jsonld';
 
       <div class="intents__layout">
         <div class="intents__list" role="tablist" aria-label="Choose what you'd like to do">
-          <button class="intent-btn is-active" data-intent="understand" role="tab" aria-selected="true" type="button">
-            <span class="intent-btn__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 12s3.5-6.5 10-6.5S22 12 22 12s-3.5 6.5-10 6.5S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg></span>
-            <span class="intent-btn__text"><strong>Understand</strong><span>What a passage means.</span></span>
-          </button>
-          <button class="intent-btn" data-intent="study" role="tab" aria-selected="false" type="button">
-            <span class="intent-btn__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 5h7v15H4a1 1 0 01-1-1V6a1 1 0 011-1z"/><path d="M20 5h-7v15h7a1 1 0 001-1V6a1 1 0 00-1-1z"/></svg></span>
-            <span class="intent-btn__text"><strong>Study</strong><span>Context, questions, resources.</span></span>
-          </button>
-          <button class="intent-btn" data-intent="teach" role="tab" aria-selected="false" type="button">
-            <span class="intent-btn__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 5h14v10H8l-4 4V5z"/><path d="M21 9v8l-3-3h-4"/></svg></span>
-            <span class="intent-btn__text"><strong>Teach</strong><span>Lessons and discussions.</span></span>
-          </button>
-          <button class="intent-btn" data-intent="translate" role="tab" aria-selected="false" type="button">
-            <span class="intent-btn__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 3 2.5 15 0 18M12 3c-2.5 3-2.5 15 0 18"/></svg></span>
-            <span class="intent-btn__text"><strong>Translate</strong><span>Terms, meaning, decisions.</span></span>
-          </button>
-          <button class="intent-btn" data-intent="share" role="tab" aria-selected="false" type="button">
-            <span class="intent-btn__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20.5 3.5A11 11 0 003.2 17.2L2 22l4.9-1.3A11 11 0 1020.5 3.5z"/></svg></span>
-            <span class="intent-btn__text"><strong>Share</strong><span>The gospel, said clearly.</span></span>
-          </button>
-          <button class="intent-btn" data-intent="equip" role="tab" aria-selected="false" type="button">
-            <span class="intent-btn__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="8" cy="8" r="3"/><path d="M2 20c0-3.3 2.7-6 6-6s6 2.7 6 6"/><path d="M15 8h5M17.5 5.5v5"/></svg></span>
-            <span class="intent-btn__text"><strong>Equip</strong><span>Train and multiply leaders.</span></span>
-          </button>
+          {INTENTS.map((intent, i) => (
+            <button class={i === 0 ? 'intent-btn is-active' : 'intent-btn'} data-intent={intent.key} role="tab" aria-selected={i === 0 ? 'true' : 'false'} type="button">
+              <span class="intent-btn__icon" aria-hidden="true" set:html={INTENT_ICONS[intent.key]} />
+              <span class="intent-btn__text"><strong>{intent.name}</strong><span>{intent.text}</span></span>
+            </button>
+          ))}
         </div>
 
         <div class="intents__preview" id="intentPreview" data-intent="understand">
@@ -155,21 +148,14 @@ import { faqNode } from '../lib/jsonld';
       </div>
 
       <div class="why__grid">
-        <div class="why-card">
-          <h4>Trusted</h4>
-          <p>Grounded in vetted biblical resources &mdash; not the open internet.</p>
-        </div>
-
-        <div class="why-card">
-          <h4>Natural</h4>
-          <p>Text or voice. No commands to learn.</p>
-        </div>
-
-        <div class="why-card">
-          <h4>Human-centered</h4>
-          <p>Supports pastors, teachers, and translators. Never replaces them.</p>
-        </div>
+        {WHY.map((card) => (
+          <div class="why-card">
+            <h4>{card.name}</h4>
+            <p>{card.text}</p>
+          </div>
+        ))}
       </div>
+
     </div>
   </section>
 
@@ -184,18 +170,11 @@ import { faqNode } from '../lib/jsonld';
     </div>
     <div class="partner-bar">
       <div class="container partner-banner">
-        <a class="partner-banner__logo" href="https://www.unfoldingword.org/" target="_blank" rel="noopener">
-          <img src="/assets/images/partners/unfoldingword.png" alt="unfoldingWord" loading="lazy" />
-        </a>
-        <a class="partner-banner__logo" href="https://www.etenlab.org" target="_blank" rel="noopener">
-          <img src="/assets/images/partners/eten-innovation-lab.png" alt="ETEN Innovation Lab" loading="lazy" />
-        </a>
-        <a class="partner-banner__logo" href="https://www.wordcollective.com/" target="_blank" rel="noopener">
-          <img src="/assets/images/partners/word-collective.png" alt="Word Collective" loading="lazy" />
-        </a>
-        <a class="partner-banner__logo" href="https://spoken.org/" target="_blank" rel="noopener">
-          <img src="/assets/images/partners/spoken-worldwide.png" alt="Spoken Worldwide" loading="lazy" />
-        </a>
+        {PARTNERS.map((partner) => (
+          <a class="partner-banner__logo" href={partner.url} target="_blank" rel="noopener">
+            <img src={partner.logo} alt={partner.name} loading="lazy" />
+          </a>
+        ))}
       </div>
     </div>
   </section>

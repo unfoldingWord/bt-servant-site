@@ -66,7 +66,7 @@ ${WHY.map((w) => `- **${w.name}**: ${w.text}`).join('\n')}
 
 ## For organizations
 
-${ORG_PATHS.map((o) => `- **${o.name}**: ${o.summary} ${o.detail}`).join('\n')}
+${ORG_PATHS.map((o) => `- **${o.name}**: ${o.summary} ${markdownText(o.detail)}`).join('\n')}
 
 More: [BT Servant for Organizations](${url('/organizations/')})
 
@@ -156,7 +156,7 @@ URL: ${url('/organizations/')} \u2014 last updated ${PAGE_UPDATED.organizations}
 
 Use It \u2192 Customize It \u2192 Integrate It
 
-${ORG_PATHS.map((o) => `## ${o.name}\n\n${o.summary}\n\n${o.detail}`).join('\n\n')}
+${ORG_PATHS.map((o) => `## ${o.name}\n\n${o.summary}\n\n${markdownText(o.detail)}`).join('\n\n')}
 
 ## Ready to bring BT Servant to your team?
 
