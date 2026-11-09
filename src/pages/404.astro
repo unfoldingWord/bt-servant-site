@@ -1,3 +1,9 @@
+---
+// Branded 404, carried over verbatim from the static site's 404.html (its own
+// standalone markup and inline styles, no shared layout). Served by
+// Cloudflare Pages for any missing URL: no canonical, not indexed.
+import GoogleAnalytics from '../components/GoogleAnalytics.astro';
+---
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,17 +12,11 @@
     <title>Page not found — BT Servant</title>
     <link rel="icon" type="image/png" href="/assets/images/favicon.png" />
 
-    <!-- Google Analytics 4 -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-LT1CE2F1PZ"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-LT1CE2F1PZ');
-    </script>
+    <meta name="robots" content="noindex" />
+    <GoogleAnalytics />
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,500;6..72,600&family=Inter:wght@400;500&display=swap" />
-    <style>
+    <style is:inline>
         :root {
             --bt-navy: #23282C; --bt-navy-deep: #15181B; --bt-bronze: #FF5A1F;
             --bt-paper: #FAF9F6; --bt-muted: #9CA1A5;

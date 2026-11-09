@@ -1,0 +1,13 @@
+{
+  // Cloudflare Pages config for btservant.ai.
+  //
+  // `name` MUST match the Cloudflare Pages project name ("bt-servant-site").
+  // A mismatch fails the build. See docs/deployment.md for the one-time setup.
+  "name": "bt-servant-site",
+  "compatibility_date": "2026-11-01",
+
+  // Astro builds the static site into dist/. Pages serves clean URLs
+  // (/organizations/ -> /organizations/index.html) and reads `_redirects` and
+  // `_headers` from the output (copied there from public/).
+  "pages_build_output_dir": "dist"
+}

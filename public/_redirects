@@ -1,0 +1,12 @@
+# One canonical host: https://btservant.ai (the `site` in astro.config.mjs and
+# every canonical, sitemap and JSON-LD URL).
+#
+# Host-level redirects are NOT done here: Cloudflare Pages ignores
+# domain-level rules in this file. www.btservant.ai → btservant.ai and
+# btservant.com / www.btservant.com → btservant.ai are zone Redirect Rules
+# (see docs/deployment.md).
+
+# The static site used .html file names; send them straight to the canonical
+# trailing-slash URL in one hop.
+/index.html           /                301
+/organizations.html   /organizations/  301

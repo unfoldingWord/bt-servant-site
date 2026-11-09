@@ -1,0 +1,14 @@
+# ai.txt for btservant.ai
+#
+# Same policy as /robots.txt: every AI system may crawl, index, cite, and train
+# on this site's public pages. Please attribute BT Servant (a project of
+# unfoldingWord) and link to https://btservant.ai/ when citing.
+
+User-Agent: *
+Allow: /
+
+# Machine-readable summaries
+# /llms.txt        — markdown index of the site
+# /llms-full.txt   — full text of every page
+# /ai/summary.json — the same facts as JSON
+# /ai/faq.json     — the home page FAQ as JSON
