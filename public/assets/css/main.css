@@ -158,6 +158,9 @@ h1, h2, h3, h4 { font-family: var(--font-heading); color: var(--bt-heading); mar
 }
 .hero__rotator .caret { display: inline-block; width: 4px; height: 0.95em; background: var(--bt-bronze); margin-left: 6px; vertical-align: -0.08em; animation: btCaret 0.85s steps(1) infinite; }
 .hero__rotator-tail { color: var(--bt-heading); font-style: normal; display: block; margin-top: 2px; }
+/* Localization: a hero line whose ending is only punctuation ("।", ".")
+   keeps it inline after the rotating word (HomePage.astro). */
+.hero__rotator-punct { color: var(--bt-heading); font-style: normal; }
 @keyframes btCaret { 0%, 55% { opacity: 1; } 56%, 100% { opacity: 0; } }
 @media (prefers-reduced-motion: reduce) { .hero__rotator .caret { display: none; } }
 .hero__sub { color: var(--bt-muted); font-size: 1.08rem; max-width: 460px; margin: 20px 0 30px; }
@@ -364,15 +367,20 @@ html[data-script="han"] { --font-heading: 'Noto Sans SC', 'Inter', system-ui, sa
 /* Tall scripts need more line height than Latin. */
 html[data-script="nastaliq"] body { line-height: 2; }
 html[data-script="nastaliq"] :is(h1, h2, h3, h4) { line-height: 1.7; }
+html[data-script="nastaliq"] :is(.hero__title, .hero__rotator) { line-height: 1.9; }
 html[data-script="myanmar"] body { line-height: 1.9; }
 html[data-script="myanmar"] :is(h1, h2, h3, h4) { line-height: 1.6; }
 /* The site uses italic Newsreader for accents; these scripts have no italic. */
-html:is([data-script="arabic"], [data-script="nastaliq"], [data-script="han"], [data-script="myanmar"], [data-script="devanagari"], [data-script="bengali"]) :is(em, .cta-banner__brandline) { font-style: normal; }
+html:is([data-script="arabic"], [data-script="nastaliq"], [data-script="han"], [data-script="myanmar"], [data-script="devanagari"], [data-script="bengali"]) :is(em, .cta-banner__brandline, .hero__rotator-text) { font-style: normal; }
 /* Letter-spaced uppercase labels make no sense outside Latin and Cyrillic. */
 html:not([data-script="latin"]):not([data-script="cyrillic"]) .site-footer__col h5 { letter-spacing: 0; }
 
 /* Right-to-left (ar, fa, ur): mirror the rules main.css writes with
    physical left/right. */
+/* The skip link is parked off-screen to the left; in RTL that side is
+   scrollable, so park it off the right edge instead. */
+[dir="rtl"] .skip-link { left: auto; right: -9999px; }
+[dir="rtl"] .skip-link:focus { right: 0; }
 [dir="rtl"] .site-nav { margin-left: 0; margin-right: auto; }
 [dir="rtl"] .hero__rotator .caret { margin-left: 0; margin-right: 6px; }
 [dir="rtl"] .intent-btn, [dir="rtl"] .reach__desktop .reach__panel { text-align: right; }
