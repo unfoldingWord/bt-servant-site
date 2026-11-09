@@ -10,3 +10,12 @@
 # trailing-slash URL in one hop.
 /index.html           /                301
 /organizations.html   /organizations/  301
+
+# Issue #6 asked for the Brazilian Portuguese page at /pt-BR/. Like the sister
+# sites, the locale lives at /pt/ (hreflang pt-BR); these send the tag-style
+# address there in one hop. Pages matches _redirects paths case-sensitively,
+# so both spellings are listed.
+/pt-BR     /pt/         301
+/pt-BR/*   /pt/:splat   301
+/pt-br     /pt/         301
+/pt-br/*   /pt/:splat   301

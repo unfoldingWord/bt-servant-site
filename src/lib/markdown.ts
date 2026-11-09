@@ -23,6 +23,7 @@ import {
   PAGE_UPDATED,
   markdownText,
 } from '../data/site';
+import { locales, defaultLocale, localePath } from '../i18n/config';
 
 export function textResponse(body: string): Response {
   return new Response(body, { headers: { 'Content-Type': 'text/markdown; charset=utf-8' } });
@@ -49,6 +50,13 @@ ${PRODUCT_NAME} is a project of [${PUBLISHER_NAME}](${PUBLISHER_URL}). It equips
 ## Pages
 
 ${pages}
+
+## Languages
+
+The site is published in 16 languages. English is at the root; the others are ${locales
+    .filter((l) => l.code !== defaultLocale)
+    .map((l) => `[${l.name}](${url(localePath(l.code, 'home'))})`)
+    .join(', ')}. Each page has the same URL under its language code (for example ${url(localePath('es', 'organizations'))}). This file and /llms-full.txt are in English.
 
 ## Where to use it
 

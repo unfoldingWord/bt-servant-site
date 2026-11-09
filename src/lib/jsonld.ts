@@ -94,14 +94,14 @@ export function appNode() {
 /** The page itself: its own title and meta description (the same strings as
  *  <title> and <meta name="description">), who wrote it, and when it last
  *  changed (PAGE_UPDATED: the date the footer shows). */
-export function webPageNode(url: string, name: string, description: string, dateModified: string) {
+export function webPageNode(url: string, name: string, description: string, dateModified: string, inLanguage = 'en') {
   return {
     '@type': 'WebPage',
     '@id': `${url}#webpage`,
     url,
     name,
     description,
-    inLanguage: 'en',
+    inLanguage,
     isPartOf: { '@id': WEBSITE_ID },
     about: { '@id': APP_ID },
     author: { '@id': PUBLISHER_ID },
@@ -111,12 +111,12 @@ export function webPageNode(url: string, name: string, description: string, date
 }
 
 /** FAQPage built from the same strings the page shows. */
-export function faqNode(url: string, items: { q: string; a: string }[]) {
+export function faqNode(url: string, items: { q: string; a: string }[], inLanguage = 'en') {
   return {
     '@type': 'FAQPage',
     '@id': `${url}#faq`,
     url,
-    inLanguage: 'en',
+    inLanguage,
     isPartOf: { '@id': WEBSITE_ID },
     mainEntity: items.map(({ q, a }) => ({
       '@type': 'Question',

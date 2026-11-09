@@ -1,0 +1,158 @@
+{
+  "meta": {
+    "title": "BT Servant — Trusted Scripture guidance, in the tools you already use",
+    "description": "BT Servant equips disciples to understand, study, teach, translate, share, and equip others with God’s Word — free on WhatsApp, Telegram, and the web."
+  },
+  "hero": {
+    "title": "BT Servant equips disciples",
+    "rotatorBefore": "",
+    "rotatorWords": ["to understand", "to study", "to teach", "to translate", "to share"],
+    "rotatorAfter": "God&rsquo;s Word.",
+    "sub": "Ask in text or voice. Get trusted, context-aware guidance &mdash; inside the apps you already use.",
+    "ctaWhatsapp": "Start on WhatsApp",
+    "ctaWeb": "Open the Web App"
+  },
+  "reach": {
+    "title": "Available wherever you serve.",
+    "sub": "Free, in the apps you already know.",
+    "openWhatsapp": "Open in WhatsApp",
+    "openTelegram": "Open in Telegram",
+    "openSignal": "Open in Signal",
+    "openWeb": "Open Web App",
+    "tabsLabel": "Choose a platform",
+    "tabWeb": "Web App",
+    "copyLink": "Copy access link",
+    "linkCopied": "Link copied!",
+    "scanToOpen": "Scan to open",
+    "channels": {
+      "whatsapp": {
+        "heading": "Use BT Servant on WhatsApp",
+        "steps": ["Scan the QR code, or tap “Open in WhatsApp.”", "Send any question.", "Reply in text or voice."],
+        "note": "",
+        "qrAlt": "Scan to open BT Servant on WhatsApp"
+      },
+      "telegram": {
+        "heading": "Use BT Servant on Telegram",
+        "steps": ["Scan the QR code, or tap “Open in Telegram” (or search @bt_servant_bot).", "Tap Start and send any question.", "Reply in text or voice."],
+        "note": "@bt_servant_bot",
+        "qrAlt": "Scan to open BT Servant on Telegram"
+      },
+      "signal": {
+        "heading": "Use BT Servant on Signal",
+        "steps": ["Scan the QR code, or tap “Open in Signal.”", "Send any question.", "Reply in text or voice."],
+        "note": "",
+        "qrAlt": "Scan to open BT Servant on Signal"
+      },
+      "web": {
+        "heading": "Use BT Servant on the Web",
+        "steps": ["Scan the QR code, or open app.btservant.ai in any browser.", "Ask your first question.", "Continue on your phone later."],
+        "note": "",
+        "qrAlt": "Scan to open the BT Servant web app"
+      }
+    },
+    "langs": "English &middot; Indonesian &middot; Spanish &middot; <em>and many more languages</em> &middot; Audio supported"
+  },
+  "intents": {
+    "title": "What would you like to do today?",
+    "sub": "Pick a starting point. The rest is a conversation.",
+    "listLabel": "Choose what you'd like to do",
+    "items": [
+      {
+        "name": "Understand",
+        "text": "What a passage means.",
+        "cta": "Start understanding",
+        "alt": "A real WhatsApp conversation with BT Servant: a user asks for help understanding Romans 12:1-2, and BT Servant replies with the passage text and translation notes."
+      },
+      {
+        "name": "Study",
+        "text": "Context, questions, resources.",
+        "cta": "Start studying",
+        "alt": "A real WhatsApp conversation with BT Servant: a user asks about the historical context of Philippians, and BT Servant replies with background from Bible study resources."
+      },
+      {
+        "name": "Teach",
+        "text": "Lessons and discussions.",
+        "cta": "Start teaching",
+        "alt": "A real WhatsApp conversation with BT Servant: a user asks for help preparing a lesson on the Good Samaritan, and BT Servant replies with a lesson outline and key insights."
+      },
+      {
+        "name": "Translate",
+        "text": "Terms, meaning, decisions.",
+        "cta": "Start translating",
+        "alt": "A real WhatsApp conversation with BT Servant: a user asks how to translate the word grace for a language with no equivalent word, and BT Servant replies with guidance from Translation Words and Translation Academy."
+      },
+      {
+        "name": "Share",
+        "text": "The gospel, said clearly.",
+        "cta": "Start sharing",
+        "alt": "A real WhatsApp conversation with BT Servant: a user asks for help explaining the gospel, and BT Servant replies with a clear outline of key gospel passages."
+      },
+      {
+        "name": "Equip",
+        "text": "Train and multiply leaders.",
+        "cta": "Start equipping",
+        "alt": "A real WhatsApp conversation with BT Servant: a user asks for help training multilingual groups in Bible translation principles, and BT Servant replies with clarifying questions to tailor the training."
+      }
+    ],
+    "continueOn": "Continue on:",
+    "continueWeb": "Web"
+  },
+  "why": {
+    "title": "Guidance you can trust",
+    "items": [
+      { "name": "Trusted", "text": "Grounded in vetted biblical resources &mdash; not the open internet." },
+      { "name": "Natural", "text": "Text or voice. No commands to learn." },
+      { "name": "Human-centered", "text": "Supports pastors, teachers, and translators. Never replaces them." }
+    ]
+  },
+  "partners": {
+    "title": "Built with ministries. Shaped by real use."
+  },
+  "faq": {
+    "title": "Frequently asked questions",
+    "items": [
+      {
+        "q": "What is BT Servant?",
+        "a": "BT Servant is a free AI assistant from unfoldingWord that gives trusted, context-aware Scripture guidance through conversation, inside the messaging apps people already use and on the web. It helps disciples understand, study, teach, translate, and share God’s Word, and equip others to do the same."
+      },
+      {
+        "q": "What can I ask BT Servant?",
+        "a": "Start from what you need: understand what a passage means; study its context, questions, and resources; teach with lessons and discussions; translate terms, meaning, and decisions; share the gospel clearly; or equip others to train and multiply leaders. The rest is a conversation."
+      },
+      {
+        "q": "Where can I use BT Servant?",
+        "a": "On WhatsApp (+1 555-819-6461), on Telegram (@bt_servant_bot), on Signal, and in any web browser at <a href=\"https://app.btservant.ai/chat\">app.btservant.ai</a>. Ask in text or voice; there are no commands to learn."
+      },
+      {
+        "q": "How do I start a conversation?",
+        "a": "Scan the QR code on this page with your phone, or tap the button for the app you already use. Send any question, then reply in text or voice. You can begin in a browser and continue on your phone later."
+      },
+      {
+        "q": "Which languages does BT Servant support?",
+        "a": "English, Indonesian, Spanish, and many more languages. You can ask and get answers in text or by voice."
+      },
+      {
+        "q": "Where do BT Servant’s answers come from?",
+        "a": "Answers are grounded in vetted biblical resources rather than the internet at large. Translation questions, for example, draw on Translation Words and Translation Academy. BT Servant supports pastors, teachers, and translators; it never replaces them."
+      },
+      {
+        "q": "Who makes BT Servant?",
+        "a": "BT Servant is a project of <a href=\"https://unfoldingword.org/about-2/\">unfoldingWord</a>, built with ministry partners ETEN Innovation Lab, Word Collective, and Spoken Worldwide. Its engine is published on <a href=\"https://github.com/unfoldingWord/bt-servant-engine\">GitHub</a>, free to embed or self-host."
+      },
+      {
+        "q": "Can my organization use BT Servant?",
+        "a": "Yes. Teams can <a href=\"/organizations/\">use it, customize it, or integrate it</a>: free access for the whole team; custom modes such as Trainer, Translator, and Checking; or the engine itself inside your own tools."
+      }
+    ]
+  },
+  "cta": {
+    "title": "What would you like to do next?",
+    "individuals": "Individuals",
+    "startWhatsapp": "Start on WhatsApp",
+    "webApp": "Web App",
+    "organizations": "Organizations",
+    "useWithTeam": "Use it with your team",
+    "customize": "Customize",
+    "integrate": "Integrate"
+  }
+}

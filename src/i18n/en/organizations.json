@@ -1,0 +1,37 @@
+{
+  "meta": {
+    "title": "BT Servant for Organizations — Use it, customize it, integrate it",
+    "description": "Bring BT Servant’s trusted, context-aware Scripture guidance to your team — free to use, customizable for your resources and workflows, and open source to integrate into your own apps."
+  },
+  "hero": {
+    "title": "For organizations",
+    "sub": "Bring trusted, context-aware Scripture guidance to your team &mdash; start free, customize as you grow, or integrate it into your own tools."
+  },
+  "path": ["Use It", "Customize It", "Integrate It"],
+  "cards": [
+    {
+      "name": "Use",
+      "summary": "Free access for your team on WhatsApp, Telegram, and the web.",
+      "detail": "<strong>Best for:</strong> teams, pilots, workshops.",
+      "buttons": ["Start now"]
+    },
+    {
+      "name": "Customize",
+      "summary": "Your resources, language, tone, and workflows.",
+      "detail": "Custom modes (Trainer, Translator, Checking), white-label deployments, and production support &mdash; through partner commitments.",
+      "buttons": ["Explore customization"]
+    },
+    {
+      "name": "Integrate",
+      "summary": "Bring trusted guidance into your own apps.",
+      "detail": "The engine is open source &mdash; embed it or self-host it, free.",
+      "buttons": ["GitHub", "Discuss an integration"]
+    }
+  ],
+  "cta": {
+    "title": "Ready to bring BT Servant to your team?",
+    "useWithTeam": "Use it with your team",
+    "customize": "Customize",
+    "integrate": "Integrate"
+  }
+}

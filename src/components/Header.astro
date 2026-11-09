@@ -1,25 +1,31 @@
 ---
+// The BT Servant header, markup carried over from the static site. The
+// language switcher is the one addition: the last item in the nav, so on
+// narrow screens it sits behind the same menu button as the links.
 import { WEB_APP_LOGIN_URL } from '../data/site';
-interface Props { anchorBase: string }
-const { anchorBase } = Astro.props;
+import { localePath, type PageSlug } from '../i18n/config';
+import LanguageSwitcher from './LanguageSwitcher.astro';
+interface Props { locale: string; slug: PageSlug; ui: any; anchorBase: string }
+const { locale, slug, ui, anchorBase } = Astro.props;
 ---
 <header class="site-header" role="banner">
   <div class="container site-header__inner">
-    <a class="site-logo" href="/" aria-label="BT Servant home">
+    <a class="site-logo" href={localePath(locale, 'home')} aria-label={ui.logoHomeLabel}>
       <img class="site-logo__full" src="/assets/images/logo-full.png" alt="BT Servant" />
     </a>
-    <nav class="site-nav" id="siteNav" aria-label="Primary">
+    <nav class="site-nav" id="siteNav" aria-label={ui.nav.label}>
       <ul class="nav-menu">
-        <li><a href={`${anchorBase}#what-you-can-do`}>What You Can Do</a></li>
-        <li><a href={`${anchorBase}#where-to-use-it`}>Where to Use It</a></li>
-        <li><a href={`${anchorBase}#why-bt-servant`}>Why BT Servant</a></li>
-        <li><a href="/organizations/">Organizations</a></li>
+        <li><a href={`${anchorBase}#what-you-can-do`} set:html={ui.nav.whatYouCanDo} /></li>
+        <li><a href={`${anchorBase}#where-to-use-it`} set:html={ui.nav.whereToUseIt} /></li>
+        <li><a href={`${anchorBase}#why-bt-servant`} set:html={ui.nav.whyBtServant} /></li>
+        <li><a href={localePath(locale, 'organizations')} set:html={ui.nav.organizations} /></li>
+        <li class="nav-menu__lang"><LanguageSwitcher locale={locale} slug={slug} label={ui.languageLabel} /></li>
       </ul>
     </nav>
     <div class="site-header__cta">
-      <a href={WEB_APP_LOGIN_URL} class="btn btn--navy btn--sm" data-track="header_cta" data-track-name="start_conversation">Start a Conversation</a>
+      <a href={WEB_APP_LOGIN_URL} class="btn btn--navy btn--sm" data-track="header_cta" data-track-name="start_conversation" set:html={ui.headerCta} />
     </div>
-    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="siteNav">
+    <button class="nav-toggle" id="navToggle" aria-label={ui.toggleMenu} aria-expanded="false" aria-controls="siteNav">
       <span></span><span></span><span></span>
     </button>
   </div>
