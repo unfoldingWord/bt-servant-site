@@ -97,7 +97,7 @@ curl -fsS https://btservant.ai/robots.txt > /tmp/robots.txt \
 
 ## Google Analytics
 
-`src/components/GoogleAnalytics.astro` emits the same GA4 snippet the static site used (measurement ID `G-LT1CE2F1PZ`, override with `PUBLIC_GA_MEASUREMENT_ID`), in production builds only. The `gtag.js` loader is fetched only on `btservant.ai` and `www.btservant.ai`, so pages.dev previews send nothing. `public/assets/js/main.js` sends the click events (`data-track` attributes, `intent_select`, `reach_tab`, `copy_link`). The 404 page loads the same tag.
+`src/components/GoogleAnalytics.astro` emits the GA4 snippet for the btservant.ai property in the unfoldingWord account (measurement ID `G-94NXJWTB9Q`; the old static site wrongly used translationCore.com's `G-LT1CE2F1PZ`). It loads in production builds only, and `PUBLIC_GA_MEASUREMENT_ID` overrides the ID. The `gtag.js` loader is fetched only on `btservant.ai` and `www.btservant.ai`, so pages.dev previews send nothing. `public/assets/js/main.js` sends the click events (`data-track` attributes, `intent_select`, `reach_tab`, `copy_link`). The 404 page loads the same tag.
 
 ## Caching and redirects (`public/_headers`, `public/_redirects`)
 
