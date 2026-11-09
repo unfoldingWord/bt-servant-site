@@ -121,6 +121,10 @@ for (const file of htmlFiles) {
       if (!p || !resolves(p)) fail(`${rel}: hreflang ${lang} → ${href} does not resolve`);
     }
     if (!alternates.some(([, , href]) => href === SITE + urlPath)) fail(`${rel}: not in its own hreflang set`);
+    // Open Graph locales must be language_TERRITORY (ogp.me), unlike hreflang.
+    for (const [, og] of html.matchAll(/<meta property="og:locale(?::alternate)?" content="([^"]+)"/g)) {
+      if (!/^[a-z]{2,3}_[A-Z]{2}$/.test(og)) fail(`${rel}: og:locale "${og}" is not language_TERRITORY`);
+    }
     const htmlLang = html.match(/<html lang="([^"]+)"/)?.[1];
     const own = alternates.find(([, , href]) => href === SITE + urlPath)?.[1];
     if (own && htmlLang !== own) fail(`${rel}: <html lang="${htmlLang}"> but hreflang says ${own}`);

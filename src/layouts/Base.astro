@@ -47,8 +47,9 @@ const graph = serializeGraph([
   webPageNode(canonical, title, description, updated, def.tag),
   ...jsonLd,
 ]);
-// Open Graph locale tags use underscores (es_MX), not BCP-47 hyphens.
-const ogLocale = (code: string) => (code === 'en' ? 'en_US' : byCode(code).tag.replace('-', '_'));
+// Open Graph locales are language_TERRITORY (es_MX, fr_FR, zh_CN), set per
+// locale in src/i18n/config.ts; the BCP-47 tags stay on lang and hreflang.
+const ogLocale = (code: string) => byCode(code).og;
 
 // What /assets/js/locale.js needs to resolve the visitor's preferred
 // interface language (see README → Localization).

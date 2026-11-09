@@ -56,9 +56,21 @@ document.addEventListener('DOMContentLoaded', function () {
   var navToggle = document.getElementById('navToggle');
   var siteNav = document.getElementById('siteNav');
   if (navToggle && siteNav) {
+    /* The open mobile menu scrolls within the space between the header and
+       the fixed bottom bar, whose height depends on the language (labels can
+       wrap), so measure both rather than assuming (main.css has a fallback). */
+    function fitNav() {
+      if (!siteNav.classList.contains('is-open')) return;
+      var top = siteNav.getBoundingClientRect().top;
+      var bar = document.querySelector('.mobile-bar');
+      var barTop = bar && getComputedStyle(bar).display !== 'none' ? bar.getBoundingClientRect().top : window.innerHeight;
+      siteNav.style.maxHeight = Math.max(160, Math.floor(barTop - top)) + 'px';
+    }
+    window.addEventListener('resize', fitNav);
     navToggle.addEventListener('click', function () {
       var open = siteNav.classList.toggle('is-open');
       navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+      if (open) fitNav(); else siteNav.style.maxHeight = '';
     });
     siteNav.addEventListener('click', function (e) {
       if (e.target.tagName === 'A' && !e.target.closest('.lang-switcher')) {

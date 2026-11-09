@@ -35,36 +35,48 @@ const err = (m) => {
 const tagsOf = (s) => (String(s).match(/<\/?[a-zA-Z][^>]*>/g) || []).sort().join(' ');
 const placeholdersOf = (s) => (String(s).match(/\{\w+\}/g) || []).sort().join(' ');
 
-function compare(locale, page, base, loc, path) {
-  if (Array.isArray(base)) {
-    if (!Array.isArray(loc) || loc.length !== base.length) {
-      err(`${locale}/${page} ${path}: array length ${loc?.length} != ${base.length}`);
+/** Compare one English value with the locale's value at the same path. A
+ *  string is checked wherever it sits, as an object field or an array entry
+ *  (hero.rotatorWords, channel steps, organizations path and buttons). */
+function compare(locale, page, base, loc, path, key = '') {
+  const where = `${locale}/${page} ${path || '(root)'}`;
+  if (typeof base === 'string') {
+    if (typeof loc !== 'string') {
+      err(`${where}: not a string`);
       return;
     }
-    base.forEach((v, i) => compare(locale, page, v, loc[i], `${path}[${i}]`));
+    if (ASSET_KEYS.has(key) && loc !== base) {
+      err(`${where}: routing value changed ("${loc}" != "${base}")`);
+      return;
+    }
+    if (tagsOf(base) !== tagsOf(loc)) err(`${where}: markup changed\n    en: ${tagsOf(base)}\n    ${locale}: ${tagsOf(loc)}`);
+    if (placeholdersOf(base) !== placeholdersOf(loc)) err(`${where}: {placeholders} changed`);
+    for (const name of PROTECTED) {
+      if (base.includes(name) && !loc.includes(name)) err(`${where}: protected name "${name}" translated or missing`);
+    }
+    return;
+  }
+  if (Array.isArray(base)) {
+    if (!Array.isArray(loc) || loc.length !== base.length) {
+      err(`${where}: array length ${loc?.length} != ${base.length}`);
+      return;
+    }
+    base.forEach((v, i) => compare(locale, page, v, loc[i], `${path}[${i}]`, key));
     return;
   }
   if (base && typeof base === 'object') {
+    if (!loc || typeof loc !== 'object' || Array.isArray(loc)) {
+      err(`${where}: not an object`);
+      return;
+    }
     for (const k of Object.keys(base)) {
-      if (!loc || !(k in loc)) {
+      if (!(k in loc)) {
         err(`${locale}/${page} ${path}.${k}: missing key`);
         continue;
       }
-      const b = base[k];
-      const l = loc[k];
-      if (typeof b === 'string') {
-        if (typeof l !== 'string') err(`${locale}/${page} ${path}.${k}: not a string`);
-        else if (ASSET_KEYS.has(k) && l !== b) err(`${locale}/${page} ${path}.${k}: routing value changed ("${l}" != "${b}")`);
-        else {
-          if (tagsOf(b) !== tagsOf(l)) err(`${locale}/${page} ${path}.${k}: markup changed\n    en: ${tagsOf(b)}\n    ${locale}: ${tagsOf(l)}`);
-          if (placeholdersOf(b) !== placeholdersOf(l)) err(`${locale}/${page} ${path}.${k}: {placeholders} changed`);
-          for (const name of PROTECTED) {
-            if (b.includes(name) && !l.includes(name)) err(`${locale}/${page} ${path}.${k}: protected name "${name}" translated or missing`);
-          }
-        }
-      } else compare(locale, page, b, l, `${path}.${k}`);
+      compare(locale, page, base[k], loc[k], `${path}.${k}`, k);
     }
-    for (const k of Object.keys(loc ?? {})) if (!(k in base)) err(`${locale}/${page} ${path}.${k}: key not in English`);
+    for (const k of Object.keys(loc)) if (!(k in base)) err(`${locale}/${page} ${path}.${k}: key not in English`);
   }
 }
 

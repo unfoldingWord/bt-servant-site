@@ -8,6 +8,11 @@ export interface LocaleDef {
   name: string;
   /** BCP-47 tag emitted in <html lang> and hreflang. */
   tag: string;
+  /** Open Graph locale (language_TERRITORY, as ogp.me requires): the
+   *  territory where the locale's main audience is, or the one Facebook's
+   *  locale list uses for the language. Not derived from `tag`, which has no
+   *  territory for most locales (and a script, not a territory, for zh). */
+  og: string;
   dir: 'ltr' | 'rtl';
   /**
    * The writing system, emitted as <html data-script> (main.css keys the
@@ -34,22 +39,22 @@ export function fontHrefFor(code: string): string | null {
 }
 
 export const locales: LocaleDef[] = [
-  { code: 'en', name: 'English',           tag: 'en',      dir: 'ltr', script: 'latin' },
-  { code: 'es', name: 'Español',           tag: 'es-MX',   dir: 'ltr', script: 'latin' },
-  { code: 'fr', name: 'Français',          tag: 'fr',      dir: 'ltr', script: 'latin' },
-  { code: 'hi', name: 'हिन्दी',              tag: 'hi',      dir: 'ltr', script: 'devanagari' },
-  { code: 'ru', name: 'Русский',           tag: 'ru',      dir: 'ltr', script: 'cyrillic' },
-  { code: 'ar', name: 'العربية',            tag: 'ar',      dir: 'rtl', script: 'arabic' },
-  { code: 'zh', name: '简体中文',           tag: 'zh-Hans', dir: 'ltr', script: 'han' },
-  { code: 'sw', name: 'Kiswahili',         tag: 'sw',      dir: 'ltr', script: 'latin' },
-  { code: 'pt', name: 'Português',         tag: 'pt-BR',   dir: 'ltr', script: 'latin' },
-  { code: 'id', name: 'Bahasa Indonesia',  tag: 'id',      dir: 'ltr', script: 'latin' },
-  { code: 'vi', name: 'Tiếng Việt',        tag: 'vi',      dir: 'ltr', script: 'latin' },
-  { code: 'bn', name: 'বাংলা',              tag: 'bn',      dir: 'ltr', script: 'bengali' },
-  { code: 'ur', name: 'اردو',               tag: 'ur',      dir: 'rtl', script: 'nastaliq' },
-  { code: 'fa', name: 'فارسی',              tag: 'fa',      dir: 'rtl', script: 'arabic' },
-  { code: 'my', name: 'ဗမာစာ',             tag: 'my',      dir: 'ltr', script: 'myanmar' },
-  { code: 'nl', name: 'Nederlands',        tag: 'nl',      dir: 'ltr', script: 'latin' },
+  { code: 'en', name: 'English',           tag: 'en', og: 'en_US',      dir: 'ltr', script: 'latin' },
+  { code: 'es', name: 'Español',           tag: 'es-MX', og: 'es_MX',   dir: 'ltr', script: 'latin' },
+  { code: 'fr', name: 'Français',          tag: 'fr', og: 'fr_FR',      dir: 'ltr', script: 'latin' },
+  { code: 'hi', name: 'हिन्दी',              tag: 'hi', og: 'hi_IN',      dir: 'ltr', script: 'devanagari' },
+  { code: 'ru', name: 'Русский',           tag: 'ru', og: 'ru_RU',      dir: 'ltr', script: 'cyrillic' },
+  { code: 'ar', name: 'العربية',            tag: 'ar', og: 'ar_AR',      dir: 'rtl', script: 'arabic' },
+  { code: 'zh', name: '简体中文',           tag: 'zh-Hans', og: 'zh_CN', dir: 'ltr', script: 'han' },
+  { code: 'sw', name: 'Kiswahili',         tag: 'sw', og: 'sw_KE',      dir: 'ltr', script: 'latin' },
+  { code: 'pt', name: 'Português',         tag: 'pt-BR', og: 'pt_BR',   dir: 'ltr', script: 'latin' },
+  { code: 'id', name: 'Bahasa Indonesia',  tag: 'id', og: 'id_ID',      dir: 'ltr', script: 'latin' },
+  { code: 'vi', name: 'Tiếng Việt',        tag: 'vi', og: 'vi_VN',      dir: 'ltr', script: 'latin' },
+  { code: 'bn', name: 'বাংলা',              tag: 'bn', og: 'bn_IN',      dir: 'ltr', script: 'bengali' },
+  { code: 'ur', name: 'اردو',               tag: 'ur', og: 'ur_PK',      dir: 'rtl', script: 'nastaliq' },
+  { code: 'fa', name: 'فارسی',              tag: 'fa', og: 'fa_IR',      dir: 'rtl', script: 'arabic' },
+  { code: 'my', name: 'ဗမာစာ',             tag: 'my', og: 'my_MM',      dir: 'ltr', script: 'myanmar' },
+  { code: 'nl', name: 'Nederlands',        tag: 'nl', og: 'nl_NL',      dir: 'ltr', script: 'latin' },
 ];
 
 export const defaultLocale = 'en';

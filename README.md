@@ -123,7 +123,7 @@ curl -fsS https://btservant.ai/robots.txt > /tmp/robots.txt \
 ## Caching and redirects (`public/_headers`, `public/_redirects`)
 
 - HTML: `public, max-age=300, s-maxage=86400, stale-while-revalidate=86400` (browsers revalidate after five minutes; Pages purges the edge on every deploy). Security headers carried over from the Netlify config: `X-Frame-Options: SAMEORIGIN`, `X-Content-Type-Options: nosniff`, `Referrer-Policy: strict-origin-when-cross-origin`.
-- `/assets/images/*`: one year, `immutable`. `/assets/js/*`, `/assets/css/*`, `/style.css`: `no-cache` plus `s-maxage`, because they are edited in place under the same filenames. (The Netlify config cached all of `/assets/*` as immutable, so an edited `main.css` could stay stale in browsers for a year.)
+- `/assets/images/*`: one year, `immutable`. `/assets/js/*`, `/assets/css/*`, `/assets/fonts/*` (the generated per-script font packs) and `/style.css`: `no-cache` plus `s-maxage`, because they are rewritten under the same filenames (no content hash); an unchanged file revalidates as a 304. (The Netlify config cached all of `/assets/*` as immutable, so an edited `main.css` could stay stale in browsers for a year.)
 - `/index.html` → `/` and `/organizations.html` → `/organizations/` (301). `/organizations` → `/organizations/` is Cloudflare Pages' own trailing-slash redirect.
 - Host redirects (`www.btservant.ai`, `btservant.com`, `www.btservant.com` → `https://btservant.ai`) are zone Redirect Rules, not `_redirects` lines: Pages ignores domain-level rules there.
 - Retiring a route is a two-part change: delete the page **and** add a `_redirects` rule. `check:routes` fails on a redirect whose target was not built, or one that chains.
