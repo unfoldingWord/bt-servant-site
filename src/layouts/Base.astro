@@ -63,7 +63,7 @@ const graph = serializeGraph([
 <meta name="twitter:description" content={description} />
 <meta name="twitter:image" content={ogImage} />
 <link rel="alternate" type="application/atom+xml" title="BT Servant engine releases" href={RELEASES_FEED_URL} />
-<link rel="alternate" type="text/markdown" title="BT Servant — summary for AI agents" href="/llms.txt" />
+<link rel="alternate" type="text/markdown" title={`${title} (markdown)`} href={`${path}index.md`} />
 <script type="application/ld+json" set:html={graph} />
 
 <link rel="icon" type="image/png" href="/assets/images/favicon.png" />

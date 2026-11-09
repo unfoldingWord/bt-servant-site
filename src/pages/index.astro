@@ -3,8 +3,10 @@
 // (asset paths made root-absolute). Shared copy for /llms.txt etc. lives in
 // src/data/site.ts.
 import Base from '../layouts/Base.astro';
+import { FAQ, SITE_URL } from '../data/site';
+import { faqNode } from '../lib/jsonld';
 ---
-<Base pageKey="home" bodyClass="home">
+<Base pageKey="home" bodyClass="home" jsonLd={[faqNode(`${SITE_URL}/`, FAQ)]}>
 
   <!-- ============================================================ -->
   <!-- 1. HERO -->
@@ -194,6 +196,31 @@ import Base from '../layouts/Base.astro';
         <a class="partner-banner__logo" href="https://spoken.org/" target="_blank" rel="noopener">
           <img src="/assets/images/partners/spoken-worldwide.png" alt="Spoken Worldwide" loading="lazy" />
         </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================ -->
+  <!-- FAQ (also emitted as FAQPage JSON-LD, /ai/faq.json and in /llms.txt;
+       the questions and answers live in src/data/site.ts) -->
+  <!-- ============================================================ -->
+  <section class="faq" id="faq">
+    <div class="container">
+      <div class="section-head section-head--center">
+        <h2 class="section-title">Frequently asked questions</h2>
+      </div>
+
+      <div class="org__cards">
+        {FAQ.map(({ q, a }, i) => (
+          <details class="org-card" open={i === 0}>
+            <summary>
+              <h3>{q}</h3>
+            </summary>
+            <div class="org-card__body">
+              <p set:html={a} />
+            </div>
+          </details>
+        ))}
       </div>
     </div>
   </section>

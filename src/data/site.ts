@@ -19,6 +19,8 @@ export const CONTACT_URL = 'https://unfoldingword.org/contact/';
 export const WEB_APP_URL = 'https://app.btservant.ai/chat';
 export const WEB_APP_LOGIN_URL = 'https://app.btservant.ai/login';
 export const WEB_APP_HOME_URL = 'https://app.btservant.ai';
+/** The number behind the WhatsApp link (wa.me/15558196461). */
+export const WHATSAPP_NUMBER = '+1 555-819-6461';
 export const WHATSAPP_URL = 'https://wa.me/15558196461?text=Hello%2C%20BT%20Servant';
 export const TELEGRAM_URL = 'https://t.me/bt_servant_bot';
 export const TELEGRAM_HANDLE = '@bt_servant_bot';
@@ -33,7 +35,8 @@ export const DISCORD_URL = 'https://discord.gg/pvzDWQ82zq';
 export const DEMO_VIDEO_URL = 'https://www.youtube.com/watch?v=dIda6Q2lGYE&list=PLa3_fZSWwn6AEbqMCPamBokvLxCUtwMXB';
 
 /** One-sentence English definition, kept identical wherever it appears
- *  (WebSite JSON-LD, /llms.txt, /ai/summary.json, the first FAQ answer). */
+ *  (WebSite and SoftwareApplication JSON-LD, /llms.txt, /ai/summary.json;
+ *  the first FAQ answer says the same in other words). */
 export const DEFINITION =
   'BT Servant is a free AI assistant from unfoldingWord that gives trusted, context-aware Scripture guidance through conversation, on WhatsApp, Telegram, Signal, and the web.';
 
@@ -125,31 +128,39 @@ export const ORG_PATHS = [
 export const FAQ: { q: string; a: string }[] = [
   {
     q: 'What is BT Servant?',
-    a: `${DEFINITION} It helps disciples understand, study, teach, translate, and share God’s Word, and equip others to do the same.`,
+    a: `BT Servant is a free AI assistant from unfoldingWord that gives trusted, context-aware Scripture guidance through conversation, inside the messaging apps people already use and on the web. It helps disciples understand, study, teach, translate, and share God\u2019s Word, and equip others to do the same.`,
+  },
+  {
+    q: 'What can I ask BT Servant?',
+    a: 'Start from what you need: understand what a passage means; study its context, questions, and resources; teach with lessons and discussions; translate terms, meaning, and decisions; share the gospel clearly; or equip others to train and multiply leaders. The rest is a conversation.',
   },
   {
     q: 'Where can I use BT Servant?',
-    a: `On WhatsApp, on Telegram (${TELEGRAM_HANDLE}), on Signal, and in any web browser at <a href="${WEB_APP_URL}">app.btservant.ai</a>. Ask in text or voice; there are no commands to learn.`,
+    a: `On WhatsApp (${WHATSAPP_NUMBER}), on Telegram (${TELEGRAM_HANDLE}), on Signal, and in any web browser at <a href="${WEB_APP_URL}">app.btservant.ai</a>. Ask in text or voice; there are no commands to learn.`,
+  },
+  {
+    q: 'How do I start a conversation?',
+    a: 'Scan the QR code on this page with your phone, or tap the button for the app you already use. Send any question, then reply in text or voice. You can begin in a browser and continue on your phone later.',
   },
   {
     q: 'Does BT Servant cost anything?',
-    a: 'No. BT Servant is free for individuals and for teams. Organizations can also customize it through partner commitments, or integrate its open-source engine into their own apps.',
+    a: 'No. BT Servant is free for individuals and for teams. Organizations can also customize it through partner commitments, or build its engine into their own apps.',
   },
   {
     q: 'Which languages does BT Servant support?',
     a: 'English, Indonesian, Spanish, and many more languages. You can ask and get answers in text or by voice.',
   },
   {
-    q: 'Where do BT Servant’s answers come from?',
-    a: 'Answers are grounded in vetted biblical resources, not the open internet. Translation questions, for example, draw on Translation Words and Translation Academy. BT Servant supports pastors, teachers, and translators; it never replaces them.',
+    q: 'Where do BT Servant\u2019s answers come from?',
+    a: 'Answers are grounded in vetted biblical resources rather than the internet at large. Translation questions, for example, draw on Translation Words and Translation Academy. BT Servant supports pastors, teachers, and translators; it never replaces them.',
   },
   {
     q: 'Who makes BT Servant?',
-    a: `BT Servant is a project of <a href="${PUBLISHER_ABOUT_URL}">unfoldingWord</a>, built with ministry partners ETEN Innovation Lab, Word Collective, and Spoken Worldwide. Its engine is open source on <a href="${GITHUB_URL}">GitHub</a>.`,
+    a: `BT Servant is a project of <a href="${PUBLISHER_ABOUT_URL}">unfoldingWord</a>, built with ministry partners ETEN Innovation Lab, Word Collective, and Spoken Worldwide. Its engine is published on <a href="${GITHUB_URL}">GitHub</a>, free to embed or self-host.`,
   },
   {
     q: 'Can my organization use BT Servant?',
-    a: 'Yes. Teams can <a href="/organizations/">use it, customize it, or integrate it</a>: free access on WhatsApp, Telegram, and the web; custom modes such as Trainer, Translator, and Checking; or the open-source engine inside your own tools.',
+    a: 'Yes. Teams can <a href="/organizations/">use it, customize it, or integrate it</a>: free access for the whole team; custom modes such as Trainer, Translator, and Checking; or the engine itself inside your own tools.',
   },
 ];
 

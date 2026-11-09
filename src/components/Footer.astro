@@ -32,7 +32,7 @@ const { anchorBase, updated } = Astro.props;
 
   <div class="site-footer__credits">
     <div class="container">
-      <span>&copy; 2026 BT Servant &middot; a project of <a href="https://www.unfoldingword.org/" target="_blank" rel="noopener">unfoldingWord</a></span>
+      <span>&copy; 2026 BT Servant &middot; a project of <a href="https://www.unfoldingword.org/" target="_blank" rel="noopener">unfoldingWord</a> &middot; Last updated <time datetime={updated}>{formatDate(updated)}</time></span>
       <span>Open source &middot; <a href={RELEASES_URL} target="_blank" rel="noopener">Release notes</a></span>
     </div>
   </div>
