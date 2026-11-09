@@ -1,0 +1,158 @@
+{
+  "meta": {
+    "title": "BT Servant — 在你常用的应用中获得可信的圣经指引",
+    "description": "BT Servant 装备门徒明白、研读、教导、翻译和分享神的话语，并装备他人 — 可在 WhatsApp、Telegram 和网页上免费使用。"
+  },
+  "hero": {
+    "title": "BT Servant 装备门徒",
+    "rotatorBefore": "",
+    "rotatorWords": ["明白", "研读", "教导", "翻译", "分享"],
+    "rotatorAfter": "神的话语。",
+    "sub": "用文字或语音提问。在你常用的应用中，获得可信、贴合语境的指引。",
+    "ctaWhatsapp": "在 WhatsApp 上开始",
+    "ctaWeb": "打开网页版"
+  },
+  "reach": {
+    "title": "无论你在哪里服侍，都能使用。",
+    "sub": "免费，就在你熟悉的应用中。",
+    "openWhatsapp": "在 WhatsApp 中打开",
+    "openTelegram": "在 Telegram 中打开",
+    "openSignal": "在 Signal 中打开",
+    "openWeb": "打开网页版",
+    "tabsLabel": "选择平台",
+    "tabWeb": "网页版",
+    "copyLink": "复制访问链接",
+    "linkCopied": "链接已复制！",
+    "scanToOpen": "扫码打开",
+    "channels": {
+      "whatsapp": {
+        "heading": "在 WhatsApp 上使用 BT Servant",
+        "steps": ["扫描二维码，或点击“在 WhatsApp 中打开”。", "发送任何问题。", "用文字或语音回复。"],
+        "note": "",
+        "qrAlt": "扫码在 WhatsApp 上打开 BT Servant"
+      },
+      "telegram": {
+        "heading": "在 Telegram 上使用 BT Servant",
+        "steps": ["扫描二维码，或点击“在 Telegram 中打开”（或搜索 @bt_servant_bot）。", "点击“开始”，然后发送任何问题。", "用文字或语音回复。"],
+        "note": "@bt_servant_bot",
+        "qrAlt": "扫码在 Telegram 上打开 BT Servant"
+      },
+      "signal": {
+        "heading": "在 Signal 上使用 BT Servant",
+        "steps": ["扫描二维码，或点击“在 Signal 中打开”。", "发送任何问题。", "用文字或语音回复。"],
+        "note": "",
+        "qrAlt": "扫码在 Signal 上打开 BT Servant"
+      },
+      "web": {
+        "heading": "在网页上使用 BT Servant",
+        "steps": ["扫描二维码，或在任意浏览器中打开 app.btservant.ai。", "提出你的第一个问题。", "之后可在手机上继续。"],
+        "note": "",
+        "qrAlt": "扫码打开 BT Servant 网页版"
+      }
+    },
+    "langs": "英语 &middot; 印尼语 &middot; 西班牙语 &middot; <em>以及更多语言</em> &middot; 支持语音"
+  },
+  "intents": {
+    "title": "今天你想做什么？",
+    "sub": "选一个起点，其余的就交给对话。",
+    "listLabel": "选择你想做的事",
+    "items": [
+      {
+        "name": "明白",
+        "text": "一段经文的含义。",
+        "cta": "开始理解",
+        "alt": "与 BT Servant 的一段真实 WhatsApp 对话：用户请它帮助理解罗马书 12:1-2，BT Servant 回复了经文内容和翻译注释。"
+      },
+      {
+        "name": "研读",
+        "text": "背景、问题、资源。",
+        "cta": "开始研读",
+        "alt": "与 BT Servant 的一段真实 WhatsApp 对话：用户询问腓立比书的历史背景，BT Servant 根据圣经研读资源回复了相关背景。"
+      },
+      {
+        "name": "教导",
+        "text": "课程与讨论。",
+        "cta": "开始教导",
+        "alt": "与 BT Servant 的一段真实 WhatsApp 对话：用户请它帮忙准备一堂关于好撒玛利亚人的课，BT Servant 回复了课程大纲和要点。"
+      },
+      {
+        "name": "翻译",
+        "text": "术语、含义、决定。",
+        "cta": "开始翻译",
+        "alt": "与 BT Servant 的一段真实 WhatsApp 对话：用户询问在没有对应词的语言中如何翻译“恩典”一词，BT Servant 根据 Translation Words 和 Translation Academy 给出了指引。"
+      },
+      {
+        "name": "分享",
+        "text": "清楚地讲述福音。",
+        "cta": "开始分享",
+        "alt": "与 BT Servant 的一段真实 WhatsApp 对话：用户请它帮忙讲解福音，BT Servant 回复了一份清晰的福音核心经文大纲。"
+      },
+      {
+        "name": "装备",
+        "text": "培训并倍增领袖。",
+        "cta": "开始装备",
+        "alt": "与 BT Servant 的一段真实 WhatsApp 对话：用户请它帮忙培训多语言小组学习圣经翻译原则，BT Servant 先提出一些澄清性问题，以便量身设计培训。"
+      }
+    ],
+    "continueOn": "继续使用：",
+    "continueWeb": "网页版"
+  },
+  "why": {
+    "title": "值得信赖的指引",
+    "items": [
+      { "name": "可信", "text": "以经过审核的圣经资源为根基，而非开放的互联网。" },
+      { "name": "自然", "text": "文字或语音皆可，无需学习任何指令。" },
+      { "name": "以人为本", "text": "支持牧师、教师和译者，绝不取代他们。" }
+    ]
+  },
+  "partners": {
+    "title": "与事工伙伴共同打造，在真实使用中不断完善。"
+  },
+  "faq": {
+    "title": "常见问题",
+    "items": [
+      {
+        "q": "BT Servant 是什么？",
+        "a": "BT Servant 是 unfoldingWord 推出的免费 AI 助手，通过对话提供可信、贴合语境的圣经指引，就在人们常用的通讯应用和网页上。它帮助门徒明白、研读、教导、翻译和分享神的话语，并装备他人也能这样做。"
+      },
+      {
+        "q": "我可以问 BT Servant 什么？",
+        "a": "从你的需要开始：明白一段经文的含义；研读它的背景、相关问题和资源；通过课程和讨论来教导；翻译术语、处理含义并做出翻译决定；清楚地分享福音；或装备他人去培训并倍增领袖。其余的就交给对话。"
+      },
+      {
+        "q": "在哪里可以使用 BT Servant？",
+        "a": "WhatsApp（+1 555-819-6461）、Telegram（@bt_servant_bot）、Signal，以及任意网页浏览器中的 <a href=\"https://app.btservant.ai/chat\">app.btservant.ai</a>。可用文字或语音提问，无需学习任何指令。"
+      },
+      {
+        "q": "如何开始对话？",
+        "a": "用手机扫描本页上的二维码，或点击你常用应用对应的按钮。发送任何问题，然后用文字或语音回复。你可以先在浏览器中开始，之后在手机上继续。"
+      },
+      {
+        "q": "BT Servant 支持哪些语言？",
+        "a": "英语、印尼语、西班牙语以及更多语言。你可以用文字或语音提问并获得回答。"
+      },
+      {
+        "q": "BT Servant 的回答从哪里来？",
+        "a": "回答以经过审核的圣经资源为根基，而不是来自整个互联网。例如，翻译方面的问题会参考 Translation Words 和 Translation Academy。BT Servant 支持牧师、教师和译者，绝不取代他们。"
+      },
+      {
+        "q": "BT Servant 由谁打造？",
+        "a": "BT Servant 是 <a href=\"https://unfoldingword.org/about-2/\">unfoldingWord</a> 的项目，与事工伙伴 ETEN Innovation Lab、Word Collective 和 Spoken Worldwide 共同打造。它的引擎已在 <a href=\"https://github.com/unfoldingWord/bt-servant-engine\">GitHub</a> 上公开，可免费嵌入或自行托管。"
+      },
+      {
+        "q": "我的机构可以使用 BT Servant 吗？",
+        "a": "可以。团队可以<a href=\"/organizations/\">使用、定制或集成它</a>：整个团队免费使用；使用培训师、译者、审核等定制模式；或将引擎本身嵌入你自己的工具中。"
+      }
+    ]
+  },
+  "cta": {
+    "title": "接下来你想做什么？",
+    "individuals": "个人",
+    "startWhatsapp": "在 WhatsApp 上开始",
+    "webApp": "网页版",
+    "organizations": "机构",
+    "useWithTeam": "与团队一起使用",
+    "customize": "定制",
+    "integrate": "集成"
+  }
+}
