@@ -1,0 +1,37 @@
+{
+  "meta": {
+    "title": "BT Servant 机构版 — 使用、定制、集成",
+    "description": "把 BT Servant 可信、贴合语境的圣经指引带给你的团队 — 免费使用，可按你的资源和工作流程定制，并且开源，可集成到你自己的应用中。"
+  },
+  "hero": {
+    "title": "面向机构",
+    "sub": "把可信、贴合语境的圣经指引带给你的团队 &mdash; 免费开始，随成长而定制，或集成到你自己的工具中。"
+  },
+  "path": ["使用", "定制", "集成"],
+  "cards": [
+    {
+      "name": "使用",
+      "summary": "你的团队可在 WhatsApp、Telegram 和网页上免费使用。",
+      "detail": "<strong>最适合：</strong>团队、试点项目、研习会。",
+      "buttons": ["立即开始"]
+    },
+    {
+      "name": "定制",
+      "summary": "你的资源、语言、语气和工作流程。",
+      "detail": "定制模式（培训师、译者、审核）、自有品牌部署以及生产环境支持 &mdash; 通过伙伴承诺提供。",
+      "buttons": ["了解定制"]
+    },
+    {
+      "name": "集成",
+      "summary": "把可信的指引带进你自己的应用。",
+      "detail": "引擎是开源的 &mdash; 可免费嵌入或自行托管。",
+      "buttons": ["GitHub", "洽谈集成"]
+    }
+  ],
+  "cta": {
+    "title": "准备好把 BT Servant 带给你的团队了吗？",
+    "useWithTeam": "与团队一起使用",
+    "customize": "定制",
+    "integrate": "集成"
+  }
+}

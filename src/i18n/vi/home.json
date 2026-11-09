@@ -1,0 +1,158 @@
+{
+  "meta": {
+    "title": "BT Servant — Hướng dẫn Kinh Thánh đáng tin cậy, ngay trong ứng dụng bạn đang dùng",
+    "description": "BT Servant trang bị cho môn đồ để hiểu, học hỏi, giảng dạy, dịch thuật, chia sẻ Lời Chúa và trang bị người khác — miễn phí trên WhatsApp, Telegram và web."
+  },
+  "hero": {
+    "title": "BT Servant trang bị cho môn đồ",
+    "rotatorBefore": "",
+    "rotatorWords": ["để hiểu", "để học hỏi", "để giảng dạy", "để dịch", "để chia sẻ"],
+    "rotatorAfter": "Lời Chúa.",
+    "sub": "Hỏi bằng văn bản hoặc giọng nói. Nhận hướng dẫn đáng tin cậy, phù hợp với ngữ cảnh &mdash; ngay trong các ứng dụng bạn đang dùng.",
+    "ctaWhatsapp": "Bắt đầu trên WhatsApp",
+    "ctaWeb": "Mở ứng dụng web"
+  },
+  "reach": {
+    "title": "Có sẵn ở bất cứ nơi nào bạn phục vụ.",
+    "sub": "Miễn phí, trong những ứng dụng bạn đã quen thuộc.",
+    "openWhatsapp": "Mở trong WhatsApp",
+    "openTelegram": "Mở trong Telegram",
+    "openSignal": "Mở trong Signal",
+    "openWeb": "Mở ứng dụng web",
+    "tabsLabel": "Chọn nền tảng",
+    "tabWeb": "Ứng dụng web",
+    "copyLink": "Sao chép liên kết",
+    "linkCopied": "Đã sao chép liên kết!",
+    "scanToOpen": "Quét để mở",
+    "channels": {
+      "whatsapp": {
+        "heading": "Dùng BT Servant trên WhatsApp",
+        "steps": ["Quét mã QR, hoặc nhấn “Mở trong WhatsApp”.", "Gửi bất kỳ câu hỏi nào.", "Trả lời bằng văn bản hoặc giọng nói."],
+        "note": "",
+        "qrAlt": "Quét để mở BT Servant trên WhatsApp"
+      },
+      "telegram": {
+        "heading": "Dùng BT Servant trên Telegram",
+        "steps": ["Quét mã QR, hoặc nhấn “Mở trong Telegram” (hoặc tìm @bt_servant_bot).", "Nhấn Start (Bắt đầu) rồi gửi bất kỳ câu hỏi nào.", "Trả lời bằng văn bản hoặc giọng nói."],
+        "note": "@bt_servant_bot",
+        "qrAlt": "Quét để mở BT Servant trên Telegram"
+      },
+      "signal": {
+        "heading": "Dùng BT Servant trên Signal",
+        "steps": ["Quét mã QR, hoặc nhấn “Mở trong Signal”.", "Gửi bất kỳ câu hỏi nào.", "Trả lời bằng văn bản hoặc giọng nói."],
+        "note": "",
+        "qrAlt": "Quét để mở BT Servant trên Signal"
+      },
+      "web": {
+        "heading": "Dùng BT Servant trên web",
+        "steps": ["Quét mã QR, hoặc mở app.btservant.ai trên bất kỳ trình duyệt nào.", "Đặt câu hỏi đầu tiên của bạn.", "Sau đó tiếp tục trên điện thoại."],
+        "note": "",
+        "qrAlt": "Quét để mở ứng dụng web BT Servant"
+      }
+    },
+    "langs": "Tiếng Anh &middot; Tiếng Indonesia &middot; Tiếng Tây Ban Nha &middot; <em>và nhiều ngôn ngữ khác</em> &middot; Hỗ trợ giọng nói"
+  },
+  "intents": {
+    "title": "Hôm nay bạn muốn làm gì?",
+    "sub": "Chọn một điểm bắt đầu. Phần còn lại là một cuộc trò chuyện.",
+    "listLabel": "Chọn điều bạn muốn làm",
+    "items": [
+      {
+        "name": "Hiểu",
+        "text": "Ý nghĩa của một phân đoạn.",
+        "cta": "Bắt đầu tìm hiểu",
+        "alt": "Một cuộc trò chuyện thật trên WhatsApp với BT Servant: người dùng nhờ giúp hiểu Rô-ma 12:1-2, và BT Servant trả lời bằng nội dung phân đoạn cùng các ghi chú dịch thuật."
+      },
+      {
+        "name": "Học hỏi",
+        "text": "Bối cảnh, câu hỏi, tài liệu.",
+        "cta": "Bắt đầu học hỏi",
+        "alt": "Một cuộc trò chuyện thật trên WhatsApp với BT Servant: người dùng hỏi về bối cảnh lịch sử của sách Phi-líp, và BT Servant trả lời bằng thông tin nền từ các tài liệu học Kinh Thánh."
+      },
+      {
+        "name": "Giảng dạy",
+        "text": "Bài học và thảo luận.",
+        "cta": "Bắt đầu giảng dạy",
+        "alt": "Một cuộc trò chuyện thật trên WhatsApp với BT Servant: người dùng nhờ giúp soạn bài học về người Sa-ma-ri nhân lành, và BT Servant trả lời bằng dàn ý bài học cùng những điểm chính."
+      },
+      {
+        "name": "Dịch thuật",
+        "text": "Thuật ngữ, ý nghĩa, quyết định.",
+        "cta": "Bắt đầu dịch",
+        "alt": "Một cuộc trò chuyện thật trên WhatsApp với BT Servant: người dùng hỏi cách dịch từ ân điển sang một ngôn ngữ không có từ tương đương, và BT Servant trả lời bằng hướng dẫn từ Translation Words và Translation Academy."
+      },
+      {
+        "name": "Chia sẻ",
+        "text": "Phúc Âm, được trình bày rõ ràng.",
+        "cta": "Bắt đầu chia sẻ",
+        "alt": "Một cuộc trò chuyện thật trên WhatsApp với BT Servant: người dùng nhờ giúp giải thích Phúc Âm, và BT Servant trả lời bằng một dàn ý rõ ràng gồm các phân đoạn chính về Phúc Âm."
+      },
+      {
+        "name": "Trang bị",
+        "text": "Đào tạo và nhân rộng người lãnh đạo.",
+        "cta": "Bắt đầu trang bị",
+        "alt": "Một cuộc trò chuyện thật trên WhatsApp với BT Servant: người dùng nhờ giúp đào tạo các nhóm đa ngôn ngữ về nguyên tắc dịch Kinh Thánh, và BT Servant trả lời bằng những câu hỏi làm rõ để điều chỉnh khóa đào tạo cho phù hợp."
+      }
+    ],
+    "continueOn": "Tiếp tục trên:",
+    "continueWeb": "Web"
+  },
+  "why": {
+    "title": "Hướng dẫn bạn có thể tin cậy",
+    "items": [
+      { "name": "Đáng tin cậy", "text": "Dựa trên các tài liệu Kinh Thánh đã được thẩm định &mdash; không phải internet mở." },
+      { "name": "Tự nhiên", "text": "Văn bản hoặc giọng nói. Không cần học lệnh nào." },
+      { "name": "Lấy con người làm trung tâm", "text": "Hỗ trợ mục sư, giáo viên và người dịch. Không bao giờ thay thế họ." }
+    ]
+  },
+  "partners": {
+    "title": "Được xây dựng cùng các mục vụ. Được hoàn thiện qua sử dụng thực tế."
+  },
+  "faq": {
+    "title": "Câu hỏi thường gặp",
+    "items": [
+      {
+        "q": "BT Servant là gì?",
+        "a": "BT Servant là một trợ lý AI miễn phí của unfoldingWord, cung cấp hướng dẫn Kinh Thánh đáng tin cậy, phù hợp với ngữ cảnh qua cuộc trò chuyện, ngay trong các ứng dụng nhắn tin mọi người đang dùng và trên web. BT Servant giúp môn đồ hiểu, học hỏi, giảng dạy, dịch thuật và chia sẻ Lời Chúa, đồng thời trang bị người khác để làm điều tương tự."
+      },
+      {
+        "q": "Tôi có thể hỏi BT Servant những gì?",
+        "a": "Hãy bắt đầu từ điều bạn cần: hiểu ý nghĩa của một phân đoạn; học hỏi bối cảnh, câu hỏi và tài liệu liên quan; giảng dạy qua bài học và thảo luận; dịch thuật ngữ, ý nghĩa và đưa ra quyết định dịch; chia sẻ Phúc Âm một cách rõ ràng; hoặc trang bị người khác để đào tạo và nhân rộng người lãnh đạo. Phần còn lại là một cuộc trò chuyện."
+      },
+      {
+        "q": "Tôi có thể dùng BT Servant ở đâu?",
+        "a": "Trên WhatsApp (+1 555-819-6461), trên Telegram (@bt_servant_bot), trên Signal, và trên bất kỳ trình duyệt web nào tại <a href=\"https://app.btservant.ai/chat\">app.btservant.ai</a>. Hỏi bằng văn bản hoặc giọng nói; không cần học lệnh nào."
+      },
+      {
+        "q": "Làm sao để bắt đầu một cuộc trò chuyện?",
+        "a": "Dùng điện thoại quét mã QR trên trang này, hoặc nhấn nút của ứng dụng bạn đang dùng. Gửi bất kỳ câu hỏi nào, rồi trả lời bằng văn bản hoặc giọng nói. Bạn có thể bắt đầu trên trình duyệt và tiếp tục trên điện thoại sau."
+      },
+      {
+        "q": "BT Servant hỗ trợ những ngôn ngữ nào?",
+        "a": "Tiếng Anh, tiếng Indonesia, tiếng Tây Ban Nha và nhiều ngôn ngữ khác. Bạn có thể hỏi và nhận câu trả lời bằng văn bản hoặc giọng nói."
+      },
+      {
+        "q": "Câu trả lời của BT Servant đến từ đâu?",
+        "a": "Câu trả lời dựa trên các tài liệu Kinh Thánh đã được thẩm định, chứ không phải từ internet nói chung. Ví dụ, các câu hỏi về dịch thuật dựa vào Translation Words và Translation Academy. BT Servant hỗ trợ mục sư, giáo viên và người dịch; không bao giờ thay thế họ."
+      },
+      {
+        "q": "Ai làm ra BT Servant?",
+        "a": "BT Servant là một dự án của <a href=\"https://unfoldingword.org/about-2/\">unfoldingWord</a>, được xây dựng cùng các đối tác mục vụ ETEN Innovation Lab, Word Collective và Spoken Worldwide. Bộ máy của BT Servant được công bố trên <a href=\"https://github.com/unfoldingWord/bt-servant-engine\">GitHub</a>, miễn phí để nhúng hoặc tự lưu trữ."
+      },
+      {
+        "q": "Tổ chức của tôi có thể dùng BT Servant không?",
+        "a": "Có. Các nhóm có thể <a href=\"/organizations/\">sử dụng, tùy chỉnh hoặc tích hợp BT Servant</a>: truy cập miễn phí cho cả nhóm; các chế độ tùy chỉnh như Huấn luyện, Dịch thuật và Kiểm tra; hoặc đưa chính bộ máy này vào công cụ của riêng bạn."
+      }
+    ]
+  },
+  "cta": {
+    "title": "Tiếp theo bạn muốn làm gì?",
+    "individuals": "Cá nhân",
+    "startWhatsapp": "Bắt đầu trên WhatsApp",
+    "webApp": "Ứng dụng web",
+    "organizations": "Tổ chức",
+    "useWithTeam": "Dùng cùng nhóm của bạn",
+    "customize": "Tùy chỉnh",
+    "integrate": "Tích hợp"
+  }
+}

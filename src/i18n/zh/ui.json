@@ -1,0 +1,31 @@
+{
+  "skipToContent": "跳到正文",
+  "logoHomeLabel": "BT Servant 首页",
+  "nav": {
+    "label": "主导航",
+    "whatYouCanDo": "能做什么",
+    "whereToUseIt": "在哪里使用",
+    "whyBtServant": "为何选择 BT Servant",
+    "organizations": "机构"
+  },
+  "headerCta": "开始对话",
+  "toggleMenu": "展开或收起菜单",
+  "languageLabel": "语言",
+  "mobileBar": {
+    "ask": "问 BT Servant",
+    "chooseApp": "选择应用"
+  },
+  "footer": {
+    "tagline": "深厚的圣经知识，通过对话触手可及。",
+    "access": "访问",
+    "webApp": "网页版",
+    "resources": "资源",
+    "demoVideo": "演示视频",
+    "contact": "联系我们",
+    "credit": "&copy; 2026 BT Servant &middot; <a href=\"https://www.unfoldingword.org/\" target=\"_blank\" rel=\"noopener\">unfoldingWord</a> 旗下项目 &middot; 最后更新于 {date}",
+    "openSource": "开源",
+    "releaseNotes": "版本说明"
+  },
+  "brandline": "自然提问。获得可信的指引。满怀信心地行动。",
+  "ogImageAlt": "BT Servant — 通过对话获得可信的圣经指引"
+}

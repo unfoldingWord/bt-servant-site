@@ -1,0 +1,158 @@
+{
+  "meta": {
+    "title": "BT Servant — Des conseils bibliques fiables dans vos applis habituelles",
+    "description": "BT Servant équipe les disciples pour comprendre, étudier, enseigner, traduire et partager la Parole de Dieu, et équiper d’autres — gratuit sur WhatsApp, Telegram, web."
+  },
+  "hero": {
+    "title": "BT Servant équipe les disciples",
+    "rotatorBefore": "",
+    "rotatorWords": ["pour comprendre", "pour étudier", "pour enseigner", "pour traduire", "pour partager"],
+    "rotatorAfter": "la Parole de Dieu.",
+    "sub": "Posez vos questions par écrit ou à voix haute. Recevez des conseils fiables et adaptés au contexte &mdash; dans les applis que vous utilisez déjà.",
+    "ctaWhatsapp": "Commencer sur WhatsApp",
+    "ctaWeb": "Ouvrir l’application web"
+  },
+  "reach": {
+    "title": "Disponible partout où vous servez.",
+    "sub": "Gratuit, dans les applis que vous connaissez déjà.",
+    "openWhatsapp": "Ouvrir dans WhatsApp",
+    "openTelegram": "Ouvrir dans Telegram",
+    "openSignal": "Ouvrir dans Signal",
+    "openWeb": "Ouvrir l’application web",
+    "tabsLabel": "Choisissez une plateforme",
+    "tabWeb": "Application web",
+    "copyLink": "Copier le lien d’accès",
+    "linkCopied": "Lien copié !",
+    "scanToOpen": "Scannez pour ouvrir",
+    "channels": {
+      "whatsapp": {
+        "heading": "Utiliser BT Servant sur WhatsApp",
+        "steps": ["Scannez le code QR ou touchez « Ouvrir dans WhatsApp ».", "Envoyez n’importe quelle question.", "Répondez par écrit ou à voix haute."],
+        "note": "",
+        "qrAlt": "Scannez pour ouvrir BT Servant sur WhatsApp"
+      },
+      "telegram": {
+        "heading": "Utiliser BT Servant sur Telegram",
+        "steps": ["Scannez le code QR ou touchez « Ouvrir dans Telegram » (ou recherchez @bt_servant_bot).", "Touchez Démarrer et envoyez n’importe quelle question.", "Répondez par écrit ou à voix haute."],
+        "note": "@bt_servant_bot",
+        "qrAlt": "Scannez pour ouvrir BT Servant sur Telegram"
+      },
+      "signal": {
+        "heading": "Utiliser BT Servant sur Signal",
+        "steps": ["Scannez le code QR ou touchez « Ouvrir dans Signal ».", "Envoyez n’importe quelle question.", "Répondez par écrit ou à voix haute."],
+        "note": "",
+        "qrAlt": "Scannez pour ouvrir BT Servant sur Signal"
+      },
+      "web": {
+        "heading": "Utiliser BT Servant sur le web",
+        "steps": ["Scannez le code QR ou ouvrez app.btservant.ai dans n’importe quel navigateur.", "Posez votre première question.", "Poursuivez plus tard sur votre téléphone."],
+        "note": "",
+        "qrAlt": "Scannez pour ouvrir l’application web BT Servant"
+      }
+    },
+    "langs": "Anglais &middot; Indonésien &middot; Espagnol &middot; <em>et bien d’autres langues</em> &middot; Audio pris en charge"
+  },
+  "intents": {
+    "title": "Que souhaitez-vous faire aujourd’hui ?",
+    "sub": "Choisissez un point de départ. Le reste est une conversation.",
+    "listLabel": "Choisissez ce que vous souhaitez faire",
+    "items": [
+      {
+        "name": "Comprendre",
+        "text": "Le sens d’un passage.",
+        "cta": "Commencer à comprendre",
+        "alt": "Une vraie conversation WhatsApp avec BT Servant : un utilisateur demande de l’aide pour comprendre Romains 12.1-2, et BT Servant répond avec le texte du passage et des notes de traduction."
+      },
+      {
+        "name": "Étudier",
+        "text": "Contexte, questions, ressources.",
+        "cta": "Commencer à étudier",
+        "alt": "Une vraie conversation WhatsApp avec BT Servant : un utilisateur pose une question sur le contexte historique de l’épître aux Philippiens, et BT Servant répond avec des éléments tirés de ressources d’étude biblique."
+      },
+      {
+        "name": "Enseigner",
+        "text": "Leçons et discussions.",
+        "cta": "Commencer à enseigner",
+        "alt": "Une vraie conversation WhatsApp avec BT Servant : un utilisateur demande de l’aide pour préparer une leçon sur le bon Samaritain, et BT Servant répond avec un plan de leçon et des idées clés."
+      },
+      {
+        "name": "Traduire",
+        "text": "Termes, sens, décisions.",
+        "cta": "Commencer à traduire",
+        "alt": "Une vraie conversation WhatsApp avec BT Servant : un utilisateur demande comment traduire le mot grâce dans une langue qui n’a pas de mot équivalent, et BT Servant répond avec des conseils tirés de Translation Words et de Translation Academy."
+      },
+      {
+        "name": "Partager",
+        "text": "L’Évangile, dit avec clarté.",
+        "cta": "Commencer à partager",
+        "alt": "Une vraie conversation WhatsApp avec BT Servant : un utilisateur demande de l’aide pour expliquer l’Évangile, et BT Servant répond avec un plan clair des principaux passages sur l’Évangile."
+      },
+      {
+        "name": "Équiper",
+        "text": "Former et multiplier des responsables.",
+        "cta": "Commencer à équiper",
+        "alt": "Une vraie conversation WhatsApp avec BT Servant : un utilisateur demande de l’aide pour former des groupes multilingues aux principes de la traduction biblique, et BT Servant répond par des questions pour adapter la formation."
+      }
+    ],
+    "continueOn": "Continuer sur :",
+    "continueWeb": "Web"
+  },
+  "why": {
+    "title": "Des conseils dignes de confiance",
+    "items": [
+      { "name": "Fiable", "text": "Fondé sur des ressources bibliques vérifiées &mdash; pas sur l’internet ouvert." },
+      { "name": "Naturel", "text": "Par écrit ou à voix haute. Aucune commande à apprendre." },
+      { "name": "Centré sur l’humain", "text": "Soutient les pasteurs, les enseignants et les traducteurs. Ne les remplace jamais." }
+    ]
+  },
+  "partners": {
+    "title": "Conçu avec des ministères. Façonné par l’usage réel."
+  },
+  "faq": {
+    "title": "Questions fréquentes",
+    "items": [
+      {
+        "q": "Qu’est-ce que BT Servant ?",
+        "a": "BT Servant est un assistant d’IA gratuit d’unfoldingWord qui offre des conseils bibliques fiables et adaptés au contexte par la conversation, dans les messageries que les gens utilisent déjà et sur le web. Il aide les disciples à comprendre, étudier, enseigner, traduire et partager la Parole de Dieu, et à équiper d’autres personnes pour en faire autant."
+      },
+      {
+        "q": "Que puis-je demander à BT Servant ?",
+        "a": "Partez de votre besoin : comprendre le sens d’un passage ; étudier son contexte, les questions qu’il soulève et les ressources disponibles ; enseigner avec des leçons et des discussions ; traduire des termes, du sens et prendre des décisions ; partager l’Évangile avec clarté ; ou équiper d’autres personnes pour former et multiplier des responsables. Le reste est une conversation."
+      },
+      {
+        "q": "Où puis-je utiliser BT Servant ?",
+        "a": "Sur WhatsApp (+1 555-819-6461), sur Telegram (@bt_servant_bot), sur Signal et dans n’importe quel navigateur à l’adresse <a href=\"https://app.btservant.ai/chat\">app.btservant.ai</a>. Posez vos questions par écrit ou à voix haute ; aucune commande à apprendre."
+      },
+      {
+        "q": "Comment commencer une conversation ?",
+        "a": "Scannez le code QR de cette page avec votre téléphone, ou touchez le bouton de l’application que vous utilisez déjà. Envoyez n’importe quelle question, puis répondez par écrit ou à voix haute. Vous pouvez commencer dans un navigateur et poursuivre plus tard sur votre téléphone."
+      },
+      {
+        "q": "Quelles langues BT Servant prend-il en charge ?",
+        "a": "L’anglais, l’indonésien, l’espagnol et bien d’autres langues. Vous pouvez poser vos questions et recevoir les réponses par écrit ou à voix haute."
+      },
+      {
+        "q": "D’où viennent les réponses de BT Servant ?",
+        "a": "Les réponses s’appuient sur des ressources bibliques vérifiées plutôt que sur l’internet en général. Les questions de traduction, par exemple, s’appuient sur Translation Words et Translation Academy. BT Servant soutient les pasteurs, les enseignants et les traducteurs ; il ne les remplace jamais."
+      },
+      {
+        "q": "Qui développe BT Servant ?",
+        "a": "BT Servant est un projet d’<a href=\"https://unfoldingword.org/about-2/\">unfoldingWord</a>, conçu avec les ministères partenaires ETEN Innovation Lab, Word Collective et Spoken Worldwide. Son moteur est publié sur <a href=\"https://github.com/unfoldingWord/bt-servant-engine\">GitHub</a>, libre d’être intégré ou auto-hébergé."
+      },
+      {
+        "q": "Mon organisation peut-elle utiliser BT Servant ?",
+        "a": "Oui. Les équipes peuvent <a href=\"/organizations/\">l’utiliser, le personnaliser ou l’intégrer</a> : un accès gratuit pour toute l’équipe ; des modes personnalisés comme Formateur, Traducteur et Vérification ; ou le moteur lui-même dans vos propres outils."
+      }
+    ]
+  },
+  "cta": {
+    "title": "Que souhaitez-vous faire ensuite ?",
+    "individuals": "Particuliers",
+    "startWhatsapp": "Commencer sur WhatsApp",
+    "webApp": "Application web",
+    "organizations": "Organisations",
+    "useWithTeam": "L’utiliser en équipe",
+    "customize": "Personnaliser",
+    "integrate": "Intégrer"
+  }
+}

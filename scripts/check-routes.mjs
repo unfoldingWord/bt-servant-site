@@ -8,6 +8,7 @@ import { join, relative } from 'node:path';
 
 const DIST = new URL('../dist/', import.meta.url).pathname;
 const SITE = 'https://btservant.ai';
+const LOCALE_COUNT = 16; // src/i18n/config.ts
 const errors = [];
 const fail = (msg) => errors.push(msg);
 
@@ -110,6 +111,25 @@ for (const file of htmlFiles) {
     }
   }
 
+  if (!isNotFound) {
+    // hreflang: the full reciprocal set (every locale + x-default), each
+    // resolving to a built page, and this page among them.
+    const alternates = [...html.matchAll(/<link rel="alternate" hreflang="([^"]+)" href="([^"]+)"/g)];
+    if (alternates.length !== LOCALE_COUNT + 1) fail(`${rel}: ${alternates.length} hreflang links, expected ${LOCALE_COUNT + 1}`);
+    for (const [, lang, href] of alternates) {
+      const p = internalPath(href);
+      if (!p || !resolves(p)) fail(`${rel}: hreflang ${lang} → ${href} does not resolve`);
+    }
+    if (!alternates.some(([, , href]) => href === SITE + urlPath)) fail(`${rel}: not in its own hreflang set`);
+    // Open Graph locales must be language_TERRITORY (ogp.me), unlike hreflang.
+    for (const [, og] of html.matchAll(/<meta property="og:locale(?::alternate)?" content="([^"]+)"/g)) {
+      if (!/^[a-z]{2,3}_[A-Z]{2}$/.test(og)) fail(`${rel}: og:locale "${og}" is not language_TERRITORY`);
+    }
+    const htmlLang = html.match(/<html lang="([^"]+)"/)?.[1];
+    const own = alternates.find(([, , href]) => href === SITE + urlPath)?.[1];
+    if (own && htmlLang !== own) fail(`${rel}: <html lang="${htmlLang}"> but hreflang says ${own}`);
+  }
+
   for (const [, attr, url] of html.matchAll(/\s(href|src)="([^"]+)"/g)) {
     const path = internalPath(url);
     if (path === null) continue;
@@ -162,7 +182,9 @@ const redirects = readFileSync(join(DIST, '_redirects'), 'utf8')
   .map((l) => l.trim().split(/\s+/));
 const sources = new Set(redirects.map(([from]) => from));
 for (const [from, to] of redirects) {
-  if (!resolves(to)) fail(`_redirects: ${from} → ${to}, which was not built`);
+  // A :splat target resolves when its fixed prefix does (/pt/:splat → /pt/).
+  const target = to.replace(/:splat$/, '');
+  if (!resolves(target)) fail(`_redirects: ${from} → ${to}, which was not built`);
   if (sources.has(to)) fail(`_redirects: ${from} → ${to} chains into another redirect`);
 }
 

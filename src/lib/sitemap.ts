@@ -1,7 +1,9 @@
 // Sitemaps (same shape as openbiblestories.org and translationcore.com): an
-// index pointing at one file for the pages, each with its lastmod (the same
-// PAGE_UPDATED date as the page's footer and dateModified).
-import { SITE_URL, PAGES, PAGE_UPDATED } from '../data/site';
+// index pointing at one file for the pages. Every locale of every page is
+// listed, each with the full reciprocal hreflang set + x-default and its
+// lastmod (the same PAGE_UPDATED date as the page's footer and dateModified).
+import { SITE_URL, PAGE_UPDATED } from '../data/site';
+import { locales, defaultLocale, localePath, localizedSlugs } from '../i18n/config';
 
 export function xmlResponse(body: string): Response {
   return new Response(`<?xml version="1.0" encoding="UTF-8"?>\n${body}`, {
@@ -17,8 +19,17 @@ export function sitemapIndex(): string {
 }
 
 export function pagesSitemap(): string {
-  const urls = PAGES.map(
-    (p) => `  <url>\n    <loc>${SITE_URL}${p.path}</loc>\n    <lastmod>${PAGE_UPDATED[p.key]}</lastmod>\n  </url>`
-  );
-  return `<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls.join('\n')}\n</urlset>\n`;
+  const urls: string[] = [];
+  for (const slug of localizedSlugs) {
+    const alternates = [
+      ...locales.map((l) => `    <xhtml:link rel="alternate" hreflang="${l.tag}" href="${SITE_URL}${localePath(l.code, slug)}"/>`),
+      `    <xhtml:link rel="alternate" hreflang="x-default" href="${SITE_URL}${localePath(defaultLocale, slug)}"/>`,
+    ].join('\n');
+    for (const l of locales) {
+      urls.push(
+        `  <url>\n    <loc>${SITE_URL}${localePath(l.code, slug)}</loc>\n    <lastmod>${PAGE_UPDATED[slug]}</lastmod>\n${alternates}\n  </url>`
+      );
+    }
+  }
+  return `<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">\n${urls.join('\n')}\n</urlset>\n`;
 }

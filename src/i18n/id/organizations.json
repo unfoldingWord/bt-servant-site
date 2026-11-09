@@ -1,0 +1,37 @@
+{
+  "meta": {
+    "title": "BT Servant untuk Organisasi — Gunakan, sesuaikan, integrasikan",
+    "description": "Hadirkan bimbingan Alkitab BT Servant yang tepercaya dan memahami konteks bagi tim Anda — gratis digunakan, dapat disesuaikan, dan sumber terbuka untuk diintegrasikan."
+  },
+  "hero": {
+    "title": "Untuk organisasi",
+    "sub": "Hadirkan bimbingan Alkitab yang tepercaya dan memahami konteks bagi tim Anda &mdash; mulai secara gratis, sesuaikan seiring pertumbuhan Anda, atau integrasikan ke dalam alat Anda sendiri."
+  },
+  "path": ["Gunakan", "Sesuaikan", "Integrasikan"],
+  "cards": [
+    {
+      "name": "Gunakan",
+      "summary": "Akses gratis untuk tim Anda di WhatsApp, Telegram, dan web.",
+      "detail": "<strong>Paling cocok untuk:</strong> tim, uji coba, lokakarya.",
+      "buttons": ["Mulai sekarang"]
+    },
+    {
+      "name": "Sesuaikan",
+      "summary": "Sumber daya, bahasa, gaya bahasa, dan alur kerja Anda.",
+      "detail": "Mode khusus (Pelatih, Penerjemah, Pemeriksaan), penerapan dengan merek Anda sendiri, dan dukungan produksi &mdash; melalui komitmen kemitraan.",
+      "buttons": ["Jelajahi penyesuaian"]
+    },
+    {
+      "name": "Integrasikan",
+      "summary": "Hadirkan bimbingan tepercaya di dalam aplikasi Anda sendiri.",
+      "detail": "Mesinnya bersumber terbuka &mdash; sematkan atau hosting sendiri, gratis.",
+      "buttons": ["GitHub", "Diskusikan integrasi"]
+    }
+  ],
+  "cta": {
+    "title": "Siap menghadirkan BT Servant bagi tim Anda?",
+    "useWithTeam": "Gunakan bersama tim Anda",
+    "customize": "Sesuaikan",
+    "integrate": "Integrasikan"
+  }
+}

@@ -1,0 +1,32 @@
+---
+// The language menu: the same markup and behaviour as the switchers on
+// openbiblestories.org and translationcore.com, styled to match the BT
+// Servant nav (main.css → "Language switcher"). /assets/js/main.js opens and
+// closes it; /assets/js/locale.js remembers a pick.
+import { locales, byCode, localePath, type PageSlug } from '../i18n/config';
+
+interface Props {
+  locale: string;
+  slug: PageSlug;
+  label: string;
+}
+const { locale, slug, label } = Astro.props;
+const current = byCode(locale);
+---
+<div class="lang-switcher">
+  {/* The accessible name contains the visible text ("English"), so voice
+      control users saying "click English" can activate it (WCAG 2.5.3). */}
+  <button type="button" class="lang-switcher__btn" aria-haspopup="true" aria-expanded="false">
+    <svg class="lang-switcher__globe" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 3 2.5 15 0 18M12 3c-2.5 3-2.5 15 0 18"/></svg>
+    <span class="sr-only">{label}:</span>
+    <span>{current.name}</span>
+    <svg class="lang-switcher__chevron" width="10" height="6" viewBox="0 0 10 6" aria-hidden="true"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.5"></path></svg>
+  </button>
+  <ul class="lang-switcher__menu">
+    {locales.map((l) => (
+      <li>
+        <a href={localePath(l.code, slug)} data-locale={l.code} lang={l.tag} dir={l.dir} aria-current={l.code === locale ? 'true' : undefined}>{l.name}</a>
+      </li>
+    ))}
+  </ul>
+</div>

@@ -1,0 +1,31 @@
+{
+  "skipToContent": "মূল বিষয়বস্তুতে যান",
+  "logoHomeLabel": "BT Servant হোম",
+  "nav": {
+    "label": "প্রধান",
+    "whatYouCanDo": "আপনি যা করতে পারেন",
+    "whereToUseIt": "কোথায় ব্যবহার করবেন",
+    "whyBtServant": "কেন BT Servant",
+    "organizations": "প্রতিষ্ঠান"
+  },
+  "headerCta": "কথোপকথন শুরু করুন",
+  "toggleMenu": "মেনু খুলুন/বন্ধ করুন",
+  "languageLabel": "ভাষা",
+  "mobileBar": {
+    "ask": "BT Servant-কে জিজ্ঞাসা করুন",
+    "chooseApp": "অ্যাপ বেছে নিন"
+  },
+  "footer": {
+    "tagline": "বাইবেলের গভীর জ্ঞান, এখন কথোপকথনের মাধ্যমে সহজলভ্য।",
+    "access": "ব্যবহার করুন",
+    "webApp": "ওয়েব অ্যাপ",
+    "resources": "সহায়ক উপকরণ",
+    "demoVideo": "ডেমো ভিডিও",
+    "contact": "যোগাযোগ",
+    "credit": "&copy; 2026 BT Servant &middot; <a href=\"https://www.unfoldingword.org/\" target=\"_blank\" rel=\"noopener\">unfoldingWord</a>-এর একটি প্রকল্প &middot; সর্বশেষ হালনাগাদ: {date}",
+    "openSource": "ওপেন সোর্স",
+    "releaseNotes": "রিলিজ নোট"
+  },
+  "brandline": "সহজভাবে জিজ্ঞাসা করুন। নির্ভরযোগ্য দিকনির্দেশনা পান। আস্থার সঙ্গে এগিয়ে যান।",
+  "ogImageAlt": "BT Servant — কথোপকথনের মাধ্যমে শাস্ত্রের উপর নির্ভরযোগ্য দিকনির্দেশনা"
+}

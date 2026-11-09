@@ -1,0 +1,158 @@
+{
+  "meta": {
+    "title": "BT Servant — Mwongozo wa Maandiko wa kuaminika kwenye programu unazotumia",
+    "description": "BT Servant huwaandaa wanafunzi kuelewa, kujifunza, kufundisha, kutafsiri na kushiriki Neno la Mungu, na kuwaandaa wengine — bure kwenye WhatsApp, Telegram na wavuti."
+  },
+  "hero": {
+    "title": "BT Servant huwaandaa wanafunzi",
+    "rotatorBefore": "",
+    "rotatorWords": ["kuelewa", "kujifunza", "kufundisha", "kutafsiri", "kushiriki"],
+    "rotatorAfter": "Neno la Mungu.",
+    "sub": "Uliza kwa maandishi au kwa sauti. Pata mwongozo wa kuaminika unaozingatia muktadha &mdash; ndani ya programu unazotumia tayari.",
+    "ctaWhatsapp": "Anza kwenye WhatsApp",
+    "ctaWeb": "Fungua Programu ya Wavuti"
+  },
+  "reach": {
+    "title": "Inapatikana popote unapohudumu.",
+    "sub": "Bure, kwenye programu unazozifahamu tayari.",
+    "openWhatsapp": "Fungua kwenye WhatsApp",
+    "openTelegram": "Fungua kwenye Telegram",
+    "openSignal": "Fungua kwenye Signal",
+    "openWeb": "Fungua Programu ya Wavuti",
+    "tabsLabel": "Chagua jukwaa",
+    "tabWeb": "Programu ya Wavuti",
+    "copyLink": "Nakili kiungo cha kufikia",
+    "linkCopied": "Kiungo kimenakiliwa!",
+    "scanToOpen": "Changanua ili kufungua",
+    "channels": {
+      "whatsapp": {
+        "heading": "Tumia BT Servant kwenye WhatsApp",
+        "steps": ["Changanua msimbo wa QR, au gusa “Fungua kwenye WhatsApp”.", "Tuma swali lolote.", "Jibu kwa maandishi au kwa sauti."],
+        "note": "",
+        "qrAlt": "Changanua ili kufungua BT Servant kwenye WhatsApp"
+      },
+      "telegram": {
+        "heading": "Tumia BT Servant kwenye Telegram",
+        "steps": ["Changanua msimbo wa QR, au gusa “Fungua kwenye Telegram” (au tafuta @bt_servant_bot).", "Gusa Start kisha tuma swali lolote.", "Jibu kwa maandishi au kwa sauti."],
+        "note": "@bt_servant_bot",
+        "qrAlt": "Changanua ili kufungua BT Servant kwenye Telegram"
+      },
+      "signal": {
+        "heading": "Tumia BT Servant kwenye Signal",
+        "steps": ["Changanua msimbo wa QR, au gusa “Fungua kwenye Signal”.", "Tuma swali lolote.", "Jibu kwa maandishi au kwa sauti."],
+        "note": "",
+        "qrAlt": "Changanua ili kufungua BT Servant kwenye Signal"
+      },
+      "web": {
+        "heading": "Tumia BT Servant kwenye Wavuti",
+        "steps": ["Changanua msimbo wa QR, au fungua app.btservant.ai kwenye kivinjari chochote.", "Uliza swali lako la kwanza.", "Endelea kwenye simu yako baadaye."],
+        "note": "",
+        "qrAlt": "Changanua ili kufungua programu ya wavuti ya BT Servant"
+      }
+    },
+    "langs": "Kiingereza &middot; Kiindonesia &middot; Kihispania &middot; <em>na lugha nyingine nyingi</em> &middot; Pia kwa sauti"
+  },
+  "intents": {
+    "title": "Ungependa kufanya nini leo?",
+    "sub": "Chagua pa kuanzia. Mengine ni mazungumzo.",
+    "listLabel": "Chagua unachotaka kufanya",
+    "items": [
+      {
+        "name": "Elewa",
+        "text": "Maana ya kifungu.",
+        "cta": "Anza kuelewa",
+        "alt": "Mazungumzo halisi ya WhatsApp na BT Servant: mtumiaji anaomba msaada wa kuelewa Warumi 12:1-2, na BT Servant inajibu kwa maandiko ya kifungu hicho na maelezo ya tafsiri."
+      },
+      {
+        "name": "Jifunze",
+        "text": "Muktadha, maswali, rasilimali.",
+        "cta": "Anza kujifunza",
+        "alt": "Mazungumzo halisi ya WhatsApp na BT Servant: mtumiaji anauliza kuhusu muktadha wa kihistoria wa Wafilipi, na BT Servant inajibu kwa maelezo ya usuli kutoka kwa rasilimali za kujifunza Biblia."
+      },
+      {
+        "name": "Fundisha",
+        "text": "Masomo na majadiliano.",
+        "cta": "Anza kufundisha",
+        "alt": "Mazungumzo halisi ya WhatsApp na BT Servant: mtumiaji anaomba msaada wa kuandaa somo kuhusu Msamaria Mwema, na BT Servant inajibu kwa muhtasari wa somo na mambo muhimu."
+      },
+      {
+        "name": "Tafsiri",
+        "text": "Istilahi, maana, maamuzi.",
+        "cta": "Anza kutafsiri",
+        "alt": "Mazungumzo halisi ya WhatsApp na BT Servant: mtumiaji anauliza jinsi ya kutafsiri neno neema kwa lugha isiyo na neno linalolingana nalo, na BT Servant inajibu kwa mwongozo kutoka Translation Words na Translation Academy."
+      },
+      {
+        "name": "Shiriki",
+        "text": "Injili, ikielezwa kwa uwazi.",
+        "cta": "Anza kushiriki",
+        "alt": "Mazungumzo halisi ya WhatsApp na BT Servant: mtumiaji anaomba msaada wa kueleza Injili, na BT Servant inajibu kwa muhtasari ulio wazi wa vifungu muhimu kuhusu Injili."
+      },
+      {
+        "name": "Andaa",
+        "text": "Funza na zidisha viongozi.",
+        "cta": "Anza kuandaa",
+        "alt": "Mazungumzo halisi ya WhatsApp na BT Servant: mtumiaji anaomba msaada wa kufundisha vikundi vya lugha nyingi kanuni za tafsiri ya Biblia, na BT Servant inajibu kwa maswali ya ufafanuzi ili kurekebisha mafunzo yalingane na mahitaji yao."
+      }
+    ],
+    "continueOn": "Endelea kwenye:",
+    "continueWeb": "Wavuti"
+  },
+  "why": {
+    "title": "Mwongozo unaoweza kuuamini",
+    "items": [
+      { "name": "Wa kuaminika", "text": "Umejengwa juu ya rasilimali za Biblia zilizohakikiwa &mdash; si mtandao wazi." },
+      { "name": "Wa kawaida", "text": "Maandishi au sauti. Hakuna amri za kujifunza." },
+      { "name": "Unaozingatia watu", "text": "Huwasaidia wachungaji, walimu na watafsiri. Haiwachukui nafasi kamwe." }
+    ]
+  },
+  "partners": {
+    "title": "Imejengwa pamoja na huduma. Imeundwa kwa matumizi halisi."
+  },
+  "faq": {
+    "title": "Maswali yanayoulizwa mara kwa mara",
+    "items": [
+      {
+        "q": "BT Servant ni nini?",
+        "a": "BT Servant ni msaidizi wa AI wa bure kutoka unfoldingWord anayetoa mwongozo wa Maandiko wa kuaminika unaozingatia muktadha kupitia mazungumzo, ndani ya programu za ujumbe ambazo watu wanazitumia tayari na kwenye wavuti. Huwasaidia wanafunzi kuelewa, kujifunza, kufundisha, kutafsiri na kushiriki Neno la Mungu, na kuwaandaa wengine kufanya vivyo hivyo."
+      },
+      {
+        "q": "Ninaweza kuuliza BT Servant nini?",
+        "a": "Anza na unachohitaji: kuelewa maana ya kifungu; kujifunza muktadha wake, maswali na rasilimali; kufundisha kwa masomo na majadiliano; kutafsiri istilahi, maana na maamuzi; kushiriki Injili kwa uwazi; au kuwaandaa wengine ili wafunze na kuzidisha viongozi. Mengine ni mazungumzo."
+      },
+      {
+        "q": "Ninaweza kutumia BT Servant wapi?",
+        "a": "Kwenye WhatsApp (+1 555-819-6461), kwenye Telegram (@bt_servant_bot), kwenye Signal, na kwenye kivinjari chochote cha wavuti kupitia <a href=\"https://app.btservant.ai/chat\">app.btservant.ai</a>. Uliza kwa maandishi au kwa sauti; hakuna amri za kujifunza."
+      },
+      {
+        "q": "Ninaanzaje mazungumzo?",
+        "a": "Changanua msimbo wa QR ulio kwenye ukurasa huu kwa simu yako, au gusa kitufe cha programu unayotumia tayari. Tuma swali lolote, kisha ujibu kwa maandishi au kwa sauti. Unaweza kuanza kwenye kivinjari na kuendelea kwenye simu yako baadaye."
+      },
+      {
+        "q": "BT Servant inapatikana kwa lugha zipi?",
+        "a": "Kiingereza, Kiindonesia, Kihispania na lugha nyingine nyingi. Unaweza kuuliza na kupata majibu kwa maandishi au kwa sauti."
+      },
+      {
+        "q": "Majibu ya BT Servant yanatoka wapi?",
+        "a": "Majibu yamejengwa juu ya rasilimali za Biblia zilizohakikiwa, si mtandao kwa ujumla. Kwa mfano, maswali ya tafsiri hutumia Translation Words na Translation Academy. BT Servant huwasaidia wachungaji, walimu na watafsiri; haiwachukui nafasi kamwe."
+      },
+      {
+        "q": "Nani anatengeneza BT Servant?",
+        "a": "BT Servant ni mradi wa <a href=\"https://unfoldingword.org/about-2/\">unfoldingWord</a>, uliojengwa pamoja na washirika wa huduma ETEN Innovation Lab, Word Collective na Spoken Worldwide. Injini yake imechapishwa kwenye <a href=\"https://github.com/unfoldingWord/bt-servant-engine\">GitHub</a>, bure kuipachika au kuiendesha kwenye seva yako mwenyewe."
+      },
+      {
+        "q": "Je, shirika langu linaweza kutumia BT Servant?",
+        "a": "Ndiyo. Timu zinaweza <a href=\"/organizations/\">kuitumia, kuibadilisha au kuiunganisha</a>: ufikiaji wa bure kwa timu nzima; hali maalum kama Mkufunzi, Mtafsiri na Ukaguzi; au injini yenyewe ndani ya zana zenu."
+      }
+    ]
+  },
+  "cta": {
+    "title": "Ungependa kufanya nini sasa?",
+    "individuals": "Watu binafsi",
+    "startWhatsapp": "Anza kwenye WhatsApp",
+    "webApp": "Programu ya Wavuti",
+    "organizations": "Mashirika",
+    "useWithTeam": "Itumie na timu yako",
+    "customize": "Badilisha",
+    "integrate": "Unganisha"
+  }
+}

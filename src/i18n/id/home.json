@@ -1,0 +1,158 @@
+{
+  "meta": {
+    "title": "BT Servant — Bimbingan Alkitab tepercaya di aplikasi yang Anda pakai",
+    "description": "Pahami, pelajari, ajarkan, terjemahkan, dan bagikan Firman Tuhan, serta perlengkapi orang lain, bersama BT Servant — gratis di WhatsApp, Telegram, dan web."
+  },
+  "hero": {
+    "title": "BT Servant memperlengkapi murid-murid",
+    "rotatorBefore": "",
+    "rotatorWords": ["untuk memahami", "untuk mempelajari", "untuk mengajarkan", "untuk menerjemahkan", "untuk membagikan"],
+    "rotatorAfter": "Firman Tuhan.",
+    "sub": "Bertanyalah lewat teks atau suara. Dapatkan bimbingan tepercaya yang memahami konteks &mdash; di dalam aplikasi yang sudah Anda gunakan.",
+    "ctaWhatsapp": "Mulai di WhatsApp",
+    "ctaWeb": "Buka Aplikasi Web"
+  },
+  "reach": {
+    "title": "Tersedia di mana pun Anda melayani.",
+    "sub": "Gratis, di aplikasi yang sudah Anda kenal.",
+    "openWhatsapp": "Buka di WhatsApp",
+    "openTelegram": "Buka di Telegram",
+    "openSignal": "Buka di Signal",
+    "openWeb": "Buka Aplikasi Web",
+    "tabsLabel": "Pilih platform",
+    "tabWeb": "Aplikasi Web",
+    "copyLink": "Salin tautan akses",
+    "linkCopied": "Tautan disalin!",
+    "scanToOpen": "Pindai untuk membuka",
+    "channels": {
+      "whatsapp": {
+        "heading": "Gunakan BT Servant di WhatsApp",
+        "steps": ["Pindai kode QR, atau ketuk “Buka di WhatsApp”.", "Kirim pertanyaan apa saja.", "Balas dengan teks atau suara."],
+        "note": "",
+        "qrAlt": "Pindai untuk membuka BT Servant di WhatsApp"
+      },
+      "telegram": {
+        "heading": "Gunakan BT Servant di Telegram",
+        "steps": ["Pindai kode QR, atau ketuk “Buka di Telegram” (atau cari @bt_servant_bot).", "Ketuk Mulai dan kirim pertanyaan apa saja.", "Balas dengan teks atau suara."],
+        "note": "@bt_servant_bot",
+        "qrAlt": "Pindai untuk membuka BT Servant di Telegram"
+      },
+      "signal": {
+        "heading": "Gunakan BT Servant di Signal",
+        "steps": ["Pindai kode QR, atau ketuk “Buka di Signal”.", "Kirim pertanyaan apa saja.", "Balas dengan teks atau suara."],
+        "note": "",
+        "qrAlt": "Pindai untuk membuka BT Servant di Signal"
+      },
+      "web": {
+        "heading": "Gunakan BT Servant di Web",
+        "steps": ["Pindai kode QR, atau buka app.btservant.ai di peramban apa saja.", "Ajukan pertanyaan pertama Anda.", "Lanjutkan nanti di ponsel Anda."],
+        "note": "",
+        "qrAlt": "Pindai untuk membuka aplikasi web BT Servant"
+      }
+    },
+    "langs": "Inggris &middot; Indonesia &middot; Spanyol &middot; <em>dan banyak bahasa lainnya</em> &middot; Mendukung audio"
+  },
+  "intents": {
+    "title": "Apa yang ingin Anda lakukan hari ini?",
+    "sub": "Pilih titik awal. Selebihnya adalah percakapan.",
+    "listLabel": "Pilih apa yang ingin Anda lakukan",
+    "items": [
+      {
+        "name": "Memahami",
+        "text": "Arti sebuah perikop.",
+        "cta": "Mulai memahami",
+        "alt": "Percakapan WhatsApp nyata dengan BT Servant: seorang pengguna meminta bantuan untuk memahami Roma 12:1-2, dan BT Servant membalas dengan teks perikop tersebut serta catatan terjemahan."
+      },
+      {
+        "name": "Mempelajari",
+        "text": "Konteks, pertanyaan, sumber daya.",
+        "cta": "Mulai mempelajari",
+        "alt": "Percakapan WhatsApp nyata dengan BT Servant: seorang pengguna bertanya tentang konteks sejarah surat Filipi, dan BT Servant membalas dengan latar belakang dari sumber daya pendalaman Alkitab."
+      },
+      {
+        "name": "Mengajar",
+        "text": "Pelajaran dan diskusi.",
+        "cta": "Mulai mengajar",
+        "alt": "Percakapan WhatsApp nyata dengan BT Servant: seorang pengguna meminta bantuan menyiapkan pelajaran tentang orang Samaria yang murah hati, dan BT Servant membalas dengan kerangka pelajaran dan wawasan penting."
+      },
+      {
+        "name": "Menerjemahkan",
+        "text": "Istilah, makna, keputusan.",
+        "cta": "Mulai menerjemahkan",
+        "alt": "Percakapan WhatsApp nyata dengan BT Servant: seorang pengguna bertanya cara menerjemahkan kata kasih karunia ke dalam bahasa yang tidak memiliki padanan katanya, dan BT Servant membalas dengan panduan dari Translation Words dan Translation Academy."
+      },
+      {
+        "name": "Membagikan",
+        "text": "Injil, disampaikan dengan jelas.",
+        "cta": "Mulai membagikan",
+        "alt": "Percakapan WhatsApp nyata dengan BT Servant: seorang pengguna meminta bantuan menjelaskan Injil, dan BT Servant membalas dengan kerangka yang jelas berisi perikop-perikop utama tentang Injil."
+      },
+      {
+        "name": "Memperlengkapi",
+        "text": "Latih dan lipat gandakan pemimpin.",
+        "cta": "Mulai memperlengkapi",
+        "alt": "Percakapan WhatsApp nyata dengan BT Servant: seorang pengguna meminta bantuan melatih kelompok multibahasa dalam prinsip-prinsip penerjemahan Alkitab, dan BT Servant membalas dengan pertanyaan klarifikasi untuk menyesuaikan pelatihannya."
+      }
+    ],
+    "continueOn": "Lanjutkan di:",
+    "continueWeb": "Web"
+  },
+  "why": {
+    "title": "Bimbingan yang dapat Anda percayai",
+    "items": [
+      { "name": "Tepercaya", "text": "Berlandaskan sumber daya Alkitab yang telah diperiksa &mdash; bukan internet terbuka." },
+      { "name": "Alami", "text": "Teks atau suara. Tidak ada perintah yang perlu dipelajari." },
+      { "name": "Berpusat pada manusia", "text": "Mendukung gembala, guru, dan penerjemah. Tidak pernah menggantikan mereka." }
+    ]
+  },
+  "partners": {
+    "title": "Dibangun bersama pelayanan. Dibentuk oleh pemakaian nyata."
+  },
+  "faq": {
+    "title": "Pertanyaan yang sering diajukan",
+    "items": [
+      {
+        "q": "Apa itu BT Servant?",
+        "a": "BT Servant adalah asisten AI gratis dari unfoldingWord yang memberikan bimbingan Alkitab yang tepercaya dan memahami konteks melalui percakapan, di dalam aplikasi pesan yang sudah digunakan banyak orang dan di web. BT Servant menolong murid-murid untuk memahami, mempelajari, mengajarkan, menerjemahkan, dan membagikan Firman Tuhan, serta memperlengkapi orang lain untuk melakukan hal yang sama."
+      },
+      {
+        "q": "Apa yang bisa saya tanyakan kepada BT Servant?",
+        "a": "Mulailah dari kebutuhan Anda: memahami arti sebuah perikop; mempelajari konteks, pertanyaan, dan sumber dayanya; mengajar melalui pelajaran dan diskusi; menerjemahkan istilah, makna, dan keputusan; membagikan Injil dengan jelas; atau memperlengkapi orang lain untuk melatih dan melipatgandakan pemimpin. Selebihnya adalah percakapan."
+      },
+      {
+        "q": "Di mana saya bisa menggunakan BT Servant?",
+        "a": "Di WhatsApp (+1 555-819-6461), di Telegram (@bt_servant_bot), di Signal, dan di peramban web mana pun di <a href=\"https://app.btservant.ai/chat\">app.btservant.ai</a>. Bertanyalah lewat teks atau suara; tidak ada perintah yang perlu dipelajari."
+      },
+      {
+        "q": "Bagaimana cara memulai percakapan?",
+        "a": "Pindai kode QR di halaman ini dengan ponsel Anda, atau ketuk tombol untuk aplikasi yang sudah Anda gunakan. Kirim pertanyaan apa saja, lalu balas dengan teks atau suara. Anda dapat memulai di peramban dan melanjutkannya nanti di ponsel."
+      },
+      {
+        "q": "Bahasa apa saja yang didukung BT Servant?",
+        "a": "Bahasa Inggris, Indonesia, Spanyol, dan banyak bahasa lainnya. Anda dapat bertanya dan menerima jawaban dalam bentuk teks atau suara."
+      },
+      {
+        "q": "Dari mana jawaban BT Servant berasal?",
+        "a": "Jawabannya berlandaskan sumber daya Alkitab yang telah diperiksa, bukan internet secara umum. Misalnya, pertanyaan tentang penerjemahan mengacu pada Translation Words dan Translation Academy. BT Servant mendukung gembala, guru, dan penerjemah; BT Servant tidak pernah menggantikan mereka."
+      },
+      {
+        "q": "Siapa yang membuat BT Servant?",
+        "a": "BT Servant adalah proyek dari <a href=\"https://unfoldingword.org/about-2/\">unfoldingWord</a>, yang dibangun bersama mitra pelayanan ETEN Innovation Lab, Word Collective, dan Spoken Worldwide. Mesinnya diterbitkan di <a href=\"https://github.com/unfoldingWord/bt-servant-engine\">GitHub</a>, gratis untuk disematkan atau dihosting sendiri."
+      },
+      {
+        "q": "Bisakah organisasi saya menggunakan BT Servant?",
+        "a": "Bisa. Tim dapat <a href=\"/organizations/\">menggunakannya, menyesuaikannya, atau mengintegrasikannya</a>: akses gratis untuk seluruh tim; mode khusus seperti Pelatih, Penerjemah, dan Pemeriksaan; atau mesinnya sendiri di dalam alat Anda."
+      }
+    ]
+  },
+  "cta": {
+    "title": "Apa yang ingin Anda lakukan selanjutnya?",
+    "individuals": "Perorangan",
+    "startWhatsapp": "Mulai di WhatsApp",
+    "webApp": "Aplikasi Web",
+    "organizations": "Organisasi",
+    "useWithTeam": "Gunakan bersama tim Anda",
+    "customize": "Sesuaikan",
+    "integrate": "Integrasikan"
+  }
+}

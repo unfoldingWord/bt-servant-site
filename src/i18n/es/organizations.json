@@ -1,0 +1,37 @@
+{
+  "meta": {
+    "title": "BT Servant para organizaciones — Úsalo, personalízalo, intégralo",
+    "description": "Lleva a tu equipo la orientación bíblica confiable y contextual de BT Servant — gratis, adaptable a tus recursos y procesos, y de código abierto."
+  },
+  "hero": {
+    "title": "Para organizaciones",
+    "sub": "Lleva a tu equipo orientación bíblica confiable y atenta al contexto &mdash; empieza gratis, personalízala a medida que crezcas o intégrala en tus propias herramientas."
+  },
+  "path": ["Úsalo", "Personalízalo", "Intégralo"],
+  "cards": [
+    {
+      "name": "Usar",
+      "summary": "Acceso gratuito para tu equipo en WhatsApp, Telegram y la web.",
+      "detail": "<strong>Ideal para:</strong> equipos, proyectos piloto, talleres.",
+      "buttons": ["Empieza ahora"]
+    },
+    {
+      "name": "Personalizar",
+      "summary": "Tus recursos, idioma, tono y procesos de trabajo.",
+      "detail": "Modos personalizados (Capacitador, Traductor, Revisión), implementaciones con tu propia marca y soporte en producción &mdash; mediante compromisos de colaboración.",
+      "buttons": ["Explora la personalización"]
+    },
+    {
+      "name": "Integrar",
+      "summary": "Lleva orientación confiable a tus propias apps.",
+      "detail": "El motor es de código abierto &mdash; intégralo o alójalo por tu cuenta, gratis.",
+      "buttons": ["GitHub", "Habla sobre una integración"]
+    }
+  ],
+  "cta": {
+    "title": "¿Listo para llevar BT Servant a tu equipo?",
+    "useWithTeam": "Úsalo con tu equipo",
+    "customize": "Personalizar",
+    "integrate": "Integrar"
+  }
+}

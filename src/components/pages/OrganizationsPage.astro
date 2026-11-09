@@ -1,0 +1,78 @@
+---
+// The organizations page, rendered once per locale. Markup carried over
+// verbatim from the static site's organizations.html; every visible string
+// comes from src/i18n/{locale}/organizations.json (or ui.json). The card
+// order and anchors (#use, #customize, #integrate) are ORG_IDS in
+// src/data/site.ts.
+import Base from '../../layouts/Base.astro';
+import { ORG_IDS, WEB_APP_HOME_URL, CONTACT_URL, GITHUB_URL } from '../../data/site';
+import { content } from '../../i18n/content';
+
+interface Props { locale: string }
+const { locale } = Astro.props;
+const t = content<any>(locale, 'organizations');
+const ui = content<any>(locale, 'ui');
+---
+<Base locale={locale} slug="organizations" title={t.meta.title} description={t.meta.description} bodyClass="page">
+
+  <!-- ============================================================ -->
+  <!-- ORGANIZATIONS PAGE HEADER -->
+  <!-- ============================================================ -->
+  <section class="hero" style="padding: 56px 0 20px;">
+    <div class="container">
+      <div class="section-head" style="max-width: 720px; margin: 0;">
+        <h1 class="hero__title" set:html={t.hero.title} />
+        <p class="hero__sub" style="margin-top: 14px;" set:html={t.hero.sub} />
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================ -->
+  <!-- ORG PATH + CARDS -->
+  <!-- ============================================================ -->
+  <section class="org" id="for-organizations">
+    <div class="container">
+      <div class="org__path" aria-hidden="true">
+        <span set:html={t.path[0]} /> <span class="org__path-arrow">&rarr;</span> <span set:html={t.path[1]} /> <span class="org__path-arrow">&rarr;</span> <span set:html={t.path[2]} />
+      </div>
+
+      <div class="org__cards">
+        {ORG_IDS.map((id, i) => (
+          <details class="org-card" id={id} open={i === 0}>
+            <summary>
+              <h3 set:html={t.cards[i].name} />
+              <p set:html={t.cards[i].summary} />
+            </summary>
+            <div class="org-card__body">
+              <p set:html={t.cards[i].detail} />
+              {id === 'use' && <a href={WEB_APP_HOME_URL} class="btn btn--bronze btn--sm" set:html={t.cards[i].buttons[0]} />}
+              {id === 'customize' && <a href={CONTACT_URL} class="btn btn--navy btn--sm" target="_blank" rel="noopener" set:html={t.cards[i].buttons[0]} />}
+              {id === 'integrate' && <Fragment>
+                <a href={GITHUB_URL} class="btn btn--ghost btn--sm" target="_blank" rel="noopener" set:html={t.cards[i].buttons[0]} />
+                <a href={CONTACT_URL} class="btn btn--navy btn--sm" target="_blank" rel="noopener" set:html={t.cards[i].buttons[1]} />
+              </Fragment>}
+            </div>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================ -->
+  <!-- FINAL CTA -->
+  <!-- ============================================================ -->
+  <section class="cta-banner" id="get-started">
+    <div class="container cta-banner__inner">
+      <h2 class="cta-banner__title" set:html={t.cta.title} />
+      <div class="cta-banner__group">
+        <div class="cta-banner__actions">
+          <a href="https://app.btservant.ai" class="btn btn--bronze" data-track="org_cta" data-track-name="use" set:html={t.cta.useWithTeam} />
+          <a href="https://unfoldingword.org/contact/" class="btn btn--outline-light" target="_blank" rel="noopener" data-track="org_cta" data-track-name="customize" set:html={t.cta.customize} />
+          <a href="https://unfoldingword.org/contact/" class="btn btn--outline-light" target="_blank" rel="noopener" data-track="org_cta" data-track-name="integrate" set:html={t.cta.integrate} />
+        </div>
+      </div>
+      <p class="cta-banner__brandline" set:html={ui.brandline} />
+    </div>
+  </section>
+
+</Base>

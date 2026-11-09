@@ -1,0 +1,277 @@
+---
+// The home page, rendered once per locale (src/pages/index.astro for
+// English, src/pages/[lang]/index.astro for the rest). Markup carried over
+// verbatim from the static site's index.html; every visible string comes
+// from src/i18n/{locale}/home.json (or ui.json), with English as the
+// fallback for any key a locale lacks. The strings /assets/js/main.js swaps
+// in (intent previews, channel steps, the rotating hero words) are passed to
+// it as JSON in #btStrings.
+import Base from '../../layouts/Base.astro';
+import { INTENT_KEYS, PARTNERS, plainText } from '../../data/site';
+import { faqNode } from '../../lib/jsonld';
+import { content } from '../../i18n/content';
+import { byCode, localePath, localizeLinks } from '../../i18n/config';
+
+interface Props { locale: string }
+const { locale } = Astro.props;
+const t = content<any>(locale, 'home');
+const ui = content<any>(locale, 'ui');
+const def = byCode(locale);
+const canonical = new URL(localePath(locale, 'home'), Astro.site).href;
+// A rotatorAfter that is only sentence-final punctuation (".", "۔", "。", "।",
+// "။") stays on the rotating word's line, with no space before it, instead
+// of taking the block-level tail line that "God’s Word." gets in English.
+const afterIsPunctuation = /^[.!?,;:。．！？۔؟،।॥။]/.test(t.hero.rotatorAfter);
+
+// Strings for /assets/js/main.js (plain text: it sets textContent and alt).
+const scriptStrings = JSON.stringify({
+  rotatorWords: t.hero.rotatorWords.map(plainText),
+  linkCopied: plainText(t.reach.linkCopied),
+  intents: Object.fromEntries(
+    INTENT_KEYS.map((key, i) => [key, { alt: plainText(t.intents.items[i].alt), cta: plainText(t.intents.items[i].cta) }])
+  ),
+  channels: Object.fromEntries(
+    Object.entries(t.reach.channels).map(([key, c]: [string, any]) => [
+      key,
+      { heading: plainText(c.heading), steps: c.steps.map(plainText), note: plainText(c.note), qrAlt: plainText(c.qrAlt) },
+    ])
+  ),
+  ctas: {
+    whatsapp: plainText(t.reach.openWhatsapp),
+    telegram: plainText(t.reach.openTelegram),
+    signal: plainText(t.reach.openSignal),
+    web: plainText(t.reach.openWeb),
+  },
+}).replace(/</g, '\\u003c');
+
+// Each intent's line icon (markup only; the copy is intents.items in home.json).
+const INTENT_ICONS: Record<string, string> = {
+  understand: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 12s3.5-6.5 10-6.5S22 12 22 12s-3.5 6.5-10 6.5S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg>',
+  study: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 5h7v15H4a1 1 0 01-1-1V6a1 1 0 011-1z"/><path d="M20 5h-7v15h7a1 1 0 001-1V6a1 1 0 00-1-1z"/></svg>',
+  teach: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 5h14v10H8l-4 4V5z"/><path d="M21 9v8l-3-3h-4"/></svg>',
+  translate: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 3 2.5 15 0 18M12 3c-2.5 3-2.5 15 0 18"/></svg>',
+  share: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20.5 3.5A11 11 0 003.2 17.2L2 22l4.9-1.3A11 11 0 1020.5 3.5z"/></svg>',
+  equip: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="8" cy="8" r="3"/><path d="M2 20c0-3.3 2.7-6 6-6s6 2.7 6 6"/><path d="M15 8h5M17.5 5.5v5"/></svg>',
+};
+---
+<Base locale={locale} slug="home" title={t.meta.title} description={t.meta.description} bodyClass="home" jsonLd={[faqNode(canonical, t.faq.items, def.tag)]}>
+
+  <!-- ============================================================ -->
+  <!-- 1. HERO -->
+  <!-- ============================================================ -->
+  <section class="hero">
+    <div class="container hero__inner">
+      <div class="hero__copy">
+        <h1 class="hero__title" set:html={t.hero.title} />
+        <p class="hero__rotator" aria-live="polite">{t.hero.rotatorBefore && <Fragment><span class="hero__rotator-tail" set:html={t.hero.rotatorBefore} /> </Fragment>}<span class="hero__rotator-text" id="heroRotator" set:html={t.hero.rotatorWords[0]} /><span class="caret" aria-hidden="true"></span>{t.hero.rotatorAfter && (afterIsPunctuation
+          ? <span class="hero__rotator-punct" set:html={t.hero.rotatorAfter} />
+          : <Fragment> <span class="hero__rotator-tail" set:html={t.hero.rotatorAfter} /></Fragment>)}</p>
+        <p class="hero__sub" set:html={t.hero.sub} />
+        <div class="hero__actions">
+          <a href="https://wa.me/15558196461?text=Hello%2C%20BT%20Servant" class="btn btn--navy" data-track="hero_cta" data-track-name="start_whatsapp" set:html={t.hero.ctaWhatsapp} />
+          <a href="https://app.btservant.ai/chat" class="btn btn--ghost" data-track="hero_cta" data-track-name="open_webapp" set:html={t.hero.ctaWeb} />
+        </div>
+      </div>
+
+      <div class="hero__visual" aria-hidden="true">
+        <div class="chat-shot">
+          <img src="/assets/images/wa/understand.png" alt={plainText(t.intents.items[0].alt)} loading="lazy" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================ -->
+  <!-- 2. REACH -->
+  <!-- ============================================================ -->
+  <section class="reach" id="where-to-use-it">
+    <div class="container">
+      <div class="section-head section-head--center">
+        <h2 class="section-title reach__title" set:html={t.reach.title} />
+        <p class="section-sub reach__sub" set:html={t.reach.sub} />
+      </div>
+
+      <div class="reach__mobile-actions">
+        <a href="https://wa.me/15558196461?text=Hello%2C%20BT%20Servant" class="btn btn--navy" data-track="reach_mobile" data-track-name="whatsapp" set:html={t.reach.openWhatsapp} />
+        <a href="https://t.me/bt_servant_bot" class="btn btn--ghost" data-track="reach_mobile" data-track-name="telegram" set:html={t.reach.openTelegram} />
+        <a href="https://signal.me/#eu/-RGNTp_ER2U74QlijVSyUHxU_EnzcvATLyvcTyCYS8r_jcbr-FlNxJcgZ7fPXTce" class="btn btn--ghost" data-track="reach_mobile" data-track-name="signal" set:html={t.reach.openSignal} />
+        <a href="https://app.btservant.ai/chat" class="btn btn--bronze" data-track="reach_mobile" data-track-name="web" set:html={t.reach.openWeb} />
+      </div>
+
+      <div class="reach__desktop" id="reachDesktop">
+        <div class="reach__tabs" role="tablist" aria-label={plainText(t.reach.tabsLabel)}>
+          <button class="reach__tab is-active" data-channel="whatsapp" role="tab" aria-selected="true" type="button">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M20.5 3.5A11 11 0 003.2 17.2L2 22l4.9-1.3A11 11 0 1020.5 3.5z"/></svg>
+            WhatsApp
+          </button>
+          <button class="reach__tab" data-channel="telegram" role="tab" aria-selected="false" type="button">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M2 12l19-8-6 18-5-6-6-2z"/></svg>
+            Telegram
+          </button>
+          <button class="reach__tab" data-channel="signal" role="tab" aria-selected="false" type="button">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="12" r="9" stroke-dasharray="3 2.4"/><circle cx="12" cy="12" r="4.5"/></svg>
+            Signal
+          </button>
+          <button class="reach__tab" data-channel="web" role="tab" aria-selected="false" type="button">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 3 2.5 15 0 18M12 3c-2.5 3-2.5 15 0 18"/></svg>
+            <Fragment set:html={t.reach.tabWeb} />
+          </button>
+        </div>
+
+        <div class="reach__panel" id="reachPanel">
+          <div class="reach__steps-wrap">
+            <h3 id="reachHeading" set:html={t.reach.channels.whatsapp.heading} />
+            <ol class="wa-steps" id="reachSteps"></ol>
+            <p class="reach__note" id="reachNote"></p>
+            <div class="reach__panel-actions">
+              <a class="btn btn--navy" id="reachCta" href="https://wa.me/15558196461?text=Hello%2C%20BT%20Servant" data-track="reach_cta" data-track-name="whatsapp" set:html={t.reach.openWhatsapp} />
+              <button class="btn btn--ghost" id="reachCopyLink" type="button" set:html={t.reach.copyLink} />
+            </div>
+          </div>
+          <div class="reach__qr">
+            <img id="reachQrImg" src="/assets/images/qr-code.png" alt={plainText(t.reach.channels.whatsapp.qrAlt)} width="210" height="210" loading="lazy" />
+            <span set:html={t.reach.scanToOpen} />
+          </div>
+        </div>
+      </div>
+
+      <p class="reach__langs" set:html={t.reach.langs} />
+    </div>
+  </section>
+
+  <!-- ============================================================ -->
+  <!-- 3. INTENTS -->
+  <!-- ============================================================ -->
+  <section class="intents" id="what-you-can-do">
+    <div class="container">
+      <div class="section-head section-head--center">
+        <h2 class="section-title" set:html={t.intents.title} />
+        <p class="section-sub" set:html={t.intents.sub} />
+      </div>
+
+      <div class="intents__layout">
+        <div class="intents__list" role="tablist" aria-label={plainText(t.intents.listLabel)}>
+          {INTENT_KEYS.map((key, i) => (
+            <button class={i === 0 ? 'intent-btn is-active' : 'intent-btn'} data-intent={key} role="tab" aria-selected={i === 0 ? 'true' : 'false'} type="button">
+              <span class="intent-btn__icon" aria-hidden="true" set:html={INTENT_ICONS[key]} />
+              <span class="intent-btn__text"><strong set:html={t.intents.items[i].name} /><span set:html={t.intents.items[i].text} /></span>
+            </button>
+          ))}
+        </div>
+
+        <div class="intents__preview" id="intentPreview" data-intent="understand">
+          <div class="chat-shot">
+            <img id="intentPreviewImg" src="/assets/images/wa/understand.png" alt={plainText(t.intents.items[0].alt)} loading="lazy" />
+          </div>
+          <div class="intents__preview-actions">
+            <a href="https://app.btservant.ai/chat?intent=understand" class="btn btn--bronze" id="intentPreviewCta" data-track="intent_cta" data-track-name="understand" set:html={t.intents.items[0].cta} />
+            <div class="intents__preview-continue">
+              <span set:html={t.intents.continueOn} />
+              <a href="https://wa.me/15558196461?text=Hello%2C%20BT%20Servant" data-track="intent_continue" data-track-name="whatsapp">WhatsApp</a>
+              <a href="https://t.me/bt_servant_bot" data-track="intent_continue" data-track-name="telegram">Telegram</a>
+              <a href="https://app.btservant.ai/chat" data-track="intent_continue" data-track-name="web" set:html={t.intents.continueWeb} />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================ -->
+  <!-- 5. WHY BT SERVANT -->
+  <!-- ============================================================ -->
+  <section class="why section--vellum" id="why-bt-servant">
+    <div class="container">
+      <div class="section-head section-head--center">
+        <h2 class="section-title" set:html={t.why.title} />
+      </div>
+
+      <div class="why__grid">
+        {t.why.items.map((card: any) => (
+          <div class="why-card">
+            <h4 set:html={card.name} />
+            <p set:html={card.text} />
+          </div>
+        ))}
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============================================================ -->
+  <!-- 7. PARTNERS -->
+  <!-- ============================================================ -->
+  <section class="partners section--vellum" id="partners" style="padding-bottom: 60px;">
+    <div class="container">
+      <div class="section-head section-head--center">
+        <h2 class="section-title" set:html={t.partners.title} />
+      </div>
+    </div>
+    <div class="partner-bar">
+      <div class="container partner-banner">
+        {PARTNERS.map((partner) => (
+          <a class="partner-banner__logo" href={partner.url} target="_blank" rel="noopener">
+            <img src={partner.logo} alt={partner.name} loading="lazy" />
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================ -->
+  <!-- FAQ (also emitted as FAQPage JSON-LD, /ai/faq.json and in /llms.txt;
+       the questions and answers live in src/i18n/{locale}/home.json) -->
+  <!-- ============================================================ -->
+  <section class="faq" id="faq">
+    <div class="container">
+      <div class="section-head section-head--center">
+        <h2 class="section-title" set:html={t.faq.title} />
+      </div>
+
+      <div class="org__cards">
+        {t.faq.items.map(({ q, a }: any, i: number) => (
+          <details class="org-card" open={i === 0}>
+            <summary>
+              <h3 set:html={q} />
+            </summary>
+            <div class="org-card__body">
+              <p set:html={localizeLinks(a, locale)} />
+            </div>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================ -->
+  <!-- 8. FINAL CTA -->
+  <!-- ============================================================ -->
+  <section class="cta-banner" id="get-started">
+    <div class="container cta-banner__inner">
+      <h2 class="cta-banner__title" set:html={t.cta.title} />
+
+      <div class="cta-banner__group">
+        <span class="cta-banner__group-label" set:html={t.cta.individuals} />
+        <div class="cta-banner__actions">
+          <a href="https://wa.me/15558196461?text=Hello%2C%20BT%20Servant" class="btn btn--bronze" data-track="final_cta" data-track-name="whatsapp" set:html={t.cta.startWhatsapp} />
+          <a href="https://t.me/bt_servant_bot" class="btn btn--outline-light" data-track="final_cta" data-track-name="telegram">Telegram</a>
+          <a href="https://signal.me/#eu/-RGNTp_ER2U74QlijVSyUHxU_EnzcvATLyvcTyCYS8r_jcbr-FlNxJcgZ7fPXTce" class="btn btn--outline-light" data-track="final_cta" data-track-name="signal">Signal</a>
+          <a href="https://app.btservant.ai/chat" class="btn btn--outline-light" data-track="final_cta" data-track-name="web" set:html={t.cta.webApp} />
+        </div>
+      </div>
+      <div class="cta-banner__group">
+        <span class="cta-banner__group-label" set:html={t.cta.organizations} />
+        <div class="cta-banner__actions">
+          <a href="https://app.btservant.ai" class="btn btn--outline-light" set:html={t.cta.useWithTeam} />
+          <a href="https://unfoldingword.org/contact/" class="btn btn--outline-light" target="_blank" rel="noopener" set:html={t.cta.customize} />
+          <a href="https://unfoldingword.org/contact/" class="btn btn--outline-light" target="_blank" rel="noopener" set:html={t.cta.integrate} />
+        </div>
+      </div>
+
+      <p class="cta-banner__brandline" set:html={ui.brandline} />
+    </div>
+  </section>
+
+<script type="application/json" id="btStrings" set:html={scriptStrings} />
+
+</Base>

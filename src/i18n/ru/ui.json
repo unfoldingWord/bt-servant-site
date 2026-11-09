@@ -1,0 +1,31 @@
+{
+  "skipToContent": "Перейти к содержимому",
+  "logoHomeLabel": "BT Servant — главная",
+  "nav": {
+    "label": "Основное меню",
+    "whatYouCanDo": "Возможности",
+    "whereToUseIt": "Где использовать",
+    "whyBtServant": "Почему BT Servant",
+    "organizations": "Организациям"
+  },
+  "headerCta": "Начать диалог",
+  "toggleMenu": "Открыть или закрыть меню",
+  "languageLabel": "Язык",
+  "mobileBar": {
+    "ask": "Спросить BT Servant",
+    "chooseApp": "Выбрать приложение"
+  },
+  "footer": {
+    "tagline": "Глубокие библейские знания, доступные в простом диалоге.",
+    "access": "Доступ",
+    "webApp": "Веб-приложение",
+    "resources": "Ресурсы",
+    "demoVideo": "Демо-видео",
+    "contact": "Контакты",
+    "credit": "&copy; 2026 BT Servant &middot; проект <a href=\"https://www.unfoldingword.org/\" target=\"_blank\" rel=\"noopener\">unfoldingWord</a> &middot; Последнее обновление: {date}",
+    "openSource": "Открытый исходный код",
+    "releaseNotes": "Примечания к выпуску"
+  },
+  "brandline": "Спрашивайте как обычно. Получайте надёжные ответы. Действуйте уверенно.",
+  "ogImageAlt": "BT Servant — надёжная помощь в понимании Писания через диалог"
+}

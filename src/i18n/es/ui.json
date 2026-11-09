@@ -1,0 +1,31 @@
+{
+  "skipToContent": "Saltar al contenido",
+  "logoHomeLabel": "Inicio de BT Servant",
+  "nav": {
+    "label": "Principal",
+    "whatYouCanDo": "Qué puedes hacer",
+    "whereToUseIt": "Dónde usarlo",
+    "whyBtServant": "Por qué BT Servant",
+    "organizations": "Organizaciones"
+  },
+  "headerCta": "Empieza a conversar",
+  "toggleMenu": "Abrir o cerrar el menú",
+  "languageLabel": "Idioma",
+  "mobileBar": {
+    "ask": "Pregúntale a BT Servant",
+    "chooseApp": "Elige la app"
+  },
+  "footer": {
+    "tagline": "Conocimiento bíblico profundo, al alcance de una conversación.",
+    "access": "Acceso",
+    "webApp": "App web",
+    "resources": "Recursos",
+    "demoVideo": "Video de demostración",
+    "contact": "Contacto",
+    "credit": "&copy; 2026 BT Servant &middot; un proyecto de <a href=\"https://www.unfoldingword.org/\" target=\"_blank\" rel=\"noopener\">unfoldingWord</a> &middot; Última actualización: {date}",
+    "openSource": "Código abierto",
+    "releaseNotes": "Notas de versión"
+  },
+  "brandline": "Pregunta con naturalidad. Recibe orientación confiable. Actúa con confianza.",
+  "ogImageAlt": "BT Servant — orientación bíblica confiable a través de una conversación"
+}

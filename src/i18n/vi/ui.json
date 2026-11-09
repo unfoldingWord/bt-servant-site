@@ -1,0 +1,31 @@
+{
+  "skipToContent": "Chuyển đến nội dung",
+  "logoHomeLabel": "Trang chủ BT Servant",
+  "nav": {
+    "label": "Chính",
+    "whatYouCanDo": "Bạn có thể làm gì",
+    "whereToUseIt": "Dùng ở đâu",
+    "whyBtServant": "Vì sao chọn BT Servant",
+    "organizations": "Tổ chức"
+  },
+  "headerCta": "Bắt đầu trò chuyện",
+  "toggleMenu": "Mở/đóng menu",
+  "languageLabel": "Ngôn ngữ",
+  "mobileBar": {
+    "ask": "Hỏi BT Servant",
+    "chooseApp": "Chọn ứng dụng"
+  },
+  "footer": {
+    "tagline": "Hiểu biết sâu sắc về Kinh Thánh, dễ tiếp cận qua cuộc trò chuyện.",
+    "access": "Truy cập",
+    "webApp": "Ứng dụng web",
+    "resources": "Tài nguyên",
+    "demoVideo": "Video giới thiệu",
+    "contact": "Liên hệ",
+    "credit": "&copy; 2026 BT Servant &middot; một dự án của <a href=\"https://www.unfoldingword.org/\" target=\"_blank\" rel=\"noopener\">unfoldingWord</a> &middot; Cập nhật lần cuối {date}",
+    "openSource": "Mã nguồn mở",
+    "releaseNotes": "Ghi chú phát hành"
+  },
+  "brandline": "Hỏi tự nhiên. Nhận hướng dẫn đáng tin cậy. Hành động với sự tự tin.",
+  "ogImageAlt": "BT Servant — hướng dẫn Kinh Thánh đáng tin cậy qua cuộc trò chuyện"
+}

@@ -1,0 +1,31 @@
+{
+  "skipToContent": "အဓိကအကြောင်းအရာသို့ ကျော်သွားရန်",
+  "logoHomeLabel": "BT Servant ပင်မစာမျက်နှာ",
+  "nav": {
+    "label": "အဓိက",
+    "whatYouCanDo": "လုပ်ဆောင်နိုင်သည်များ",
+    "whereToUseIt": "အသုံးပြုနိုင်သည့်နေရာ",
+    "whyBtServant": "ဘာကြောင့် BT Servant",
+    "organizations": "အဖွဲ့အစည်းများ"
+  },
+  "headerCta": "စကားပြော စတင်ပါ",
+  "toggleMenu": "မီနူး ဖွင့်/ပိတ်",
+  "languageLabel": "ဘာသာစကား",
+  "mobileBar": {
+    "ask": "BT Servant ကို မေးပါ",
+    "chooseApp": "အက်ပ် ရွေးပါ"
+  },
+  "footer": {
+    "tagline": "နက်နဲသော ကျမ်းစာအသိပညာကို စကားပြောဆိုခြင်းဖြင့် လွယ်ကူစွာ ရယူနိုင်ပါသည်။",
+    "access": "အသုံးပြုရန်",
+    "webApp": "ဝဘ်အက်ပ်",
+    "resources": "အရင်းအမြစ်များ",
+    "demoVideo": "သရုပ်ပြ ဗီဒီယို",
+    "contact": "ဆက်သွယ်ရန်",
+    "credit": "&copy; 2026 BT Servant &middot; <a href=\"https://www.unfoldingword.org/\" target=\"_blank\" rel=\"noopener\">unfoldingWord</a> ၏ စီမံကိန်းတစ်ခု &middot; နောက်ဆုံး မွမ်းမံသည့်ရက်- {date}",
+    "openSource": "ပွင့်လင်းရင်းမြစ်",
+    "releaseNotes": "ထုတ်ဝေမှု မှတ်စုများ"
+  },
+  "brandline": "သဘာဝကျကျ မေးပါ။ ယုံကြည်စိတ်ချရသော လမ်းညွှန်မှုကို ရယူပါ။ စိတ်ချလက်ချ ဆောင်ရွက်ပါ။",
+  "ogImageAlt": "BT Servant — စကားပြောဆိုခြင်းဖြင့် ယုံကြည်စိတ်ချရသော ကျမ်းစာလမ်းညွှန်မှု"
+}

@@ -1,45 +1,69 @@
 ---
-// Shared page shell (the same contract as translationcore.com's Base.astro,
-// without the localization). The markup inside <body> is the hand-written
-// BT Servant design, carried over verbatim from the static site.
+// Shared page shell (the same contract as translationcore.com's Base.astro).
+// The markup inside <body> is the hand-written BT Servant design, carried
+// over verbatim from the static site.
 //
 // Props:
-//   pageKey   — 'home' | 'organizations' (from src/data/site.ts): drives the
-//               title, description, canonical and "Last updated" date
+//   locale    — locale code ('en', 'es', …)
+//   slug      — 'home' | 'organizations': drives the canonical, hreflang,
+//               the language switcher and the "Last updated" date
+//   title, description — this locale's <head> values
 //   bodyClass — the original <body class> ("home" or "page")
 //   jsonLd    — extra JSON-LD nodes merged into the page's single @graph
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import MobileBar from '../components/MobileBar.astro';
 import GoogleAnalytics from '../components/GoogleAnalytics.astro';
-import { page, PAGE_UPDATED, PRODUCT_NAME, PUBLISHER_NAME, RELEASES_FEED_URL, type PageKey } from '../data/site';
+import { PAGE_UPDATED, PRODUCT_NAME, PUBLISHER_NAME, RELEASES_FEED_URL } from '../data/site';
 import { organizationNode, websiteNode, appNode, webPageNode, serializeGraph } from '../lib/jsonld';
+import { locales, byCode, defaultLocale, localePath, fontHrefFor, localizedSlugs, slugPaths, type PageSlug } from '../i18n/config';
+import { content } from '../i18n/content';
 
 interface Props {
-  pageKey: PageKey;
+  locale: string;
+  slug: Exclude<PageSlug, '404'>;
+  title: string;
+  description: string;
   bodyClass: string;
   jsonLd?: unknown[];
 }
 
-const { pageKey, bodyClass, jsonLd = [] } = Astro.props;
-const { path, title, description } = page(pageKey);
-const updated = PAGE_UPDATED[pageKey];
-const isHome = pageKey === 'home';
-// In-page anchors (#where-to-use-it …) live on the home page.
-const anchorBase = isHome ? '' : '/';
+const { locale, slug, title, description, bodyClass, jsonLd = [] } = Astro.props;
+const def = byCode(locale);
+const ui = content<any>(locale, 'ui');
+const updated = PAGE_UPDATED[slug];
+const path = localePath(locale, slug);
+const homePath = localePath(locale, 'home');
+// In-page anchors (#where-to-use-it …) live on this locale's home page.
+const anchorBase = slug === 'home' ? '' : homePath;
 
 const canonical = new URL(path, Astro.site).href;
 const ogImage = new URL('/assets/images/og-image.png', Astro.site).href;
+const fontHref = fontHrefFor(locale);
 const graph = serializeGraph([
   organizationNode(),
   websiteNode(),
   appNode(),
-  webPageNode(canonical, title, description, updated),
+  webPageNode(canonical, title, description, updated, def.tag),
   ...jsonLd,
 ]);
+// Open Graph locales are language_TERRITORY (es_MX, fr_FR, zh_CN), set per
+// locale in src/i18n/config.ts; the BCP-47 tags stay on lang and hreflang.
+const ogLocale = (code: string) => byCode(code).og;
+
+// What /assets/js/locale.js needs to resolve the visitor's preferred
+// interface language (see README → Localization).
+const localeMeta = JSON.stringify({
+  locale,
+  defaultLocale,
+  alternates: true,
+  locales: locales.map((l) => l.code),
+  tags: Object.fromEntries(locales.map((l) => [l.code, l.tag])),
+  slugs: Object.fromEntries(localizedSlugs.map((s) => [s, slugPaths[s]])),
+});
 ---
 <!DOCTYPE html>
-<html lang="en" data-theme="carbon">
+<html lang={def.tag} dir={def.dir} data-script={def.script} data-theme="carbon">
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -53,17 +77,20 @@ const graph = serializeGraph([
 <meta property="og:title" content={title} />
 <meta property="og:description" content={description} />
 <meta property="og:url" content={canonical} />
-<meta property="og:locale" content="en_US" />
+<meta property="og:locale" content={ogLocale(locale)} />
+{locales.filter((l) => l.code !== locale).map((l) => <meta property="og:locale:alternate" content={ogLocale(l.code)} />)}
 <meta property="og:image" content={ogImage} />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
-<meta property="og:image:alt" content="BT Servant — trusted Scripture guidance through conversation" />
+<meta property="og:image:alt" content={ui.ogImageAlt} />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content={title} />
 <meta name="twitter:description" content={description} />
 <meta name="twitter:image" content={ogImage} />
+{locales.map((l) => <link rel="alternate" hreflang={l.tag} href={new URL(localePath(l.code, slug), Astro.site).href} />)}
+<link rel="alternate" hreflang="x-default" href={new URL(localePath(defaultLocale, slug), Astro.site).href} />
 <link rel="alternate" type="application/atom+xml" title="BT Servant engine releases" href={RELEASES_FEED_URL} />
-<link rel="alternate" type="text/markdown" title={`${title} (markdown)`} href={`${path}index.md`} />
+{locale === defaultLocale && <link rel="alternate" type="text/markdown" title={`${title} (markdown)`} href={`${path}index.md`} />}
 <script type="application/ld+json" set:html={graph} />
 
 <link rel="icon" type="image/png" href="/assets/images/favicon.png" />
@@ -72,25 +99,32 @@ const graph = serializeGraph([
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=Inter:wght@400;500;600;700;800&display=swap" />
+{fontHref && <link rel="stylesheet" href={fontHref} />}
 
 <link rel="stylesheet" href="/assets/css/main.css" />
+
+<!-- The interface-language preference (/assets/js/locale.js). In <head> and
+     not deferred: a visitor whose language has its own copy of this page is
+     redirected there before the browser paints the page they are leaving. -->
+<script is:inline set:html={`window.__btLocale=${localeMeta}`} />
+<script is:inline src="/assets/js/locale.js"></script>
 
 <GoogleAnalytics />
 </head>
 
 <body class={bodyClass}>
 
-<a class="skip-link" href="#site-content">Skip to content</a>
+<a class="skip-link" href="#site-content" set:html={ui.skipToContent} />
 
-<Header anchorBase={anchorBase} />
+<Header locale={locale} slug={slug} ui={ui} anchorBase={anchorBase} />
 
 <main id="site-content">
 <slot />
 </main>
 
-<MobileBar anchorBase={anchorBase} />
+<MobileBar ui={ui} anchorBase={anchorBase} />
 
-<Footer anchorBase={anchorBase} updated={updated} />
+<Footer locale={locale} ui={ui} anchorBase={anchorBase} updated={updated} />
 
 <script is:inline src="/assets/js/main.js"></script>
 </body>

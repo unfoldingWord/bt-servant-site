@@ -1,0 +1,37 @@
+{
+  "meta": {
+    "title": "BT Servant cho tổ chức — Sử dụng, tùy chỉnh, tích hợp",
+    "description": "Đem hướng dẫn Kinh Thánh đáng tin cậy, phù hợp với ngữ cảnh của BT Servant đến với nhóm của bạn — miễn phí sử dụng, có thể tùy chỉnh theo tài liệu và quy trình làm việc của bạn, và là mã nguồn mở để tích hợp vào ứng dụng của riêng bạn."
+  },
+  "hero": {
+    "title": "Dành cho tổ chức",
+    "sub": "Đem hướng dẫn Kinh Thánh đáng tin cậy, phù hợp với ngữ cảnh đến với nhóm của bạn &mdash; bắt đầu miễn phí, tùy chỉnh khi phát triển, hoặc tích hợp vào công cụ của riêng bạn."
+  },
+  "path": ["Sử dụng", "Tùy chỉnh", "Tích hợp"],
+  "cards": [
+    {
+      "name": "Sử dụng",
+      "summary": "Truy cập miễn phí cho nhóm của bạn trên WhatsApp, Telegram và web.",
+      "detail": "<strong>Phù hợp nhất cho:</strong> các nhóm, dự án thử nghiệm, hội thảo.",
+      "buttons": ["Bắt đầu ngay"]
+    },
+    {
+      "name": "Tùy chỉnh",
+      "summary": "Tài liệu, ngôn ngữ, giọng điệu và quy trình làm việc của bạn.",
+      "detail": "Các chế độ tùy chỉnh (Huấn luyện, Dịch thuật, Kiểm tra), triển khai mang thương hiệu riêng và hỗ trợ vận hành &mdash; thông qua cam kết đối tác.",
+      "buttons": ["Tìm hiểu tùy chỉnh"]
+    },
+    {
+      "name": "Tích hợp",
+      "summary": "Đưa hướng dẫn đáng tin cậy vào ứng dụng của riêng bạn.",
+      "detail": "Bộ máy là mã nguồn mở &mdash; nhúng hoặc tự lưu trữ, miễn phí.",
+      "buttons": ["GitHub", "Trao đổi về tích hợp"]
+    }
+  ],
+  "cta": {
+    "title": "Sẵn sàng đem BT Servant đến với nhóm của bạn?",
+    "useWithTeam": "Dùng cùng nhóm của bạn",
+    "customize": "Tùy chỉnh",
+    "integrate": "Tích hợp"
+  }
+}

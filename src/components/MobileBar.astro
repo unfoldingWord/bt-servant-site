@@ -1,9 +1,9 @@
 ---
 import { WHATSAPP_URL } from '../data/site';
-interface Props { anchorBase: string }
-const { anchorBase } = Astro.props;
+interface Props { ui: any; anchorBase: string }
+const { ui, anchorBase } = Astro.props;
 ---
 <div class="mobile-bar" aria-hidden="false">
-  <a href={WHATSAPP_URL} class="btn btn--navy" data-track="mobile_bar" data-track-name="ask">Ask BT Servant</a>
-  <a href={`${anchorBase}#where-to-use-it`} class="btn btn--ghost">Choose App</a>
+  <a href={WHATSAPP_URL} class="btn btn--navy" data-track="mobile_bar" data-track-name="ask" set:html={ui.mobileBar.ask} />
+  <a href={`${anchorBase}#where-to-use-it`} class="btn btn--ghost" set:html={ui.mobileBar.chooseApp} />
 </div>

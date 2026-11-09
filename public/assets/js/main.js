@@ -15,16 +15,65 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 
+  /* ---------- Localized strings ----------
+     Each page's copy of the strings below, in its own language, from the
+     <script type="application/json" id="btStrings"> the page renders
+     (src/components/pages/HomePage.astro). The English built into this file
+     is the fallback. */
+  var I18N = {};
+  try {
+    var stringsEl = document.getElementById('btStrings');
+    if (stringsEl) I18N = JSON.parse(stringsEl.textContent) || {};
+  } catch (e) { I18N = {}; }
+  function merge(target, extra) {
+    if (!extra) return target;
+    Object.keys(extra).forEach(function (k) {
+      var v = extra[k];
+      if (v === undefined || v === null) return;
+      if (v === '' && k !== 'note') return; /* an empty note is meaningful: no note */
+      target[k] = v;
+    });
+    return target;
+  }
+
+  /* ---------- Language switcher ---------- */
+  document.querySelectorAll('.lang-switcher').forEach(function (root) {
+    var toggle = root.querySelector('button[aria-haspopup]');
+    if (!toggle) return;
+    function close(focus) {
+      if (toggle.getAttribute('aria-expanded') !== 'true') return;
+      toggle.setAttribute('aria-expanded', 'false');
+      if (focus) toggle.focus();
+    }
+    toggle.addEventListener('click', function () {
+      toggle.setAttribute('aria-expanded', String(toggle.getAttribute('aria-expanded') !== 'true'));
+    });
+    root.addEventListener('keydown', function (e) { if (e.key === 'Escape') close(true); });
+    document.addEventListener('click', function (e) { if (!root.contains(e.target)) close(false); });
+  });
+
   /* ---------- Mobile nav ---------- */
   var navToggle = document.getElementById('navToggle');
   var siteNav = document.getElementById('siteNav');
   if (navToggle && siteNav) {
+    /* The open mobile menu scrolls within the space between the header and
+       the fixed bottom bar, whose height depends on the language (labels can
+       wrap), so measure both rather than assuming (main.css has a fallback). */
+    function fitNav() {
+      if (!siteNav.classList.contains('is-open')) return;
+      var top = siteNav.getBoundingClientRect().top;
+      var bar = document.querySelector('.mobile-bar');
+      var barTop = bar && getComputedStyle(bar).display !== 'none' ? bar.getBoundingClientRect().top : window.innerHeight;
+      siteNav.style.maxHeight = Math.max(160, Math.floor(barTop - top)) + 'px';
+    }
+    window.addEventListener('resize', fitNav);
     navToggle.addEventListener('click', function () {
       var open = siteNav.classList.toggle('is-open');
       navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+      if (open) fitNav(); else siteNav.style.maxHeight = '';
     });
     siteNav.addEventListener('click', function (e) {
-      if (e.target.tagName === 'A') {
+      if (e.target.tagName === 'A' && !e.target.closest('.lang-switcher')) {
         siteNav.classList.remove('is-open');
         navToggle.setAttribute('aria-expanded', 'false');
       }
@@ -40,7 +89,7 @@ document.addEventListener('DOMContentLoaded', function () {
      after load for these users — the one thing "reduced motion" asks us not
      to do. */
   if (rotator && !reduceMotion) {
-    var words = ['to understand', 'to study', 'to teach', 'to translate', 'to share'];
+    var words = (I18N.rotatorWords && I18N.rotatorWords.length) ? I18N.rotatorWords : ['to understand', 'to study', 'to teach', 'to translate', 'to share'];
     var wi = 0, ci = 0, deleting = false, paused = false;
     var hero = rotator.closest('.hero');
     if (hero) {
@@ -115,6 +164,7 @@ document.addEventListener('DOMContentLoaded', function () {
       cta: 'Start equipping'
     }
   };
+  Object.keys(INTENTS).forEach(function (k) { merge(INTENTS[k], I18N.intents && I18N.intents[k]); });
   var intentBtns = document.querySelectorAll('.intent-btn');
   var pvImg = document.getElementById('intentPreviewImg');
   var pvCta = document.getElementById('intentPreviewCta');
@@ -179,6 +229,10 @@ document.addEventListener('DOMContentLoaded', function () {
       qrAlt: 'Scan to open the BT Servant web app'
     }
   };
+  Object.keys(CHANNELS).forEach(function (k) {
+    merge(CHANNELS[k], I18N.channels && I18N.channels[k]);
+    if (I18N.ctas && I18N.ctas[k]) CHANNELS[k].cta = I18N.ctas[k];
+  });
   var reachTabs = document.querySelectorAll('.reach__tab');
   var reachHeading = document.getElementById('reachHeading');
   var reachSteps = document.getElementById('reachSteps');
@@ -222,7 +276,7 @@ document.addEventListener('DOMContentLoaded', function () {
       if (navigator.clipboard) {
         navigator.clipboard.writeText(link).then(function () {
           var prev = copyBtn.textContent;
-          copyBtn.textContent = 'Link copied!';
+          copyBtn.textContent = I18N.linkCopied || 'Link copied!';
           setTimeout(function () { copyBtn.textContent = prev; }, 1800);
         });
       }

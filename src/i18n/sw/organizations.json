@@ -1,0 +1,37 @@
+{
+  "meta": {
+    "title": "BT Servant kwa Mashirika — Itumie, ibadilishe, iunganishe",
+    "description": "Leta mwongozo wa Maandiko wa BT Servant, wa kuaminika na unaozingatia muktadha, kwa timu yako — bure kutumia, unaoweza kubadilishwa, na chanzo huria ili kuuunganisha."
+  },
+  "hero": {
+    "title": "Kwa mashirika",
+    "sub": "Leta mwongozo wa Maandiko wa kuaminika unaozingatia muktadha kwa timu yako &mdash; anza bure, ibadilishe kadiri mnavyokua, au iunganishe ndani ya zana zenu wenyewe."
+  },
+  "path": ["Itumie", "Ibadilishe", "Iunganishe"],
+  "cards": [
+    {
+      "name": "Tumia",
+      "summary": "Ufikiaji wa bure kwa timu yako kwenye WhatsApp, Telegram na wavuti.",
+      "detail": "<strong>Inafaa zaidi kwa:</strong> timu, majaribio, warsha.",
+      "buttons": ["Anza sasa"]
+    },
+    {
+      "name": "Badilisha",
+      "summary": "Rasilimali zenu, lugha, mtindo na utaratibu wa kazi.",
+      "detail": "Hali maalum (Mkufunzi, Mtafsiri, Ukaguzi), matoleo yenye chapa yenu wenyewe, na msaada wa uendeshaji &mdash; kupitia makubaliano ya ushirikiano.",
+      "buttons": ["Chunguza ubadilishaji"]
+    },
+    {
+      "name": "Unganisha",
+      "summary": "Leta mwongozo wa kuaminika ndani ya programu zenu wenyewe.",
+      "detail": "Injini ni chanzo huria &mdash; ipachike au iendeshe kwenye seva yenu wenyewe, bure.",
+      "buttons": ["GitHub", "Jadili muunganisho"]
+    }
+  ],
+  "cta": {
+    "title": "Uko tayari kuleta BT Servant kwa timu yako?",
+    "useWithTeam": "Itumie na timu yako",
+    "customize": "Badilisha",
+    "integrate": "Unganisha"
+  }
+}

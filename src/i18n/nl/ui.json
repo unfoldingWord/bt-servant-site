@@ -1,0 +1,31 @@
+{
+  "skipToContent": "Naar de inhoud",
+  "logoHomeLabel": "BT Servant startpagina",
+  "nav": {
+    "label": "Hoofdmenu",
+    "whatYouCanDo": "Wat je kunt doen",
+    "whereToUseIt": "Waar je het gebruikt",
+    "whyBtServant": "Waarom BT Servant",
+    "organizations": "Organisaties"
+  },
+  "headerCta": "Begin een gesprek",
+  "toggleMenu": "Menu openen of sluiten",
+  "languageLabel": "Taal",
+  "mobileBar": {
+    "ask": "Vraag BT Servant",
+    "chooseApp": "Kies een app"
+  },
+  "footer": {
+    "tagline": "Diepgaande Bijbelkennis, toegankelijk gemaakt door een gesprek.",
+    "access": "Toegang",
+    "webApp": "Webapp",
+    "resources": "Bronnen",
+    "demoVideo": "Demovideo",
+    "contact": "Contact",
+    "credit": "&copy; 2026 BT Servant &middot; een project van <a href=\"https://www.unfoldingword.org/\" target=\"_blank\" rel=\"noopener\">unfoldingWord</a> &middot; Laatst bijgewerkt {date}",
+    "openSource": "Open source",
+    "releaseNotes": "Release-opmerkingen"
+  },
+  "brandline": "Vraag het gewoon. Ontvang betrouwbare begeleiding. Ga met vertrouwen aan de slag.",
+  "ogImageAlt": "BT Servant — betrouwbare hulp bij de Schrift via een gesprek"
+}

@@ -1,0 +1,31 @@
+{
+  "skipToContent": "مواد پر جائیں",
+  "logoHomeLabel": "BT Servant ہوم پیج",
+  "nav": {
+    "label": "مرکزی نیویگیشن",
+    "whatYouCanDo": "خصوصیات",
+    "whereToUseIt": "کہاں استعمال کریں",
+    "whyBtServant": "BT Servant کیوں",
+    "organizations": "ادارے"
+  },
+  "headerCta": "گفتگو شروع کریں",
+  "toggleMenu": "مینو کھولیں یا بند کریں",
+  "languageLabel": "زبان",
+  "mobileBar": {
+    "ask": "BT Servant سے پوچھیں",
+    "chooseApp": "ایپ منتخب کریں"
+  },
+  "footer": {
+    "tagline": "بائبل کا گہرا علم، اب گفتگو کے ذریعے آپ کی پہنچ میں۔",
+    "access": "رسائی",
+    "webApp": "ویب ایپ",
+    "resources": "وسائل",
+    "demoVideo": "تعارفی ویڈیو",
+    "contact": "رابطہ",
+    "credit": "&copy; 2026 BT Servant &middot; <a href=\"https://www.unfoldingword.org/\" target=\"_blank\" rel=\"noopener\">unfoldingWord</a> کا ایک منصوبہ &middot; آخری اپ ڈیٹ: {date}",
+    "openSource": "اوپن سورس",
+    "releaseNotes": "ریلیز نوٹس"
+  },
+  "brandline": "فطری انداز میں پوچھیں۔ قابلِ اعتماد رہنمائی پائیں۔ اعتماد کے ساتھ قدم اٹھائیں۔",
+  "ogImageAlt": "BT Servant — گفتگو کے ذریعے کلامِ مقدس کی قابلِ اعتماد رہنمائی"
+}

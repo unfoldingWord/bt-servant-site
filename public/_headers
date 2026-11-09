@@ -33,3 +33,10 @@
   ! Cache-Control
   Cache-Control: public, no-cache, s-maxage=86400
 
+
+# The per-script font packs (scripts/build-font-css.mjs) are regenerated under
+# the SAME paths on every build (no content hash), so, like CSS and JS, they
+# revalidate: an unchanged file is a cheap 304, a changed one is fetched.
+/assets/fonts/*
+  ! Cache-Control
+  Cache-Control: public, no-cache, s-maxage=86400
