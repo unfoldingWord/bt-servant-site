@@ -1,0 +1,37 @@
+{
+  "meta": {
+    "title": "BT Servant voor organisaties — Gebruik het, pas het aan, integreer het",
+    "description": "Breng de betrouwbare hulp bij de Schrift van BT Servant naar je team — gratis te gebruiken, aan te passen aan je bronnen en werkwijzen, en open source om in je eigen apps te integreren."
+  },
+  "hero": {
+    "title": "Voor organisaties",
+    "sub": "Breng betrouwbare begeleiding bij de Schrift, met oog voor de context, naar je team &mdash; begin gratis, pas het aan naarmate je groeit, of integreer het in je eigen hulpmiddelen."
+  },
+  "path": ["Gebruiken", "Aanpassen", "Integreren"],
+  "cards": [
+    {
+      "name": "Gebruiken",
+      "summary": "Gratis toegang voor je team op WhatsApp, Telegram en het web.",
+      "detail": "<strong>Het meest geschikt voor:</strong> teams, pilots, workshops.",
+      "buttons": ["Begin nu"]
+    },
+    {
+      "name": "Aanpassen",
+      "summary": "Jouw bronnen, taal, toon en werkwijzen.",
+      "detail": "Aangepaste modi (Trainer, Vertaler, Controle), white-labelversies en ondersteuning voor productiegebruik &mdash; via partnerafspraken.",
+      "buttons": ["Ontdek de mogelijkheden"]
+    },
+    {
+      "name": "Integreren",
+      "summary": "Breng betrouwbare begeleiding naar je eigen apps.",
+      "detail": "De engine is open source &mdash; bouw hem in of host hem zelf, gratis.",
+      "buttons": ["GitHub", "Bespreek een integratie"]
+    }
+  ],
+  "cta": {
+    "title": "Klaar om BT Servant naar je team te brengen?",
+    "useWithTeam": "Gebruik het met je team",
+    "customize": "Aanpassen",
+    "integrate": "Integreren"
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "skipToContent": "Ruka hadi maudhui",
+  "logoHomeLabel": "Ukurasa wa mwanzo wa BT Servant",
+  "nav": {
+    "label": "Kuu",
+    "whatYouCanDo": "Unachoweza Kufanya",
+    "whereToUseIt": "Mahali pa Kutumia",
+    "whyBtServant": "Kwa nini BT Servant",
+    "organizations": "Mashirika"
+  },
+  "headerCta": "Anza Mazungumzo",
+  "toggleMenu": "Fungua au funga menyu",
+  "languageLabel": "Lugha",
+  "mobileBar": {
+    "ask": "Uliza BT Servant",
+    "chooseApp": "Chagua Programu"
+  },
+  "footer": {
+    "tagline": "Maarifa ya kina ya Biblia, yanayopatikana kwa urahisi kupitia mazungumzo.",
+    "access": "Ufikiaji",
+    "webApp": "Programu ya Wavuti",
+    "resources": "Rasilimali",
+    "demoVideo": "Video ya Maonyesho",
+    "contact": "Wasiliana Nasi",
+    "credit": "&copy; 2026 BT Servant &middot; mradi wa <a href=\"https://www.unfoldingword.org/\" target=\"_blank\" rel=\"noopener\">unfoldingWord</a> &middot; Ilisasishwa mara ya mwisho {date}",
+    "openSource": "Chanzo huria",
+    "releaseNotes": "Maelezo ya matoleo"
+  },
+  "brandline": "Uliza kwa kawaida. Pokea mwongozo wa kuaminika. Tenda kwa ujasiri.",
+  "ogImageAlt": "BT Servant — mwongozo wa Maandiko wa kuaminika kupitia mazungumzo"
+}

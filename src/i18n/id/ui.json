@@ -1,0 +1,31 @@
+{
+  "skipToContent": "Langsung ke konten",
+  "logoHomeLabel": "Beranda BT Servant",
+  "nav": {
+    "label": "Utama",
+    "whatYouCanDo": "Yang Bisa Anda Lakukan",
+    "whereToUseIt": "Tempat Menggunakan",
+    "whyBtServant": "Mengapa BT Servant",
+    "organizations": "Organisasi"
+  },
+  "headerCta": "Mulai Percakapan",
+  "toggleMenu": "Buka/tutup menu",
+  "languageLabel": "Bahasa",
+  "mobileBar": {
+    "ask": "Tanya BT Servant",
+    "chooseApp": "Pilih Aplikasi"
+  },
+  "footer": {
+    "tagline": "Pengetahuan Alkitab yang mendalam, mudah diakses melalui percakapan.",
+    "access": "Akses",
+    "webApp": "Aplikasi Web",
+    "resources": "Sumber Daya",
+    "demoVideo": "Video Demo",
+    "contact": "Kontak",
+    "credit": "&copy; 2026 BT Servant &middot; sebuah proyek dari <a href=\"https://www.unfoldingword.org/\" target=\"_blank\" rel=\"noopener\">unfoldingWord</a> &middot; Terakhir diperbarui {date}",
+    "openSource": "Sumber terbuka",
+    "releaseNotes": "Catatan rilis"
+  },
+  "brandline": "Bertanyalah dengan bahasa sehari-hari. Terimalah bimbingan tepercaya. Bertindaklah dengan yakin.",
+  "ogImageAlt": "BT Servant — bimbingan Alkitab tepercaya melalui percakapan"
+}

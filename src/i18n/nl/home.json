@@ -1,0 +1,158 @@
+{
+  "meta": {
+    "title": "BT Servant — Betrouwbare hulp bij de Schrift, in apps die je al gebruikt",
+    "description": "BT Servant rust discipelen toe om Gods Woord te begrijpen, bestuderen, onderwijzen, vertalen, delen en anderen toe te rusten — gratis op WhatsApp, Telegram en web."
+  },
+  "hero": {
+    "title": "BT Servant rust discipelen toe",
+    "rotatorBefore": "om Gods Woord",
+    "rotatorWords": ["te begrijpen", "te bestuderen", "te onderwijzen", "te vertalen", "te delen"],
+    "rotatorAfter": ".",
+    "sub": "Vraag het via tekst of spraak. Krijg betrouwbare begeleiding die rekening houdt met de context &mdash; in de apps die je al gebruikt.",
+    "ctaWhatsapp": "Begin op WhatsApp",
+    "ctaWeb": "Open de webapp"
+  },
+  "reach": {
+    "title": "Beschikbaar overal waar je dient.",
+    "sub": "Gratis, in de apps die je al kent.",
+    "openWhatsapp": "Openen in WhatsApp",
+    "openTelegram": "Openen in Telegram",
+    "openSignal": "Openen in Signal",
+    "openWeb": "Webapp openen",
+    "tabsLabel": "Kies een platform",
+    "tabWeb": "Webapp",
+    "copyLink": "Toegangslink kopiëren",
+    "linkCopied": "Link gekopieerd!",
+    "scanToOpen": "Scan om te openen",
+    "channels": {
+      "whatsapp": {
+        "heading": "Gebruik BT Servant op WhatsApp",
+        "steps": ["Scan de QR-code of tik op ‘Openen in WhatsApp’.", "Stel een vraag.", "Antwoord via tekst of spraak."],
+        "note": "",
+        "qrAlt": "Scan om BT Servant op WhatsApp te openen"
+      },
+      "telegram": {
+        "heading": "Gebruik BT Servant op Telegram",
+        "steps": ["Scan de QR-code of tik op ‘Openen in Telegram’ (of zoek op @bt_servant_bot).", "Tik op Start en stel een vraag.", "Antwoord via tekst of spraak."],
+        "note": "@bt_servant_bot",
+        "qrAlt": "Scan om BT Servant op Telegram te openen"
+      },
+      "signal": {
+        "heading": "Gebruik BT Servant op Signal",
+        "steps": ["Scan de QR-code of tik op ‘Openen in Signal’.", "Stel een vraag.", "Antwoord via tekst of spraak."],
+        "note": "",
+        "qrAlt": "Scan om BT Servant op Signal te openen"
+      },
+      "web": {
+        "heading": "Gebruik BT Servant op het web",
+        "steps": ["Scan de QR-code of open app.btservant.ai in een willekeurige browser.", "Stel je eerste vraag.", "Ga later verder op je telefoon."],
+        "note": "",
+        "qrAlt": "Scan om de webapp van BT Servant te openen"
+      }
+    },
+    "langs": "Engels &middot; Indonesisch &middot; Spaans &middot; <em>en nog veel meer talen</em> &middot; Spraak ondersteund"
+  },
+  "intents": {
+    "title": "Wat wil je vandaag doen?",
+    "sub": "Kies een beginpunt. De rest is een gesprek.",
+    "listLabel": "Kies wat je wilt doen",
+    "items": [
+      {
+        "name": "Begrijpen",
+        "text": "Wat een tekstgedeelte betekent.",
+        "cta": "Begin met begrijpen",
+        "alt": "Een echt WhatsApp-gesprek met BT Servant: iemand vraagt hulp om Romeinen 12:1-2 te begrijpen, en BT Servant antwoordt met de tekst van het gedeelte en vertaalnotities."
+      },
+      {
+        "name": "Bestuderen",
+        "text": "Context, vragen, bronnen.",
+        "cta": "Begin met bestuderen",
+        "alt": "Een echt WhatsApp-gesprek met BT Servant: iemand vraagt naar de historische context van Filippenzen, en BT Servant antwoordt met achtergrondinformatie uit hulpmiddelen voor Bijbelstudie."
+      },
+      {
+        "name": "Onderwijzen",
+        "text": "Lessen en gesprekken.",
+        "cta": "Begin met onderwijzen",
+        "alt": "Een echt WhatsApp-gesprek met BT Servant: iemand vraagt hulp bij het voorbereiden van een les over de barmhartige Samaritaan, en BT Servant antwoordt met een lesopzet en belangrijke inzichten."
+      },
+      {
+        "name": "Vertalen",
+        "text": "Begrippen, betekenis, keuzes.",
+        "cta": "Begin met vertalen",
+        "alt": "Een echt WhatsApp-gesprek met BT Servant: iemand vraagt hoe je het woord genade vertaalt in een taal zonder een overeenkomend woord, en BT Servant antwoordt met richtlijnen uit Translation Words en Translation Academy."
+      },
+      {
+        "name": "Delen",
+        "text": "Het evangelie, helder verteld.",
+        "cta": "Begin met delen",
+        "alt": "Een echt WhatsApp-gesprek met BT Servant: iemand vraagt hulp om het evangelie uit te leggen, en BT Servant antwoordt met een helder overzicht van belangrijke Bijbelgedeelten over het evangelie."
+      },
+      {
+        "name": "Toerusten",
+        "text": "Leiders opleiden en vermenigvuldigen.",
+        "cta": "Begin met toerusten",
+        "alt": "Een echt WhatsApp-gesprek met BT Servant: iemand vraagt hulp bij het trainen van meertalige groepen in principes van Bijbelvertaling, en BT Servant antwoordt met verhelderende vragen om de training op maat te maken."
+      }
+    ],
+    "continueOn": "Ga verder op:",
+    "continueWeb": "Web"
+  },
+  "why": {
+    "title": "Begeleiding die je kunt vertrouwen",
+    "items": [
+      { "name": "Betrouwbaar", "text": "Gebaseerd op zorgvuldig gekozen Bijbelse bronnen &mdash; niet op het open internet." },
+      { "name": "Natuurlijk", "text": "Tekst of spraak. Geen commando’s om te leren." },
+      { "name": "Mensgericht", "text": "Ondersteunt voorgangers, leraren en vertalers. Vervangt hen nooit." }
+    ]
+  },
+  "partners": {
+    "title": "Gebouwd met bedieningen. Gevormd door echt gebruik."
+  },
+  "faq": {
+    "title": "Veelgestelde vragen",
+    "items": [
+      {
+        "q": "Wat is BT Servant?",
+        "a": "BT Servant is een gratis AI-assistent van unfoldingWord die via een gesprek betrouwbare begeleiding bij de Schrift geeft, met oog voor de context, in de berichtenapps die mensen al gebruiken en op het web. Het helpt discipelen om Gods Woord te begrijpen, te bestuderen, te onderwijzen, te vertalen en te delen, en om anderen toe te rusten om hetzelfde te doen."
+      },
+      {
+        "q": "Wat kan ik BT Servant vragen?",
+        "a": "Begin bij wat je nodig hebt: begrijpen wat een tekstgedeelte betekent; de context, vragen en bronnen bestuderen; onderwijzen met lessen en gesprekken; begrippen, betekenis en keuzes vertalen; het evangelie helder delen; of anderen toerusten om leiders op te leiden en te vermenigvuldigen. De rest is een gesprek."
+      },
+      {
+        "q": "Waar kan ik BT Servant gebruiken?",
+        "a": "Op WhatsApp (+1 555-819-6461), op Telegram (@bt_servant_bot), op Signal en in elke webbrowser op <a href=\"https://app.btservant.ai/chat\">app.btservant.ai</a>. Vraag het via tekst of spraak; je hoeft geen commando’s te leren."
+      },
+      {
+        "q": "Hoe begin ik een gesprek?",
+        "a": "Scan de QR-code op deze pagina met je telefoon, of tik op de knop van de app die je al gebruikt. Stel een vraag en antwoord daarna via tekst of spraak. Je kunt in een browser beginnen en later verdergaan op je telefoon."
+      },
+      {
+        "q": "Welke talen ondersteunt BT Servant?",
+        "a": "Engels, Indonesisch, Spaans en nog veel meer talen. Je kunt vragen stellen en antwoorden krijgen via tekst of spraak."
+      },
+      {
+        "q": "Waar komen de antwoorden van BT Servant vandaan?",
+        "a": "De antwoorden zijn gebaseerd op zorgvuldig gekozen Bijbelse bronnen, niet op het internet in het algemeen. Vragen over vertalen putten bijvoorbeeld uit Translation Words en Translation Academy. BT Servant ondersteunt voorgangers, leraren en vertalers; het vervangt hen nooit."
+      },
+      {
+        "q": "Wie maakt BT Servant?",
+        "a": "BT Servant is een project van <a href=\"https://unfoldingword.org/about-2/\">unfoldingWord</a>, gebouwd samen met de bedieningspartners ETEN Innovation Lab, Word Collective en Spoken Worldwide. De engine is gepubliceerd op <a href=\"https://github.com/unfoldingWord/bt-servant-engine\">GitHub</a> en kan gratis worden ingebouwd of zelf gehost."
+      },
+      {
+        "q": "Kan mijn organisatie BT Servant gebruiken?",
+        "a": "Ja. Teams kunnen <a href=\"/organizations/\">het gebruiken, aanpassen of integreren</a>: gratis toegang voor het hele team; aangepaste modi zoals Trainer, Vertaler en Controle; of de engine zelf in je eigen hulpmiddelen."
+      }
+    ]
+  },
+  "cta": {
+    "title": "Wat wil je hierna doen?",
+    "individuals": "Persoonlijk",
+    "startWhatsapp": "Begin op WhatsApp",
+    "webApp": "Webapp",
+    "organizations": "Organisaties",
+    "useWithTeam": "Gebruik het met je team",
+    "customize": "Aanpassen",
+    "integrate": "Integreren"
+  }
+}

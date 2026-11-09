@@ -18,6 +18,9 @@ const t = content<any>(locale, 'home');
 const ui = content<any>(locale, 'ui');
 const def = byCode(locale);
 const canonical = new URL(localePath(locale, 'home'), Astro.site).href;
+// A rotatorAfter that is only sentence-final punctuation (".", "۔", "。")
+// follows the rotating word with no space before it.
+const afterIsPunctuation = /^[.!?,;:。．！？۔؟،]/.test(t.hero.rotatorAfter);
 
 // Strings for /assets/js/main.js (plain text: it sets textContent and alt).
 const scriptStrings = JSON.stringify({
@@ -59,7 +62,7 @@ const INTENT_ICONS: Record<string, string> = {
     <div class="container hero__inner">
       <div class="hero__copy">
         <h1 class="hero__title" set:html={t.hero.title} />
-        <p class="hero__rotator" aria-live="polite">{t.hero.rotatorBefore && <Fragment><span class="hero__rotator-tail" set:html={t.hero.rotatorBefore} /> </Fragment>}<span class="hero__rotator-text" id="heroRotator" set:html={t.hero.rotatorWords[0]} /><span class="caret" aria-hidden="true"></span>{t.hero.rotatorAfter && <Fragment> <span class="hero__rotator-tail" set:html={t.hero.rotatorAfter} /></Fragment>}</p>
+        <p class="hero__rotator" aria-live="polite">{t.hero.rotatorBefore && <Fragment><span class="hero__rotator-tail" set:html={t.hero.rotatorBefore} /> </Fragment>}<span class="hero__rotator-text" id="heroRotator" set:html={t.hero.rotatorWords[0]} /><span class="caret" aria-hidden="true"></span>{t.hero.rotatorAfter && <Fragment>{afterIsPunctuation ? '' : ' '}<span class="hero__rotator-tail" set:html={t.hero.rotatorAfter} /></Fragment>}</p>
         <p class="hero__sub" set:html={t.hero.sub} />
         <div class="hero__actions">
           <a href="https://wa.me/15558196461?text=Hello%2C%20BT%20Servant" class="btn btn--navy" data-track="hero_cta" data-track-name="start_whatsapp" set:html={t.hero.ctaWhatsapp} />
