@@ -1,0 +1,17 @@
+{
+  "name": "bt-servant-site",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "check:routes": "node scripts/check-routes.mjs"
+  },
+  "dependencies": {
+    "astro": "^5.0.0"
+  },
+  "engines": {
+    "node": ">=18.20"
+  }
+}

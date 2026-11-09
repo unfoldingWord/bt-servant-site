@@ -1,0 +1,84 @@
+---
+// Organizations page. Markup carried over verbatim from the static site's
+// organizations.html (asset paths made root-absolute).
+import Base from '../../layouts/Base.astro';
+---
+<Base pageKey="organizations" bodyClass="page">
+
+  <!-- ============================================================ -->
+  <!-- ORGANIZATIONS PAGE HEADER -->
+  <!-- ============================================================ -->
+  <section class="hero" style="padding: 56px 0 20px;">
+    <div class="container">
+      <div class="section-head" style="max-width: 720px; margin: 0;">
+        <h1 class="hero__title">For organizations</h1>
+        <p class="hero__sub" style="margin-top: 14px;">Bring trusted, context-aware Scripture guidance to your team &mdash; start free, customize as you grow, or integrate it into your own tools.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================ -->
+  <!-- ORG PATH + CARDS -->
+  <!-- ============================================================ -->
+  <section class="org" id="for-organizations">
+    <div class="container">
+      <div class="org__path" aria-hidden="true">
+        <span>Use It</span> <span class="org__path-arrow">&rarr;</span> <span>Customize It</span> <span class="org__path-arrow">&rarr;</span> <span>Integrate It</span>
+      </div>
+
+      <div class="org__cards">
+        <details class="org-card" id="use" open>
+          <summary>
+            <h3>Use</h3>
+            <p>Free access for your team on WhatsApp, Telegram, and the web.</p>
+          </summary>
+          <div class="org-card__body">
+            <p><strong>Best for:</strong> teams, pilots, workshops.</p>
+            <a href="https://app.btservant.ai" class="btn btn--bronze btn--sm">Start now</a>
+          </div>
+        </details>
+
+        <details class="org-card" id="customize">
+          <summary>
+            <h3>Customize</h3>
+            <p>Your resources, language, tone, and workflows.</p>
+          </summary>
+          <div class="org-card__body">
+            <p>Custom modes (Trainer, Translator, Checking), white-label deployments, and production support &mdash; through partner commitments.</p>
+            <a href="https://unfoldingword.org/contact/" class="btn btn--navy btn--sm" target="_blank" rel="noopener">Explore customization</a>
+          </div>
+        </details>
+
+        <details class="org-card" id="integrate">
+          <summary>
+            <h3>Integrate</h3>
+            <p>Bring trusted guidance into your own apps.</p>
+          </summary>
+          <div class="org-card__body">
+            <p>The engine is open source &mdash; embed it or self-host it, free.</p>
+            <a href="https://github.com/unfoldingWord/bt-servant-engine" class="btn btn--ghost btn--sm" target="_blank" rel="noopener">GitHub</a>
+            <a href="https://unfoldingword.org/contact/" class="btn btn--navy btn--sm" target="_blank" rel="noopener">Discuss an integration</a>
+          </div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================ -->
+  <!-- FINAL CTA -->
+  <!-- ============================================================ -->
+  <section class="cta-banner" id="get-started">
+    <div class="container cta-banner__inner">
+      <h2 class="cta-banner__title">Ready to bring BT Servant to your team?</h2>
+      <div class="cta-banner__group">
+        <div class="cta-banner__actions">
+          <a href="https://app.btservant.ai" class="btn btn--bronze" data-track="org_cta" data-track-name="use">Use it with your team</a>
+          <a href="https://unfoldingword.org/contact/" class="btn btn--outline-light" target="_blank" rel="noopener" data-track="org_cta" data-track-name="customize">Customize</a>
+          <a href="https://unfoldingword.org/contact/" class="btn btn--outline-light" target="_blank" rel="noopener" data-track="org_cta" data-track-name="integrate">Integrate</a>
+        </div>
+      </div>
+      <p class="cta-banner__brandline">Ask naturally. Receive trusted guidance. Take action with confidence.</p>
+    </div>
+  </section>
+
+</Base>

@@ -85,32 +85,32 @@ document.addEventListener('DOMContentLoaded', function () {
      no native app exists, so the previews are actual conversations, not mockups. */
   var INTENTS = {
     understand: {
-      img: 'assets/images/wa/understand.png',
+      img: '/assets/images/wa/understand.png',
       alt: 'A real WhatsApp conversation with BT Servant: a user asks for help understanding Romans 12:1-2, and BT Servant replies with the passage text and translation notes.',
       cta: 'Start understanding'
     },
     study: {
-      img: 'assets/images/wa/study.png',
+      img: '/assets/images/wa/study.png',
       alt: 'A real WhatsApp conversation with BT Servant: a user asks about the historical context of Philippians, and BT Servant replies with background from Bible study resources.',
       cta: 'Start studying'
     },
     teach: {
-      img: 'assets/images/wa/teach.png',
+      img: '/assets/images/wa/teach.png',
       alt: 'A real WhatsApp conversation with BT Servant: a user asks for help preparing a lesson on the Good Samaritan, and BT Servant replies with a lesson outline and key insights.',
       cta: 'Start teaching'
     },
     translate: {
-      img: 'assets/images/wa/translate.png',
+      img: '/assets/images/wa/translate.png',
       alt: 'A real WhatsApp conversation with BT Servant: a user asks how to translate the word grace for a language with no equivalent word, and BT Servant replies with guidance from Translation Words and Translation Academy.',
       cta: 'Start translating'
     },
     share: {
-      img: 'assets/images/wa/share.png',
+      img: '/assets/images/wa/share.png',
       alt: 'A real WhatsApp conversation with BT Servant: a user asks for help explaining the gospel, and BT Servant replies with a clear outline of key gospel passages.',
       cta: 'Start sharing'
     },
     equip: {
-      img: 'assets/images/wa/equip.png',
+      img: '/assets/images/wa/equip.png',
       alt: 'A real WhatsApp conversation with BT Servant: a user asks for help training multilingual groups in Bible translation principles, and BT Servant replies with clarifying questions to tailor the training.',
       cta: 'Start equipping'
     }
@@ -148,7 +148,7 @@ document.addEventListener('DOMContentLoaded', function () {
       note: '',
       link: 'https://wa.me/15558196461?text=Hello%2C%20BT%20Servant',
       cta: 'Open in WhatsApp',
-      qr: 'assets/images/qr-code.png',
+      qr: '/assets/images/qr-code.png',
       qrAlt: 'Scan to open BT Servant on WhatsApp'
     },
     telegram: {
@@ -157,7 +157,7 @@ document.addEventListener('DOMContentLoaded', function () {
       note: '@bt_servant_bot',
       link: 'https://t.me/bt_servant_bot',
       cta: 'Open in Telegram',
-      qr: 'assets/images/qr-code-telegram.png',
+      qr: '/assets/images/qr-code-telegram.png',
       qrAlt: 'Scan to open BT Servant on Telegram'
     },
     signal: {
@@ -166,7 +166,7 @@ document.addEventListener('DOMContentLoaded', function () {
       note: '',
       link: 'https://signal.me/#eu/-RGNTp_ER2U74QlijVSyUHxU_EnzcvATLyvcTyCYS8r_jcbr-FlNxJcgZ7fPXTce',
       cta: 'Open in Signal',
-      qr: 'assets/images/qr-code-signal.png',
+      qr: '/assets/images/qr-code-signal.png',
       qrAlt: 'Scan to open BT Servant on Signal'
     },
     web: {
@@ -175,7 +175,7 @@ document.addEventListener('DOMContentLoaded', function () {
       note: '',
       link: 'https://app.btservant.ai/chat',
       cta: 'Open Web App',
-      qr: 'assets/images/qr-code-webapp.png',
+      qr: '/assets/images/qr-code-webapp.png',
       qrAlt: 'Scan to open the BT Servant web app'
     }
   };

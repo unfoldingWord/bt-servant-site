@@ -1,0 +1,39 @@
+---
+import { WEB_APP_URL, GITHUB_URL, DISCORD_URL, DEMO_VIDEO_URL, CONTACT_URL, RELEASES_URL, formatDate } from '../data/site';
+interface Props { anchorBase: string; updated: string }
+const { anchorBase, updated } = Astro.props;
+---
+<footer class="site-footer" role="contentinfo" id="about">
+  <div class="container site-footer__inner">
+    <div class="site-footer__brand">
+      <a class="site-logo" href="/">
+        <img class="site-logo__full" src="/assets/images/logo-full-inverse.png" alt="BT Servant" />
+      </a>
+      <p class="site-footer__tag">Deep biblical knowledge, made accessible through conversation.</p>
+    </div>
+
+    <div class="site-footer__cols">
+      <div class="site-footer__col">
+        <h5>Access</h5>
+        <a href={`${anchorBase}#where-to-use-it`}>WhatsApp</a>
+        <a href={`${anchorBase}#where-to-use-it`}>Telegram</a>
+        <a href={`${anchorBase}#where-to-use-it`}>Signal</a>
+        <a href={WEB_APP_URL}>Web App</a>
+      </div>
+      <div class="site-footer__col">
+        <h5>Resources</h5>
+        <a href={GITHUB_URL} target="_blank" rel="noopener">GitHub</a>
+        <a href={DISCORD_URL} target="_blank" rel="noopener">Discord</a>
+        <a href={DEMO_VIDEO_URL} target="_blank" rel="noopener">Demo Video</a>
+        <a href={CONTACT_URL} target="_blank" rel="noopener">Contact</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="site-footer__credits">
+    <div class="container">
+      <span>&copy; 2026 BT Servant &middot; a project of <a href="https://www.unfoldingword.org/" target="_blank" rel="noopener">unfoldingWord</a></span>
+      <span>Open source &middot; <a href={RELEASES_URL} target="_blank" rel="noopener">Release notes</a></span>
+    </div>
+  </div>
+</footer>

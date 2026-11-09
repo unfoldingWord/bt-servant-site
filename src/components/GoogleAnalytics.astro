@@ -1,0 +1,26 @@
+---
+// Google Analytics 4 (the same property and snippet the static site used).
+//
+// Production builds only. The gtag.js loader is fetched only on btservant.ai
+// and www.btservant.ai, so pages.dev previews send nothing; `gtag()` itself
+// is always defined because /assets/js/main.js calls it for click events.
+// The measurement ID is a public identifier; PUBLIC_GA_MEASUREMENT_ID
+// overrides it if the property ever changes.
+const measurementId = import.meta.env.PUBLIC_GA_MEASUREMENT_ID ?? 'G-LT1CE2F1PZ';
+const enabled = Boolean(measurementId) && import.meta.env.PROD;
+const snippet = `
+  (function () {
+    var h = location.hostname;
+    if (h !== 'btservant.ai' && h !== 'www.btservant.ai') return;
+    var s = document.createElement('script');
+    s.async = true;
+    s.src = 'https://www.googletagmanager.com/gtag/js?id=${measurementId}';
+    document.head.appendChild(s);
+  })();
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', '${measurementId}');
+`;
+---
+{enabled && <Fragment><!-- Google Analytics 4 --><script is:inline set:html={snippet} /></Fragment>}

@@ -1,57 +1,10 @@
-<!DOCTYPE html>
-<html lang="en" data-theme="carbon">
-<head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>BT Servant — Trusted Scripture guidance, in the tools you already use</title>
-<meta name="description" content="BT Servant equips disciples to understand, study, teach, translate, share, and equip others with God's Word — free on WhatsApp, Telegram, and the web." />
-
-<link rel="icon" type="image/png" href="assets/images/favicon.png" />
-<link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png" />
-
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=Inter:wght@400;500;600;700;800&display=swap" />
-
-<link rel="stylesheet" href="assets/css/main.css" />
-
-<!-- Google Analytics 4 -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-LT1CE2F1PZ"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-LT1CE2F1PZ');
-</script>
-</head>
-
-<body class="home">
-
-<a class="skip-link" href="#site-content">Skip to content</a>
-
-<header class="site-header" role="banner">
-  <div class="container site-header__inner">
-    <a class="site-logo" href="/" aria-label="BT Servant home">
-      <img class="site-logo__full" src="assets/images/logo-full.png" alt="BT Servant" />
-    </a>
-    <nav class="site-nav" id="siteNav" aria-label="Primary">
-      <ul class="nav-menu">
-        <li><a href="#what-you-can-do">What You Can Do</a></li>
-        <li><a href="#where-to-use-it">Where to Use It</a></li>
-        <li><a href="#why-bt-servant">Why BT Servant</a></li>
-        <li><a href="organizations.html">Organizations</a></li>
-      </ul>
-    </nav>
-    <div class="site-header__cta">
-      <a href="https://app.btservant.ai/login" class="btn btn--navy btn--sm" data-track="header_cta" data-track-name="start_conversation">Start a Conversation</a>
-    </div>
-    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="siteNav">
-      <span></span><span></span><span></span>
-    </button>
-  </div>
-</header>
-
-<main id="site-content">
+---
+// Home page. Markup carried over verbatim from the static site's index.html
+// (asset paths made root-absolute). Shared copy for /llms.txt etc. lives in
+// src/data/site.ts.
+import Base from '../layouts/Base.astro';
+---
+<Base pageKey="home" bodyClass="home">
 
   <!-- ============================================================ -->
   <!-- 1. HERO -->
@@ -70,7 +23,7 @@
 
       <div class="hero__visual" aria-hidden="true">
         <div class="chat-shot">
-          <img src="assets/images/wa/understand.png" alt="A real WhatsApp conversation with BT Servant: a user asks for help understanding Romans 12:1-2, and BT Servant replies with the passage text and translation notes." loading="lazy" />
+          <img src="/assets/images/wa/understand.png" alt="A real WhatsApp conversation with BT Servant: a user asks for help understanding Romans 12:1-2, and BT Servant replies with the passage text and translation notes." loading="lazy" />
         </div>
       </div>
     </div>
@@ -124,7 +77,7 @@
             </div>
           </div>
           <div class="reach__qr">
-            <img id="reachQrImg" src="assets/images/qr-code.png" alt="Scan to open BT Servant on WhatsApp" width="210" height="210" loading="lazy" />
+            <img id="reachQrImg" src="/assets/images/qr-code.png" alt="Scan to open BT Servant on WhatsApp" width="210" height="210" loading="lazy" />
             <span>Scan to open</span>
           </div>
         </div>
@@ -174,7 +127,7 @@
 
         <div class="intents__preview" id="intentPreview" data-intent="understand">
           <div class="chat-shot">
-            <img id="intentPreviewImg" src="assets/images/wa/understand.png" alt="A real WhatsApp conversation with BT Servant: a user asks for help understanding Romans 12:1-2, and BT Servant replies with the passage text and translation notes." loading="lazy" />
+            <img id="intentPreviewImg" src="/assets/images/wa/understand.png" alt="A real WhatsApp conversation with BT Servant: a user asks for help understanding Romans 12:1-2, and BT Servant replies with the passage text and translation notes." loading="lazy" />
           </div>
           <div class="intents__preview-actions">
             <a href="https://app.btservant.ai/chat?intent=understand" class="btn btn--bronze" id="intentPreviewCta" data-track="intent_cta" data-track-name="understand">Start understanding</a>
@@ -230,16 +183,16 @@
     <div class="partner-bar">
       <div class="container partner-banner">
         <a class="partner-banner__logo" href="https://www.unfoldingword.org/" target="_blank" rel="noopener">
-          <img src="assets/images/partners/unfoldingword.png" alt="unfoldingWord" loading="lazy" />
+          <img src="/assets/images/partners/unfoldingword.png" alt="unfoldingWord" loading="lazy" />
         </a>
         <a class="partner-banner__logo" href="https://www.etenlab.org" target="_blank" rel="noopener">
-          <img src="assets/images/partners/eten-innovation-lab.png" alt="ETEN Innovation Lab" loading="lazy" />
+          <img src="/assets/images/partners/eten-innovation-lab.png" alt="ETEN Innovation Lab" loading="lazy" />
         </a>
         <a class="partner-banner__logo" href="https://www.wordcollective.com/" target="_blank" rel="noopener">
-          <img src="assets/images/partners/word-collective.png" alt="Word Collective" loading="lazy" />
+          <img src="/assets/images/partners/word-collective.png" alt="Word Collective" loading="lazy" />
         </a>
         <a class="partner-banner__logo" href="https://spoken.org/" target="_blank" rel="noopener">
-          <img src="assets/images/partners/spoken-worldwide.png" alt="Spoken Worldwide" loading="lazy" />
+          <img src="/assets/images/partners/spoken-worldwide.png" alt="Spoken Worldwide" loading="lazy" />
         </a>
       </div>
     </div>
@@ -274,48 +227,4 @@
     </div>
   </section>
 
-</main>
-
-<div class="mobile-bar" aria-hidden="false">
-  <a href="https://wa.me/15558196461?text=Hello%2C%20BT%20Servant" class="btn btn--navy" data-track="mobile_bar" data-track-name="ask">Ask BT Servant</a>
-  <a href="#where-to-use-it" class="btn btn--ghost">Choose App</a>
-</div>
-
-<footer class="site-footer" role="contentinfo" id="about">
-  <div class="container site-footer__inner">
-    <div class="site-footer__brand">
-      <a class="site-logo" href="/">
-        <img class="site-logo__full" src="assets/images/logo-full-inverse.png" alt="BT Servant" />
-      </a>
-      <p class="site-footer__tag">Deep biblical knowledge, made accessible through conversation.</p>
-    </div>
-
-    <div class="site-footer__cols">
-      <div class="site-footer__col">
-        <h5>Access</h5>
-        <a href="#where-to-use-it">WhatsApp</a>
-        <a href="#where-to-use-it">Telegram</a>
-        <a href="#where-to-use-it">Signal</a>
-        <a href="https://app.btservant.ai/chat">Web App</a>
-      </div>
-      <div class="site-footer__col">
-        <h5>Resources</h5>
-        <a href="https://github.com/unfoldingWord/bt-servant-engine" target="_blank" rel="noopener">GitHub</a>
-        <a href="https://discord.gg/pvzDWQ82zq" target="_blank" rel="noopener">Discord</a>
-        <a href="https://www.youtube.com/watch?v=dIda6Q2lGYE&amp;list=PLa3_fZSWwn6AEbqMCPamBokvLxCUtwMXB" target="_blank" rel="noopener">Demo Video</a>
-        <a href="https://unfoldingword.org/contact/" target="_blank" rel="noopener">Contact</a>
-      </div>
-    </div>
-  </div>
-
-  <div class="site-footer__credits">
-    <div class="container">
-      <span>&copy; 2026 BT Servant &middot; a project of <a href="https://www.unfoldingword.org/" target="_blank" rel="noopener">unfoldingWord</a></span>
-      <span>Open source &middot; <a href="https://github.com/unfoldingWord/bt-servant-engine/releases" target="_blank" rel="noopener">Release notes</a></span>
-    </div>
-  </div>
-</footer>
-
-<script src="assets/js/main.js"></script>
-</body>
-</html>
+</Base>
