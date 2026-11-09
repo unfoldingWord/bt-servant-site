@@ -149,10 +149,6 @@ export const FAQ: { q: string; a: string }[] = [
     a: 'Scan the QR code on this page with your phone, or tap the button for the app you already use. Send any question, then reply in text or voice. You can begin in a browser and continue on your phone later.',
   },
   {
-    q: 'Does BT Servant cost anything?',
-    a: 'No. BT Servant is free for individuals and for teams. Organizations can also customize it through partner commitments, or build its engine into their own apps.',
-  },
-  {
     q: 'Which languages does BT Servant support?',
     a: 'English, Indonesian, Spanish, and many more languages. You can ask and get answers in text or by voice.',
   },
