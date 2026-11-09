@@ -1,0 +1,31 @@
+{
+  "skipToContent": "پرش به محتوا",
+  "logoHomeLabel": "صفحهٔ اصلی BT Servant",
+  "nav": {
+    "label": "ناوبری اصلی",
+    "whatYouCanDo": "چه می‌توانید بکنید",
+    "whereToUseIt": "کجا استفاده کنید",
+    "whyBtServant": "چرا BT Servant",
+    "organizations": "سازمان‌ها"
+  },
+  "headerCta": "شروع گفتگو",
+  "toggleMenu": "باز و بسته کردن منو",
+  "languageLabel": "زبان",
+  "mobileBar": {
+    "ask": "از BT Servant بپرسید",
+    "chooseApp": "انتخاب برنامه"
+  },
+  "footer": {
+    "tagline": "دانش عمیق کتاب‌مقدسی، در دسترس از راه گفتگو.",
+    "access": "دسترسی",
+    "webApp": "اپلیکیشن وب",
+    "resources": "منابع",
+    "demoVideo": "ویدیوی معرفی",
+    "contact": "تماس",
+    "credit": "&copy; ۲۰۲۶ BT Servant &middot; پروژه‌ای از <a href=\"https://www.unfoldingword.org/\" target=\"_blank\" rel=\"noopener\">unfoldingWord</a> &middot; آخرین به‌روزرسانی: {date}",
+    "openSource": "متن‌باز",
+    "releaseNotes": "یادداشت‌های انتشار"
+  },
+  "brandline": "طبیعی بپرسید. راهنمایی قابل اعتماد دریافت کنید. با اطمینان اقدام کنید.",
+  "ogImageAlt": "BT Servant — راهنمایی قابل اعتماد در کتاب‌مقدس از راه گفتگو"
+}
