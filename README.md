@@ -102,7 +102,7 @@ If a link changes, update `site.ts`, the matching `href`s in `src/components/pag
   uvx --from geo-optimizer-skill geo audit --url btservant.ai
   ```
 
-  Before this migration production scored 42/100. This build scored 91/100 on a local Cloudflare Pages preview (`wrangler pages dev`) built with the canonical pointing at the audited host, i.e. the way production will be audited. The points still open: Knowledge Graph links (no Wikipedia, Wikidata, LinkedIn or Crunchbase profile could be confirmed for BT Servant or unfoldingWord; add one to `ORGANIZATION_SAME_AS` in `jsonld.ts` only once it is verified) and "front-loading" (a number in the first 30% of the page text, which would mean changing the hero copy).
+  Before this migration production scored 42/100. The Astro build scored 91/100 on a local Cloudflare Pages preview (`wrangler pages dev`) built with the canonical pointing at the audited host, i.e. the way production will be audited; with localization (hreflang counts as geographic identity) it scores 92/100. The points still open: Knowledge Graph links (no Wikipedia, Wikidata, LinkedIn or Crunchbase profile could be confirmed for BT Servant or unfoldingWord; add one to `ORGANIZATION_SAME_AS` in `jsonld.ts` only once it is verified) and "front-loading" (a number in the first 30% of the page text, which would mean changing the hero copy).
 
 ## Crawlers and AI policy
 
